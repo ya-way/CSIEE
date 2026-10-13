@@ -1,0 +1,108 @@
+{
+  "paper": "AgentHop: A Diagnostic Benchmark for Agentic Multi-Hop Scientific Question Answering",
+  "version": "arXiv:2609.34428v1",
+  "url": "https://arxiv.org/html/2609.34428v1",
+  "source": "Table 2, Outcome / Accuracy column",
+  "metric": "Answer accuracy (%)",
+  "verified_on": "2026-10-13",
+  "precision": 1,
+  "transcription": "Printed numeric cells; no estimates from bar heights.",
+  "rows": [
+    {
+      "method": "Gemini-3 Pro",
+      "accuracy": 89.1,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Gemini-3 Flash",
+      "accuracy": 54.7,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "GPT-5.3 codex",
+      "accuracy": 82.5,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "GPT-5.4",
+      "accuracy": 79.0,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Claude Opus 4.6",
+      "accuracy": 77.5,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Claude Sonnet 4.6",
+      "accuracy": 76.6,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "GLM-5.1",
+      "accuracy": 69.6,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "DeepSeek-reasoner",
+      "accuracy": 59.6,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "DeepSeek-chat",
+      "accuracy": 56.4,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Kimi-K2.5",
+      "accuracy": 44.1,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "MiniMax-M2.7",
+      "accuracy": 41.3,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Gemma-4-31B",
+      "accuracy": 64.8,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Gemma-4-26B-A4B",
+      "accuracy": 23.6,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Gemma-3-27B",
+      "accuracy": 18.6,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Qwen3.5-27B",
+      "accuracy": 48.2,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Qwen3.6-35B-A3B",
+      "accuracy": 38.1,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Qwen3.5-35B-A3B",
+      "accuracy": 32.0,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Qwen3-30B-A3B",
+      "accuracy": 16.0,
+      "context": "Question + choices + scientific-paper tools"
+    },
+    {
+      "method": "Qwen3-32B",
+      "accuracy": 13.3,
+      "context": "Question + choices + scientific-paper tools"
+    }
+  ],
+  "conversion": "Original accuracies are fractions printed to three decimals; multiply by 100 and display one decimal."
+}

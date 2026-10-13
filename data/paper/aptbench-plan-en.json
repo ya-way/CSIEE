@@ -1,0 +1,85 @@
+{
+  "paper": "APTBench: Benchmarking Agentic Potential of Base LLMs During Pre-Training",
+  "version": "arXiv:2510.24397v1",
+  "url": "https://arxiv.org/html/2510.24397v1",
+  "source": "Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column",
+  "metric": "DR closed-ended Plan_EN accuracy (%)",
+  "verified_on": "2026-10-13",
+  "precision": 2,
+  "transcription": "Printed numeric cells; no estimates from bar heights.",
+  "rows": [
+    {
+      "method": "Qwen3-1.7B",
+      "accuracy": 53.09,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "Qwen3-4B",
+      "accuracy": 72.48,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "Qwen3-8B",
+      "accuracy": 73.94,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "Llama3.2-3B",
+      "accuracy": 41.69,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "SmolLM-3B",
+      "accuracy": 48.7,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "Qwen3-30BA3B",
+      "accuracy": 73.13,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "Seed-OSS-36B",
+      "accuracy": 81.6,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "Gemma3-27B",
+      "accuracy": 73.13,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "Llama4-Scout-109BA17B",
+      "accuracy": 78.01,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "GLM4.5-Air-106BA12B",
+      "accuracy": 74.27,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "GLM4.5-355BA32B",
+      "accuracy": 85.5,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "DeepSeek-V3-671BA37B",
+      "accuracy": 82.31,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "DeepSeek-V3.1-671BA37B",
+      "accuracy": 84.04,
+      "context": "Base model; task context + question + choices"
+    },
+    {
+      "method": "Kimi K2-1TA32B",
+      "accuracy": 86.64,
+      "context": "Base model; task context + question + choices"
+    }
+  ],
+  "local_category": "deepresearch/plan_en",
+  "local_n": 614,
+  "local_options_per_question": 6
+}

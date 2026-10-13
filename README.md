@@ -8,7 +8,7 @@
 
 Zero parameters · Zero API calls · Suspiciously nonzero accuracy
 
-[Meet the class](#meet-the-class) · [Report card](#report-card) · [Run it](#run-it) · [Methods](docs/methodology.md)
+[Meet the class](#meet-the-class) · [Five charts](#five-exams-three-students-no-studying) · [Report card](#report-card) · [Run it](#run-it) · [Methods](docs/methodology.md)
 
 </div>
 
@@ -38,33 +38,188 @@ $ csiee guess 10 11 12 99 --strategy xiaogang
 ```
 
 <!-- personamem:start -->
-## PersonaMem-v2: a ruler enters the chat
+## Five exams. Three students. No studying.
 
-![PersonaMem-v2: paper-reported MCQ results and the three CSIEE classmates, with input context and accuracy on a shared scale](assets/personamem-comparison.png)
+Paper results and CSIEE measurements share each chart, sorted from highest to lowest. **Every baseline in the selected paper columns is retained, including low scores.** Teal is paper-reported; red is options-only. Different inputs and evaluation pipelines make these contextual comparisons, not matched agent leaderboards.
 
-**Xiaoming: 45.62%. GPT-5-Chat, as reported in the paper: 45.6%.** One brought a ruler; the other received 32k of conversation history. These are different evaluation pipelines, not a claim of equivalent capability.
+### PersonaMem-v2
+
+![PersonaMem-v2: descending vertical bars, paper results and CSIEE](assets/personamem-comparison.png)
+
+Text-memory MCQs · 32k history setting. Paper: 32k history; Agentic Memory compresses it to 2k. CSIEE: options only, n=5,000.
 
 <details>
-<summary><strong>The same table, in text — paper values and our measurements</strong></summary>
+<summary>All values, in one table</summary>
 
-| Method | History / memory | MCQ accuracy | Shuffled mean | Source |
-| :-- | :-- | --: | --: | :-- |
-| GPT-5-mini | 32k history | 48.7% | — | Paper Fig. 4 |
-| GPT-5-Chat | 32k history | 45.6% | — | Paper Fig. 4 |
-| Qwen3-4B · Agentic Memory | 2k memory* | 55.2% | — | Paper Fig. 6 |
-| Qwen3-4B · GRPO | 32k history | 53.8% | — | Paper Fig. 6 |
-| **Xiaoming · longest** | **Options only** | **45.62%** | 45.59% | CSIEE, n=5,000 |
-| **Xiaohong · C** | **Options only** | **24.68%** | 25.22% | CSIEE, n=5,000 |
-| **Xiaogang · outlier** | **Options only** | **36.90%** | 37.05% | CSIEE, n=5,000 |
-| Uniform chance | Options only | 25.00% | 25.00% (expected) | Analytical |
-
-Paper: [Jiang et al., Figs. 4 & 6](https://arxiv.org/html/2512.06688v1#S4); MCQ only, with 32k frontier results. *Agentic Memory builds a 2k memory from 32k history. CSIEE uses seed 42 and reconstructed option order on all 5,000 text MCQs. Published model scores were not rerun. Paper values retain one decimal; local scores retain two. “—” means no paper permutation control is available.
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| Qwen3-4B · GRPO (MCQ-only) | 55.5% | 32k history | Paper: Figure 6 | — |
+| Qwen3-4B · Agentic Memory | 55.2% | 2k memory* | Paper: Figure 6 | — |
+| Qwen3-4B · GRPO | 53.8% | 32k history | Paper: Figure 6 | — |
+| GPT-5-mini | 48.7% | 32k history | Paper: Figure 4 | — |
+| **Xiaoming · longest** | **45.62%** | Options only | CSIEE: Saved CSIEE counts | 45.59% |
+| GPT-5-Chat | 45.6% | 32k history | Paper: Figure 4 | — |
+| o4-mini | 39.1% | 32k history | Paper: Figure 4 | — |
+| GPT-4.1 | 38.7% | 32k history | Paper: Figure 4 | — |
+| GPT-5-nano | 37.9% | 32k history | Paper: Figure 4 | — |
+| GPT-4.1-mini | 37.6% | 32k history | Paper: Figure 4 | — |
+| **Xiaogang · outlier** | **36.90%** | Options only | CSIEE: Saved CSIEE counts | 37.05% |
+| Qwen3-4B · GRPO (OE-only) | 35.6% | 32k history | Paper: Figure 6 | — |
+| Qwen3-4B · SFT | 35.0% | 32k history | Paper: Figure 6 | — |
+| Qwen3-4B · Base | 30.5% | 32k history | Paper: Figure 6 | — |
+| **Xiaohong · C** | **24.68%** | Options only | CSIEE: Saved CSIEE counts | 25.22% |
+| Uniform chance | 25.00% | Options only | Analytical expectation | — |
 
 </details>
 
-[Full comparison, 128k results & source notes](docs/personamem-comparison.md) · [Vector figure](assets/personamem-comparison.svg)
+[Source notes and exact scope](docs/personamem-comparison.md) · [Vector figure](assets/personamem-comparison.svg)
 
-Four paper references are shown for clarity; base/SFT models, training ablations and other frontier variants remain in the full comparison.
+### AgentSense
+
+![AgentSense: descending vertical bars, paper results and CSIEE](assets/agentsense-comparison.png)
+
+Information reasoning · Info / Acc.. Paper: agent interactions + MCQs. CSIEE: options only, n=1,863; one invalid MCQ excluded.
+
+<details>
+<summary>All values, in one table</summary>
+
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| GPT-4o | 76.86% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| Qwen2.5-72b | 76.05% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| Qwen2.5-14b | 75.02% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| Qwen2.5-7b | 74.82% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| Llama-3-70b | 73.08% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| Llama-3-8B | 69.68% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| GPT-3.5-turbo | 68.41% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| Mistral-7b | 66.59% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| **Xiaoming · longest** | **49.87%** | Options only | CSIEE: Saved CSIEE counts | 49.69% |
+| **Xiaogang · outlier** | **49.44%** | Options only | CSIEE: Saved CSIEE counts | 49.57% |
+| Llama-2-70b | 36.78% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| Llama-2-7b | 33.06% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| Llama-2-13b | 28.56% | Agent interaction + question + choices | Paper: Table 1, Info / Acc. column | — |
+| **Xiaohong · C** | **25.17%** | Options only | CSIEE: Saved CSIEE counts | 25.10% |
+| Uniform chance | 25.00% | Options only | Analytical expectation | — |
+
+</details>
+
+[Source notes and exact scope](docs/agentsense-comparison.md) · [Vector figure](assets/agentsense-comparison.svg)
+
+### ACPBench
+
+![ACPBench: descending vertical bars, paper results and CSIEE](assets/acpbench-comparison.png)
+
+MCQ accuracy · macro-average across seven planning tasks. Paper: 2-shot CoT. CSIEE: options only, n=895; equal weight per task, five invalid MCQs excluded.
+
+<details>
+<summary>All values, in one table</summary>
+
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| LLAMA-3.1 405B | 77.42% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| GPT-4o | 74.97% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| LLAMA-3 70B | 74.30% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| LLAMA-3.1 70B | 66.94% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| GPT-4o Mini | 56.50% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Mixtral 8x7B | 51.44% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| LLAMA-3 8B | 44.05% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| LLAMA-3.1 8B | 41.52% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Codestral 22B | 40.97% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Mixtral 8x22B | 39.25% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Mistral Inst. 7B | 37.30% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| LLAMA-c 34B | 35.71% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Deepseek Inst. 33B | 35.11% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Phi-3 128K | 34.75% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| **Xiaogang · outlier** | **34.25%** | Options only | CSIEE: Saved CSIEE counts | — |
+| LLAMA-c 70B | 32.87% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Granite-c Inst. 8B | 32.63% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| LLAMA-2 70B | 29.71% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Granite 7B | 29.67% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Granite-c 8B | 29.21% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Gemma 7B | 28.93% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Mistral 7B | 28.67% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| Granite 13B | 26.66% | Question + choices; 2-shot CoT | Paper: Table 2, Mean / MCQ column | — |
+| **Xiaohong · C** | **25.29%** | Options only | CSIEE: Saved CSIEE counts | — |
+| **Xiaoming · longest** | **20.22%** | Options only | CSIEE: Saved CSIEE counts | — |
+| Uniform chance | 25.00% | Options only | Analytical expectation | — |
+
+</details>
+
+[Source notes and exact scope](docs/acpbench-comparison.md) · [Vector figure](assets/acpbench-comparison.svg)
+
+### APTBench
+
+![APTBench: descending vertical bars, paper results and CSIEE](assets/aptbench-comparison.png)
+
+Deep research · closed-ended Plan_EN subset. Paper: base models + task context. CSIEE: options only, n=614; six choices per question.
+
+<details>
+<summary>All values, in one table</summary>
+
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| Kimi K2-1TA32B | 86.64% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| GLM4.5-355BA32B | 85.50% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| DeepSeek-V3.1-671BA37B | 84.04% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| DeepSeek-V3-671BA37B | 82.31% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| Seed-OSS-36B | 81.60% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| Llama4-Scout-109BA17B | 78.01% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| GLM4.5-Air-106BA12B | 74.27% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| Qwen3-8B | 73.94% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| Gemma3-27B | 73.13% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| Qwen3-30BA3B | 73.13% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| Qwen3-4B | 72.48% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| Qwen3-1.7B | 53.09% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| SmolLM-3B | 48.70% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| Llama3.2-3B | 41.69% | Base model; task context + question + choices | Paper: Table 3, Closed-ended Question / Plan_EN (ACC), first numeric column | — |
+| **Xiaoming · longest** | **20.36%** | Options only | CSIEE: Saved CSIEE counts | — |
+| **Xiaohong · C** | **16.94%** | Options only | CSIEE: Saved CSIEE counts | — |
+| **Xiaogang · outlier** | **7.33%** | Options only | CSIEE: Saved CSIEE counts | — |
+| Uniform chance | 16.67% | Options only | Analytical expectation | — |
+
+</details>
+
+[Source notes and exact scope](docs/aptbench-comparison.md) · [Vector figure](assets/aptbench-comparison.svg)
+
+### AgentHop
+
+![AgentHop: descending vertical bars, paper results and CSIEE](assets/agenthop-comparison.png)
+
+Scientific research MCQs · answer accuracy. Paper: agents with paper-search tools and resource caps. CSIEE: options only, n=1,011.
+
+<details>
+<summary>All values, in one table</summary>
+
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| Gemini-3 Pro | 89.1% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| GPT-5.3 codex | 82.5% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| GPT-5.4 | 79.0% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Claude Opus 4.6 | 77.5% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Claude Sonnet 4.6 | 76.6% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| GLM-5.1 | 69.6% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Gemma-4-31B | 64.8% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| DeepSeek-reasoner | 59.6% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| DeepSeek-chat | 56.4% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Gemini-3 Flash | 54.7% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Qwen3.5-27B | 48.2% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Kimi-K2.5 | 44.1% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| MiniMax-M2.7 | 41.3% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Qwen3.6-35B-A3B | 38.1% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Qwen3.5-35B-A3B | 32.0% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| **Xiaohong · C** | **27.50%** | Options only | CSIEE: Saved CSIEE counts | 25.00% |
+| Gemma-4-26B-A4B | 23.6% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Gemma-3-27B | 18.6% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| **Xiaogang · outlier** | **18.40%** | Options only | CSIEE: Saved CSIEE counts | 18.46% |
+| Qwen3-30B-A3B | 16.0% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| Qwen3-32B | 13.3% | Question + choices + scientific-paper tools | Paper: Table 2, Outcome / Accuracy column | — |
+| **Xiaoming · longest** | **0.89%** | Options only | CSIEE: Saved CSIEE counts | 0.98% |
+| Uniform chance | 25.00% | Options only | Analytical expectation | — |
+
+</details>
+
+[Source notes and exact scope](docs/agenthop-comparison.md) · [Vector figure](assets/agenthop-comparison.svg)
+
 <!-- personamem:end -->
 
 ## Report card

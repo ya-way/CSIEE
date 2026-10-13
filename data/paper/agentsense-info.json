@@ -1,0 +1,67 @@
+{
+  "paper": "AgentSense: Benchmarking Social Intelligence of Language Agents through Interactive Scenarios",
+  "version": "arXiv:2410.19346v2",
+  "url": "https://arxiv.org/html/2410.19346v2",
+  "source": "Table 1, Info / Acc. column",
+  "metric": "Information-reasoning accuracy (%)",
+  "verified_on": "2026-10-13",
+  "precision": 2,
+  "transcription": "Printed numeric cells; no estimates from bar heights.",
+  "rows": [
+    {
+      "method": "Llama-2-7b",
+      "accuracy": 33.06,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "Llama-2-13b",
+      "accuracy": 28.56,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "Llama-2-70b",
+      "accuracy": 36.78,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "Llama-3-8B",
+      "accuracy": 69.68,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "Llama-3-70b",
+      "accuracy": 73.08,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "Qwen2.5-7b",
+      "accuracy": 74.82,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "Qwen2.5-14b",
+      "accuracy": 75.02,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "Qwen2.5-72b",
+      "accuracy": 76.05,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "Mistral-7b",
+      "accuracy": 66.59,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "GPT-3.5-turbo",
+      "accuracy": 68.41,
+      "context": "Agent interaction + question + choices"
+    },
+    {
+      "method": "GPT-4o",
+      "accuracy": 76.86,
+      "context": "Agent interaction + question + choices"
+    }
+  ]
+}

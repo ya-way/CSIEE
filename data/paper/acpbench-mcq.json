@@ -1,0 +1,123 @@
+{
+  "paper": "ACPBench: Reasoning about Action, Change, and Planning",
+  "version": "arXiv:2410.05669v3",
+  "url": "https://arxiv.org/html/2410.05669v3",
+  "source": "Table 2, Mean / MCQ column",
+  "metric": "MCQ accuracy, mean across seven tasks (%)",
+  "verified_on": "2026-10-13",
+  "precision": 2,
+  "transcription": "Printed numeric cells; no estimates from bar heights.",
+  "rows": [
+    {
+      "method": "Phi-3 128K",
+      "accuracy": 34.75,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Gemma 7B",
+      "accuracy": 28.93,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Granite 7B",
+      "accuracy": 29.67,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Mistral 7B",
+      "accuracy": 28.67,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Mistral Inst. 7B",
+      "accuracy": 37.3,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Granite-c 8B",
+      "accuracy": 29.21,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Granite-c Inst. 8B",
+      "accuracy": 32.63,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "LLAMA-3 8B",
+      "accuracy": 44.05,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "LLAMA-3.1 8B",
+      "accuracy": 41.52,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Mixtral 8x7B",
+      "accuracy": 51.44,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Granite 13B",
+      "accuracy": 26.66,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Codestral 22B",
+      "accuracy": 40.97,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Mixtral 8x22B",
+      "accuracy": 39.25,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "Deepseek Inst. 33B",
+      "accuracy": 35.11,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "LLAMA-c 34B",
+      "accuracy": 35.71,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "LLAMA-2 70B",
+      "accuracy": 29.71,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "LLAMA-c 70B",
+      "accuracy": 32.87,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "LLAMA-3 70B",
+      "accuracy": 74.3,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "LLAMA-3.1 70B",
+      "accuracy": 66.94,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "LLAMA-3.1 405B",
+      "accuracy": 77.42,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "GPT-4o Mini",
+      "accuracy": 56.5,
+      "context": "Question + choices; 2-shot CoT"
+    },
+    {
+      "method": "GPT-4o",
+      "accuracy": 74.97,
+      "context": "Question + choices; 2-shot CoT"
+    }
+  ],
+  "naming_note": "LLAMA-2 7OB in the printed table is normalized to LLAMA-2 70B. Other table abbreviations are preserved."
+}

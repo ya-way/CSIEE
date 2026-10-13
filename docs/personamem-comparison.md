@@ -1,39 +1,37 @@
-# PersonaMem-v2: paper results meet the classmates
+# PersonaMem-v2: paper results and the classmates
 
-![Combined paper and CSIEE MCQ comparison](../assets/personamem-comparison.png)
+![PersonaMem-v2, all listed baselines sorted by accuracy](../assets/personamem-comparison.png)
 
-The compact figure retains four paper references: the agentic-memory model, mixed-reward GRPO, the strongest 32k frontier model (GPT-5-mini), and GPT-5-Chat. Base/SFT models, training ablations, and other frontier variants remain in the complete table below. This selection simplifies the presentation; it does not change any measured result.
+All 12 paper configurations from Figures 4 and 6 are shown, including Base, SFT and both GRPO training ablations. The six frontier models use the 32k setting; 128k results remain in the appendix below. Agentic Memory builds up to 2k tokens of memory from 32k history. OE-only describes training; every plotted result is **MCQ** accuracy. CSIEE uses all 5,000 pinned text MCQs with reconstructed option order. Paper values have one decimal; the 45.62% local score versus 45.6% in the paper does not establish a meaningful win.
 
-## One table, with provenance
+Source: [arXiv:2512.06688v1, Figures 4 and 6, MCQ labels](https://arxiv.org/abs/2512.06688v1). Model scores are cited, not rerun. All models/configurations in the selected source column(s) are shown; none are filtered by score. Sorting is visual ordering, not a claim of statistical superiority or equivalent agent capability.
 
-| Method | History / memory | MCQ accuracy | Shuffled mean | Source |
-| :-- | :-- | --: | --: | :-- |
-| GPT-5-mini | 32k history | 48.7% | — | Paper Fig. 4 |
-| GPT-5-Chat | 32k history | 45.6% | — | Paper Fig. 4 |
-| o4-mini | 32k history | 39.1% | — | Paper Fig. 4 |
-| GPT-4.1 | 32k history | 38.7% | — | Paper Fig. 4 |
-| GPT-5-nano | 32k history | 37.9% | — | Paper Fig. 4 |
-| GPT-4.1-mini | 32k history | 37.6% | — | Paper Fig. 4 |
-| Qwen3-4B · Agentic Memory | 2k memory* | 55.2% | — | Paper Fig. 6 |
-| Qwen3-4B · GRPO | 32k history | 53.8% | — | Paper Fig. 6 |
-| Qwen3-4B · GRPO (MCQ-only) | 32k history | 55.5% | — | Paper Fig. 6 |
-| Qwen3-4B · GRPO (OE-only) | 32k history | 35.6% | — | Paper Fig. 6 |
-| Qwen3-4B · SFT | 32k history | 35.0% | — | Paper Fig. 6 |
-| Qwen3-4B · Base | 32k history | 30.5% | — | Paper Fig. 6 |
-| **Xiaoming · longest** | **Options only** | **45.62%** | 45.59% | CSIEE, n=5,000 |
-| **Xiaohong · C** | **Options only** | **24.68%** | 25.22% | CSIEE, n=5,000 |
-| **Xiaogang · outlier** | **Options only** | **36.90%** | 37.05% | CSIEE, n=5,000 |
-| Uniform chance | Options only | 25.00% | 25.00% (expected) | Analytical |
+## One table, both sources
 
-Paper rows are transcribed from the printed **MCQ** labels in [Figure 4](https://arxiv.org/html/2512.06688v1#S4.F4) and [Figure 6](https://arxiv.org/html/2512.06688v1#S4.F6) of Jiang et al., *PersonaMem-v2*, [arXiv:2512.06688v1](https://arxiv.org/abs/2512.06688v1). They are cited results, not our reruns. All six Qwen variants are retained, including both training ablations. OE-only means trained only on open-ended examples; the reported score here is still MCQ accuracy.
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| Qwen3-4B · GRPO (MCQ-only) | 55.5% | 32k history | Paper: Figure 6 | — |
+| Qwen3-4B · Agentic Memory | 55.2% | 2k memory* | Paper: Figure 6 | — |
+| Qwen3-4B · GRPO | 53.8% | 32k history | Paper: Figure 6 | — |
+| GPT-5-mini | 48.7% | 32k history | Paper: Figure 4 | — |
+| **Xiaoming · longest** | **45.62%** | Options only | CSIEE: Saved CSIEE counts | 45.59% |
+| GPT-5-Chat | 45.6% | 32k history | Paper: Figure 4 | — |
+| o4-mini | 39.1% | 32k history | Paper: Figure 4 | — |
+| GPT-4.1 | 38.7% | 32k history | Paper: Figure 4 | — |
+| GPT-5-nano | 37.9% | 32k history | Paper: Figure 4 | — |
+| GPT-4.1-mini | 37.6% | 32k history | Paper: Figure 4 | — |
+| **Xiaogang · outlier** | **36.90%** | Options only | CSIEE: Saved CSIEE counts | 37.05% |
+| Qwen3-4B · GRPO (OE-only) | 35.6% | 32k history | Paper: Figure 6 | — |
+| Qwen3-4B · SFT | 35.0% | 32k history | Paper: Figure 6 | — |
+| Qwen3-4B · Base | 30.5% | 32k history | Paper: Figure 6 | — |
+| **Xiaohong · C** | **24.68%** | Options only | CSIEE: Saved CSIEE counts | 25.22% |
+| Uniform chance | 25.00% | Options only | Analytical expectation | — |
 
-\* Agentic Memory constructs up to 2k tokens of memory from 32k history; “2k” is not the total history processed. The other paper rows use 32k conversation histories plus the question and choices. CSIEE sees only the choices and uses all 5,000 text MCQs at the pinned dataset revision, with seed 42 and a reconstructed option order. The local column reports accuracy on that order; the control averages ten label-preserving permutations. Paper permutation controls are unavailable (—), not zero.
-
-The table places both sources on the same accuracy scale, with their different inputs and protocols visible. It does not establish statistical superiority, equivalent personalization ability, or a matched end-to-end comparison. Paper values retain their published one-decimal precision; local values retain two decimals. A 0.02-point difference between 45.62% and 45.6% is not a meaningful win claim, especially with the paper's rounding and different evaluation pipeline.
+Local bars use input-order results, seed 42. “—” means unavailable for this exact metric, not zero. Shuffled controls are reported only where the saved aggregate uses the same question set and weighting as the chart. Full-screen controls remain in the original reports.
 
 ## The paper's 128k frontier setting
 
-| Frontier model | Paper MCQ · 32k | Paper MCQ · 128k |
+| Frontier model | 32k MCQ | 128k MCQ |
 | :-- | --: | --: |
 | GPT-5-mini | 48.7% | 44.1% |
 | GPT-5-Chat | 45.6% | 41.4% |
@@ -42,18 +40,20 @@ The table places both sources on the same accuracy scale, with their different i
 | GPT-5-nano | 37.9% | 33.9% |
 | GPT-4.1-mini | 37.6% | 37.5% |
 
-The main figure consistently selects the 32k frontier setting rather than choosing each model's best or worst context length. The paper's 128k values are retained here for completeness. Open-ended evaluation scores are excluded throughout.
+The figure consistently uses 32k frontier scores; it does not select each model's best context length.
 
-## Data and rendering
+## Reproduce and inspect
 
-- [Paper-value transcription](../data/paper/personamem-v2-mcq.json), including exact paper version and figure numbers.
-- [Local summary](../results/classmates/personamem-v2/summary.json) and [prediction records](../results/classmates/personamem-v2/predictions.jsonl).
-- [PNG](../assets/personamem-comparison.png) and [vector SVG](../assets/personamem-comparison.svg).
-- [Rendering script](../scripts/render_personamem.py); it generates the image and both Markdown tables from the same records.
+- [Paper-value transcription](../data/paper/personamem-v2-mcq.json)
+- [Local summary](../results/classmates/personamem-v2/summary.json) and [predictions](../results/classmates/personamem-v2/predictions.jsonl)
+- [PNG](../assets/personamem-comparison.png) / [SVG](../assets/personamem-comparison.svg)
+- [Renderer](../scripts/render_benchmarks.py) / [all five comparisons](benchmark-comparisons.md)
+
+Local dataset SHA-256: `95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52`.
 
 ```bash
 python -m pip install matplotlib==3.9.4
-python scripts/render_personamem.py
+python scripts/render_benchmarks.py
 ```
 
-Matplotlib is an optional figure-building dependency. The CSIEE evaluator still has no runtime dependencies. The comparison artwork is an original rendering of cited numerical results; it does not reuse the paper's images.
+Rendering uses committed numerical records only; no API calls or raw dataset downloads are required. Matplotlib is an optional figure-building dependency.
