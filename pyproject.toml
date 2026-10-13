@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "csiee"
-version = "0.1.0"
+version = "0.2.0"
 description = "Chinese Student in English Exam: zero-parameter, option-only guessing baselines."
 readme = "README.md"
 requires-python = ">=3.9"

@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.2.0",
+  "python": "3.9.13",
+  "dataset": "agenthop.jsonl",
+  "sha256": "3f1ea9261f708d27c0d545cac238338abd9161f718be745804b6ec3b1e01147b",
+  "format": "jsonl",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 1011,
+  "total_loaded": 1011,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "native option order",
+  "chance_accuracy": 0.25,
+  "answer_histogram": {
+    "A": 286,
+    "B": 237,
+    "C": 278,
+    "D": 210
+  },
+  "option_count_histogram": {
+    "4": 1011
+  },
+  "option_type_histogram": {
+    "length": 1011
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "xiaoming",
+      "correct": 9,
+      "accuracy": 0.008902077151335312,
+      "wilson_95": [
+        0.004690390096073904,
+        0.016831650249100008
+      ],
+      "lift_over_chance_pp": -24.10979228486647,
+      "shuffled_mean": 0.009792284866468843,
+      "shuffled_min": 0.008902077151335312,
+      "shuffled_max": 0.009891196834817012,
+      "shuffled_scores": [
+        0.009891196834817012,
+        0.008902077151335312,
+        0.009891196834817012,
+        0.009891196834817012,
+        0.009891196834817012,
+        0.009891196834817012,
+        0.009891196834817012,
+        0.009891196834817012,
+        0.009891196834817012,
+        0.009891196834817012
+      ],
+      "choice_invariance": 0.9983184965380811,
+      "by_category": {
+        "GROUND": {
+          "n": 330,
+          "correct": 3
+        },
+        "METHOD": {
+          "n": 124,
+          "correct": 2
+        },
+        "MOTIVE": {
+          "n": 265,
+          "correct": 2
+        },
+        "RESULT": {
+          "n": 292,
+          "correct": 2
+        }
+      }
+    },
+    {
+      "strategy": "xiaohong",
+      "correct": 278,
+      "accuracy": 0.27497527200791294,
+      "wilson_95": [
+        0.24834299348179856,
+        0.3033111136250032
+      ],
+      "lift_over_chance_pp": 2.497527200791294,
+      "shuffled_mean": 0.25004945598417405,
+      "shuffled_min": 0.23738872403560832,
+      "shuffled_max": 0.27002967359050445,
+      "shuffled_scores": [
+        0.2502472799208704,
+        0.2443125618199802,
+        0.2423343224530168,
+        0.23738872403560832,
+        0.27002967359050445,
+        0.2502472799208704,
+        0.2502472799208704,
+        0.258160237388724,
+        0.2551928783382789,
+        0.2423343224530168
+      ],
+      "choice_invariance": 0.25380811078140453,
+      "by_category": {
+        "GROUND": {
+          "n": 330,
+          "correct": 83
+        },
+        "METHOD": {
+          "n": 124,
+          "correct": 30
+        },
+        "MOTIVE": {
+          "n": 265,
+          "correct": 76
+        },
+        "RESULT": {
+          "n": 292,
+          "correct": 89
+        }
+      }
+    },
+    {
+      "strategy": "xiaogang",
+      "correct": 186,
+      "accuracy": 0.18397626112759644,
+      "wilson_95": [
+        0.16130387488072728,
+        0.20904112389124269
+      ],
+      "lift_over_chance_pp": -6.602373887240357,
+      "shuffled_mean": 0.18456973293768542,
+      "shuffled_min": 0.18397626112759644,
+      "shuffled_max": 0.18496538081107813,
+      "shuffled_scores": [
+        0.18496538081107813,
+        0.18397626112759644,
+        0.18496538081107813,
+        0.18397626112759644,
+        0.18397626112759644,
+        0.18496538081107813,
+        0.18496538081107813,
+        0.18496538081107813,
+        0.18496538081107813,
+        0.18397626112759644
+      ],
+      "choice_invariance": 0.9988130563798221,
+      "by_category": {
+        "GROUND": {
+          "n": 330,
+          "correct": 60
+        },
+        "METHOD": {
+          "n": 124,
+          "correct": 21
+        },
+        "MOTIVE": {
+          "n": 265,
+          "correct": 51
+        },
+        "RESULT": {
+          "n": 292,
+          "correct": 54
+        }
+      }
+    },
+    {
+      "strategy": "random",
+      "correct": 266,
+      "accuracy": 0.26310583580613256,
+      "wilson_95": [
+        0.23689722414500305,
+        0.29110786883116846
+      ],
+      "lift_over_chance_pp": 1.310583580613256,
+      "shuffled_mean": 0.2480712166172107,
+      "shuffled_min": 0.22551928783382788,
+      "shuffled_max": 0.27002967359050445,
+      "shuffled_scores": [
+        0.2344213649851632,
+        0.2512363996043521,
+        0.2403560830860534,
+        0.2591493570722057,
+        0.2561819980217606,
+        0.24629080118694363,
+        0.27002967359050445,
+        0.22551928783382788,
+        0.2403560830860534,
+        0.2571711177052423
+      ],
+      "choice_invariance": 0.24688427299703264,
+      "by_category": {
+        "GROUND": {
+          "n": 330,
+          "correct": 88
+        },
+        "METHOD": {
+          "n": 124,
+          "correct": 33
+        },
+        "MOTIVE": {
+          "n": 265,
+          "correct": 67
+        },
+        "RESULT": {
+          "n": 292,
+          "correct": 78
+        }
+      }
+    }
+  ],
+  "source": {
+    "dataset": "AgentHop",
+    "url": "https://huggingface.co/datasets/agenthop/agenthop",
+    "revision": "599b0659343a7a3cc852a60c2e527150121cccdf",
+    "license": "CC-BY-4.0",
+    "split": "full 1011 MCQs; no paper/tool access",
+    "sources": [
+      {
+        "path": "qa/full.jsonl",
+        "url": "https://huggingface.co/datasets/agenthop/agenthop/resolve/599b0659343a7a3cc852a60c2e527150121cccdf/qa/full.jsonl",
+        "sha256": "02ae03d17fa6d6d4c813bcea774eee99b768663764f4fe27f71739df9f60e62c"
+      }
+    ],
+    "normalization": {
+      "candidate_count": 1011,
+      "included_count": 1011,
+      "excluded_count": 0,
+      "exclusions": []
+    },
+    "sha256": "3f1ea9261f708d27c0d545cac238338abd9161f718be745804b6ec3b1e01147b",
+    "adapter_version": 1,
+    "adapter": "agenthop",
+    "source_order_seed": null,
+    "source_order": "native option order"
+  }
+}

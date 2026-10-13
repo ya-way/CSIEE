@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.2.0",
+  "python": "3.9.13",
+  "dataset": "backtrader.jsonl",
+  "sha256": "50604b8731830e276f61e5ba5ce1275da9386aa2db95d42b54b6e74bcdbfec66",
+  "format": "jsonl",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 160,
+  "total_loaded": 160,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "native option order",
+  "chance_accuracy": 0.25,
+  "answer_histogram": {
+    "A": 42,
+    "B": 43,
+    "C": 43,
+    "D": 32
+  },
+  "option_count_histogram": {
+    "4": 160
+  },
+  "option_type_histogram": {
+    "length": 98,
+    "numeric": 62
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "xiaoming",
+      "correct": 36,
+      "accuracy": 0.225,
+      "wilson_95": [
+        0.16718260299010437,
+        0.29571280435422354
+      ],
+      "lift_over_chance_pp": -2.4999999999999996,
+      "shuffled_mean": 0.2425,
+      "shuffled_min": 0.18125,
+      "shuffled_max": 0.29375,
+      "shuffled_scores": [
+        0.18125,
+        0.26875,
+        0.25625,
+        0.25625,
+        0.24375,
+        0.275,
+        0.2375,
+        0.20625,
+        0.20625,
+        0.29375
+      ],
+      "choice_invariance": 0.34562499999999996,
+      "by_category": {
+        "annualized_return": {
+          "n": 5,
+          "correct": 2
+        },
+        "avg_holding_period": {
+          "n": 4,
+          "correct": 2
+        },
+        "best_trade_day": {
+          "n": 4,
+          "correct": 0
+        },
+        "broker_cash": {
+          "n": 5,
+          "correct": 1
+        },
+        "buy_sell_signals": {
+          "n": 5,
+          "correct": 0
+        },
+        "calmar_ratio": {
+          "n": 5,
+          "correct": 2
+        },
+        "cash_after_nth_order": {
+          "n": 4,
+          "correct": 1
+        },
+        "commission": {
+          "n": 5,
+          "correct": 0
+        },
+        "crossovers": {
+          "n": 5,
+          "correct": 0
+        },
+        "days_in_position": {
+          "n": 5,
+          "correct": 0
+        },
+        "drawdown_recovery_days": {
+          "n": 5,
+          "correct": 0
+        },
+        "exposure_adjusted_return": {
+          "n": 4,
+          "correct": 3
+        },
+        "first_buy": {
+          "n": 4,
+          "correct": 0
+        },
+        "first_close": {
+          "n": 5,
+          "correct": 5
+        },
+        "golden_cross_count": {
+          "n": 5,
+          "correct": 0
+        },
+        "max_drawdown": {
+          "n": 6,
+          "correct": 1
+        },
+        "max_drawdown_window": {
+          "n": 5,
+          "correct": 2
+        },
+        "max_shares": {
+          "n": 5,
+          "correct": 5
+        },
+        "net_pnl": {
+          "n": 5,
+          "correct": 1
+        },
+        "nth_trade_pnl": {
+          "n": 4,
+          "correct": 0
+        },
+        "peak_portfolio_date": {
+          "n": 5,
+          "correct": 1
+        },
+        "portfolio_value": {
+          "n": 5,
+          "correct": 0
+        },
+        "position_on_date": {
+          "n": 5,
+          "correct": 0
+        },
+        "profit_factor": {
+          "n": 4,
+          "correct": 0
+        },
+        "roi_percentage": {
+          "n": 5,
+          "correct": 1
+        },
+        "signal_diff": {
+          "n": 5,
+          "correct": 3
+        },
+        "sma": {
+          "n": 5,
+          "correct": 1
+        },
+        "sma_comparison": {
+          "n": 6,
+          "correct": 0
+        },
+        "strategy_action_on_date": {
+          "n": 5,
+          "correct": 2
+        },
+        "total_shares_traded": {
+          "n": 5,
+          "correct": 0
+        },
+        "trade_outcomes": {
+          "n": 5,
+          "correct": 0
+        },
+        "volume": {
+          "n": 5,
+          "correct": 1
+        },
+        "win_rate": {
+          "n": 5,
+          "correct": 2
+        }
+      }
+    },
+    {
+      "strategy": "xiaohong",
+      "correct": 43,
+      "accuracy": 0.26875,
+      "wilson_95": [
+        0.206075499357641,
+        0.3422683659091802
+      ],
+      "lift_over_chance_pp": 1.874999999999999,
+      "shuffled_mean": 0.25687499999999996,
+      "shuffled_min": 0.16875,
+      "shuffled_max": 0.3125,
+      "shuffled_scores": [
+        0.16875,
+        0.275,
+        0.26875,
+        0.275,
+        0.25625,
+        0.3125,
+        0.2625,
+        0.19375,
+        0.25,
+        0.30625
+      ],
+      "choice_invariance": 0.25125000000000003,
+      "by_category": {
+        "annualized_return": {
+          "n": 5,
+          "correct": 2
+        },
+        "avg_holding_period": {
+          "n": 4,
+          "correct": 2
+        },
+        "best_trade_day": {
+          "n": 4,
+          "correct": 0
+        },
+        "broker_cash": {
+          "n": 5,
+          "correct": 1
+        },
+        "buy_sell_signals": {
+          "n": 5,
+          "correct": 0
+        },
+        "calmar_ratio": {
+          "n": 5,
+          "correct": 2
+        },
+        "cash_after_nth_order": {
+          "n": 4,
+          "correct": 1
+        },
+        "commission": {
+          "n": 5,
+          "correct": 0
+        },
+        "crossovers": {
+          "n": 5,
+          "correct": 1
+        },
+        "days_in_position": {
+          "n": 5,
+          "correct": 0
+        },
+        "drawdown_recovery_days": {
+          "n": 5,
+          "correct": 1
+        },
+        "exposure_adjusted_return": {
+          "n": 4,
+          "correct": 3
+        },
+        "first_buy": {
+          "n": 4,
+          "correct": 0
+        },
+        "first_close": {
+          "n": 5,
+          "correct": 5
+        },
+        "golden_cross_count": {
+          "n": 5,
+          "correct": 1
+        },
+        "max_drawdown": {
+          "n": 6,
+          "correct": 1
+        },
+        "max_drawdown_window": {
+          "n": 5,
+          "correct": 1
+        },
+        "max_shares": {
+          "n": 5,
+          "correct": 5
+        },
+        "net_pnl": {
+          "n": 5,
+          "correct": 1
+        },
+        "nth_trade_pnl": {
+          "n": 4,
+          "correct": 0
+        },
+        "peak_portfolio_date": {
+          "n": 5,
+          "correct": 0
+        },
+        "portfolio_value": {
+          "n": 5,
+          "correct": 0
+        },
+        "position_on_date": {
+          "n": 5,
+          "correct": 0
+        },
+        "profit_factor": {
+          "n": 4,
+          "correct": 0
+        },
+        "roi_percentage": {
+          "n": 5,
+          "correct": 1
+        },
+        "signal_diff": {
+          "n": 5,
+          "correct": 4
+        },
+        "sma": {
+          "n": 5,
+          "correct": 1
+        },
+        "sma_comparison": {
+          "n": 6,
+          "correct": 1
+        },
+        "strategy_action_on_date": {
+          "n": 5,
+          "correct": 5
+        },
+        "total_shares_traded": {
+          "n": 5,
+          "correct": 1
+        },
+        "trade_outcomes": {
+          "n": 5,
+          "correct": 0
+        },
+        "volume": {
+          "n": 5,
+          "correct": 1
+        },
+        "win_rate": {
+          "n": 5,
+          "correct": 2
+        }
+      }
+    },
+    {
+      "strategy": "xiaogang",
+      "correct": 39,
+      "accuracy": 0.24375,
+      "wilson_95": [
+        0.18374238117467875,
+        0.3157737938507177
+      ],
+      "lift_over_chance_pp": -0.6250000000000006,
+      "shuffled_mean": 0.270625,
+      "shuffled_min": 0.25,
+      "shuffled_max": 0.3125,
+      "shuffled_scores": [
+        0.26875,
+        0.29375,
+        0.275,
+        0.25625,
+        0.275,
+        0.25625,
+        0.25625,
+        0.2625,
+        0.25,
+        0.3125
+      ],
+      "choice_invariance": 0.626875,
+      "by_category": {
+        "annualized_return": {
+          "n": 5,
+          "correct": 1
+        },
+        "avg_holding_period": {
+          "n": 4,
+          "correct": 0
+        },
+        "best_trade_day": {
+          "n": 4,
+          "correct": 0
+        },
+        "broker_cash": {
+          "n": 5,
+          "correct": 1
+        },
+        "buy_sell_signals": {
+          "n": 5,
+          "correct": 0
+        },
+        "calmar_ratio": {
+          "n": 5,
+          "correct": 0
+        },
+        "cash_after_nth_order": {
+          "n": 4,
+          "correct": 1
+        },
+        "commission": {
+          "n": 5,
+          "correct": 0
+        },
+        "crossovers": {
+          "n": 5,
+          "correct": 0
+        },
+        "days_in_position": {
+          "n": 5,
+          "correct": 1
+        },
+        "drawdown_recovery_days": {
+          "n": 5,
+          "correct": 0
+        },
+        "exposure_adjusted_return": {
+          "n": 4,
+          "correct": 0
+        },
+        "first_buy": {
+          "n": 4,
+          "correct": 3
+        },
+        "first_close": {
+          "n": 5,
+          "correct": 5
+        },
+        "golden_cross_count": {
+          "n": 5,
+          "correct": 1
+        },
+        "max_drawdown": {
+          "n": 6,
+          "correct": 1
+        },
+        "max_drawdown_window": {
+          "n": 5,
+          "correct": 2
+        },
+        "max_shares": {
+          "n": 5,
+          "correct": 0
+        },
+        "net_pnl": {
+          "n": 5,
+          "correct": 1
+        },
+        "nth_trade_pnl": {
+          "n": 4,
+          "correct": 0
+        },
+        "peak_portfolio_date": {
+          "n": 5,
+          "correct": 0
+        },
+        "portfolio_value": {
+          "n": 5,
+          "correct": 0
+        },
+        "position_on_date": {
+          "n": 5,
+          "correct": 3
+        },
+        "profit_factor": {
+          "n": 4,
+          "correct": 4
+        },
+        "roi_percentage": {
+          "n": 5,
+          "correct": 4
+        },
+        "signal_diff": {
+          "n": 5,
+          "correct": 3
+        },
+        "sma": {
+          "n": 5,
+          "correct": 0
+        },
+        "sma_comparison": {
+          "n": 6,
+          "correct": 1
+        },
+        "strategy_action_on_date": {
+          "n": 5,
+          "correct": 2
+        },
+        "total_shares_traded": {
+          "n": 5,
+          "correct": 1
+        },
+        "trade_outcomes": {
+          "n": 5,
+          "correct": 0
+        },
+        "volume": {
+          "n": 5,
+          "correct": 0
+        },
+        "win_rate": {
+          "n": 5,
+          "correct": 4
+        }
+      }
+    },
+    {
+      "strategy": "random",
+      "correct": 41,
+      "accuracy": 0.25625,
+      "wilson_95": [
+        0.19487420274668216,
+        0.32905581739942663
+      ],
+      "lift_over_chance_pp": 0.6249999999999978,
+      "shuffled_mean": 0.260625,
+      "shuffled_min": 0.18125,
+      "shuffled_max": 0.29375,
+      "shuffled_scores": [
+        0.25,
+        0.29375,
+        0.25,
+        0.25625,
+        0.28125,
+        0.29375,
+        0.2625,
+        0.18125,
+        0.28125,
+        0.25625
+      ],
+      "choice_invariance": 0.261875,
+      "by_category": {
+        "annualized_return": {
+          "n": 5,
+          "correct": 1
+        },
+        "avg_holding_period": {
+          "n": 4,
+          "correct": 0
+        },
+        "best_trade_day": {
+          "n": 4,
+          "correct": 2
+        },
+        "broker_cash": {
+          "n": 5,
+          "correct": 1
+        },
+        "buy_sell_signals": {
+          "n": 5,
+          "correct": 0
+        },
+        "calmar_ratio": {
+          "n": 5,
+          "correct": 1
+        },
+        "cash_after_nth_order": {
+          "n": 4,
+          "correct": 1
+        },
+        "commission": {
+          "n": 5,
+          "correct": 2
+        },
+        "crossovers": {
+          "n": 5,
+          "correct": 1
+        },
+        "days_in_position": {
+          "n": 5,
+          "correct": 1
+        },
+        "drawdown_recovery_days": {
+          "n": 5,
+          "correct": 1
+        },
+        "exposure_adjusted_return": {
+          "n": 4,
+          "correct": 1
+        },
+        "first_buy": {
+          "n": 4,
+          "correct": 1
+        },
+        "first_close": {
+          "n": 5,
+          "correct": 1
+        },
+        "golden_cross_count": {
+          "n": 5,
+          "correct": 0
+        },
+        "max_drawdown": {
+          "n": 6,
+          "correct": 2
+        },
+        "max_drawdown_window": {
+          "n": 5,
+          "correct": 1
+        },
+        "max_shares": {
+          "n": 5,
+          "correct": 3
+        },
+        "net_pnl": {
+          "n": 5,
+          "correct": 1
+        },
+        "nth_trade_pnl": {
+          "n": 4,
+          "correct": 1
+        },
+        "peak_portfolio_date": {
+          "n": 5,
+          "correct": 0
+        },
+        "portfolio_value": {
+          "n": 5,
+          "correct": 2
+        },
+        "position_on_date": {
+          "n": 5,
+          "correct": 2
+        },
+        "profit_factor": {
+          "n": 4,
+          "correct": 0
+        },
+        "roi_percentage": {
+          "n": 5,
+          "correct": 1
+        },
+        "signal_diff": {
+          "n": 5,
+          "correct": 2
+        },
+        "sma": {
+          "n": 5,
+          "correct": 2
+        },
+        "sma_comparison": {
+          "n": 6,
+          "correct": 3
+        },
+        "strategy_action_on_date": {
+          "n": 5,
+          "correct": 3
+        },
+        "total_shares_traded": {
+          "n": 5,
+          "correct": 1
+        },
+        "trade_outcomes": {
+          "n": 5,
+          "correct": 1
+        },
+        "volume": {
+          "n": 5,
+          "correct": 0
+        },
+        "win_rate": {
+          "n": 5,
+          "correct": 2
+        }
+      }
+    }
+  ],
+  "source": {
+    "dataset": "Backtrader-Bench",
+    "url": "https://github.com/rzhao999/Backtrader-Bench",
+    "revision": "a623e5d3e55126142a163c43f57ebc5d7178f316",
+    "license": "No explicit dataset license found; consult upstream terms",
+    "split": "full 160-question base pool, not curated 30-question subset",
+    "sources": [
+      {
+        "path": "datasets/backtrader_mcq_base_pool_all_strategies.jsonl",
+        "url": "https://raw.githubusercontent.com/rzhao999/Backtrader-Bench/a623e5d3e55126142a163c43f57ebc5d7178f316/datasets/backtrader_mcq_base_pool_all_strategies.jsonl",
+        "sha256": "191f80d4262c6349b03ad2fc622b3ed432faf8d8c7f2ca3aedcf528d0d3f7f53"
+      }
+    ],
+    "normalization": {
+      "candidate_count": 160,
+      "included_count": 160,
+      "excluded_count": 0,
+      "exclusions": []
+    },
+    "sha256": "50604b8731830e276f61e5ba5ce1275da9386aa2db95d42b54b6e74bcdbfec66",
+    "adapter_version": 1,
+    "adapter": "backtrader",
+    "source_order_seed": null,
+    "source_order": "native option order"
+  }
+}

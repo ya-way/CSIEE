@@ -1,8 +1,10 @@
 """Only options go in. A zero-based choice index comes out. No labels, no LLMs."""
 
 import re
+import math
 from collections import Counter
 from decimal import Decimal
+from statistics import median
 
 
 def lite(options):
@@ -66,7 +68,38 @@ def promax(options):
     return _pick([i for i, count in votes.items() if count == max(votes.values())], options)
 
 
-STRATEGIES = {f.__name__: f for f in (lite, pro, promax, longest, shortest, numeric, cautious)}
+def xiaoming(options):
+    return longest(options)
+
+
+def xiaohong(options):
+    return lite(options)
+
+
+_SCALAR = re.compile(r'([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*([a-zA-Z%°]*)')
+
+
+def classify_options(options):
+    """Infer answer type without reading the question, metadata, or labels."""
+    matches = [_SCALAR.fullmatch(option.strip()) for option in options]
+    if all(matches):
+        units = [match[2].lower() for match in matches]
+        if len(set(units)) == 1 or set(units) <= {'', '%'}:
+            values = [float(match[1]) / (100 if unit == '%' else 1) for match, unit in zip(matches, units)]
+            if all(math.isfinite(value) for value in values):
+                scale = max(abs(value) for value in values) or 1
+                return 'numeric', [value / scale for value in values]
+    return 'length', [len(option.strip()) for option in options]
+
+
+def xiaogang(options):
+    _, values = classify_options(options)
+    distances = [abs(value - median(values)) for value in values]
+    return _pick([i for i, distance in enumerate(distances) if distance == max(distances)], options)
+
+
+STRATEGIES = {f.__name__: f for f in (xiaoming, xiaohong, xiaogang, lite, pro, promax, longest, shortest, numeric, cautious)}
+DEFAULT_STRATEGIES = ['xiaoming', 'xiaohong', 'xiaogang', 'random']
 
 
 def predict(name, options):

@@ -1,0 +1,1602 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.2.0",
+  "python": "3.9.13",
+  "dataset": "fdabench.jsonl",
+  "sha256": "c3beac3645ece1bea6a6556dd940a12ec1b412c2060676da174bad5bc909943c",
+  "format": "jsonl",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 237,
+  "total_loaded": 237,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "native option order",
+  "chance_accuracy": 0.25,
+  "answer_histogram": {
+    "A": 41,
+    "B": 114,
+    "C": 49,
+    "D": 33
+  },
+  "option_count_histogram": {
+    "4": 237
+  },
+  "option_type_histogram": {
+    "length": 227,
+    "numeric": 10
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "xiaoming",
+      "correct": 31,
+      "accuracy": 0.1308016877637131,
+      "wilson_95": [
+        0.09370101300223255,
+        0.17967990381787746
+      ],
+      "lift_over_chance_pp": -11.919831223628691,
+      "shuffled_mean": 0.1409282700421941,
+      "shuffled_min": 0.12658227848101267,
+      "shuffled_max": 0.15611814345991562,
+      "shuffled_scores": [
+        0.14767932489451477,
+        0.1308016877637131,
+        0.13924050632911392,
+        0.14345991561181434,
+        0.1518987341772152,
+        0.1350210970464135,
+        0.14767932489451477,
+        0.12658227848101267,
+        0.1308016877637131,
+        0.15611814345991562
+      ],
+      "choice_invariance": 0.8822784810126582,
+      "by_category": {
+        "Spider2-lite": {
+          "n": 184,
+          "correct": 30
+        },
+        "bird": {
+          "n": 50,
+          "correct": 1
+        },
+        "dabstep": {
+          "n": 2,
+          "correct": 0
+        },
+        "spider1": {
+          "n": 1,
+          "correct": 0
+        }
+      }
+    },
+    {
+      "strategy": "xiaohong",
+      "correct": 49,
+      "accuracy": 0.20675105485232068,
+      "wilson_95": [
+        0.1600690601343735,
+        0.26278778236845673
+      ],
+      "lift_over_chance_pp": -4.324894514767933,
+      "shuffled_mean": 0.2561181434599156,
+      "shuffled_min": 0.2109704641350211,
+      "shuffled_max": 0.3080168776371308,
+      "shuffled_scores": [
+        0.21940928270042195,
+        0.24472573839662448,
+        0.270042194092827,
+        0.3080168776371308,
+        0.2489451476793249,
+        0.25316455696202533,
+        0.26582278481012656,
+        0.24472573839662448,
+        0.2109704641350211,
+        0.29535864978902954
+      ],
+      "choice_invariance": 0.25189873417721526,
+      "by_category": {
+        "Spider2-lite": {
+          "n": 184,
+          "correct": 34
+        },
+        "bird": {
+          "n": 50,
+          "correct": 14
+        },
+        "dabstep": {
+          "n": 2,
+          "correct": 1
+        },
+        "spider1": {
+          "n": 1,
+          "correct": 0
+        }
+      }
+    },
+    {
+      "strategy": "xiaogang",
+      "correct": 22,
+      "accuracy": 0.09282700421940929,
+      "wilson_95": [
+        0.062101277858790035,
+        0.13654167611995982
+      ],
+      "lift_over_chance_pp": -15.717299578059071,
+      "shuffled_mean": 0.10506329113924051,
+      "shuffled_min": 0.08860759493670886,
+      "shuffled_max": 0.11392405063291139,
+      "shuffled_scores": [
+        0.11392405063291139,
+        0.08860759493670886,
+        0.10970464135021098,
+        0.10126582278481013,
+        0.10126582278481013,
+        0.10126582278481013,
+        0.11392405063291139,
+        0.10548523206751055,
+        0.10126582278481013,
+        0.11392405063291139
+      ],
+      "choice_invariance": 0.9194092827004221,
+      "by_category": {
+        "Spider2-lite": {
+          "n": 184,
+          "correct": 21
+        },
+        "bird": {
+          "n": 50,
+          "correct": 1
+        },
+        "dabstep": {
+          "n": 2,
+          "correct": 0
+        },
+        "spider1": {
+          "n": 1,
+          "correct": 0
+        }
+      }
+    },
+    {
+      "strategy": "random",
+      "correct": 59,
+      "accuracy": 0.2489451476793249,
+      "wilson_95": [
+        0.19819315236847646,
+        0.30770587106919833
+      ],
+      "lift_over_chance_pp": -0.10548523206750926,
+      "shuffled_mean": 0.2544303797468354,
+      "shuffled_min": 0.20675105485232068,
+      "shuffled_max": 0.3037974683544304,
+      "shuffled_scores": [
+        0.2742616033755274,
+        0.21518987341772153,
+        0.3037974683544304,
+        0.24050632911392406,
+        0.22784810126582278,
+        0.2869198312236287,
+        0.20675105485232068,
+        0.2489451476793249,
+        0.25316455696202533,
+        0.2869198312236287
+      ],
+      "choice_invariance": 0.23924050632911395,
+      "by_category": {
+        "Spider2-lite": {
+          "n": 184,
+          "correct": 49
+        },
+        "bird": {
+          "n": 50,
+          "correct": 9
+        },
+        "dabstep": {
+          "n": 2,
+          "correct": 0
+        },
+        "spider1": {
+          "n": 1,
+          "correct": 1
+        }
+      }
+    }
+  ],
+  "source": {
+    "dataset": "FDABench-Full (public labeled single-choice subset)",
+    "url": "https://huggingface.co/datasets/FDAbench2026/FDAbench-Full",
+    "revision": "0e05e5ec2c95fbe462bed0cba1882f99989ab34e",
+    "license": "MIT (upstream dataset card)",
+    "split": "single/data.jsonl records with released correct_answer; unlabeled records explicitly excluded",
+    "sources": [
+      {
+        "path": "single/data.jsonl",
+        "url": "https://huggingface.co/datasets/FDAbench2026/FDAbench-Full/resolve/0e05e5ec2c95fbe462bed0cba1882f99989ab34e/single/data.jsonl",
+        "sha256": "2b45449da0cad5587c91793be44da70b74f48ce0011a773c256ae7adef2ccfe7"
+      }
+    ],
+    "normalization": {
+      "candidate_count": 579,
+      "included_count": 237,
+      "excluded_count": 342,
+      "exclusions": [
+        {
+          "id": "FDA0669",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0670",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0671",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0673",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0675",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0676",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0677",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0678",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0680",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0681",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0683",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0684",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0685",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0687",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0688",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0689",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0690",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0691",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0694",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0695",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0696",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0697",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0707",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0708",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0709",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0710",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0713",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0714",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0715",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0716",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0717",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0718",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0719",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0720",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0723",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0724",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0727",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0729",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0730",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0731",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0732",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0733",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0735",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0736",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0737",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0738",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0739",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0740",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0741",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0742",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0743",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0744",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0746",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0747",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0748",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0749",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0750",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0751",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0754",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0755",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0757",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0758",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0759",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0760",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0762",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0763",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0768",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0769",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0770",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0771",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0772",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0773",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0774",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0775",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0776",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0777",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0778",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0779",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0780",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0817",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0818",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0819",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0827",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0828",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0832",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0836",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0838",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0841",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0842",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0844",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0847",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0848",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0849",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0850",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0851",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0852",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0853",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0854",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0856",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0857",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0858",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0859",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0860",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0861",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0876",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0877",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0878",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0879",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0880",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0881",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0882",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0883",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0905",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0906",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0907",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0908",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0909",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0910",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0911",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0912",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0913",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0915",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0916",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0917",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0918",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0919",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0920",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0921",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0922",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0924",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0925",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0926",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0927",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0928",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0931",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0933",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0937",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0938",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0939",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0941",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0942",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0943",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0944",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0945",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0946",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0947",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0949",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0950",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0951",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0953",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0954",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0955",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0956",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0957",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0958",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0960",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0961",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0962",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0964",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0965",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0966",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0967",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0968",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0969",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0971",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0973",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0974",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0975",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0977",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0979",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0980",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0981",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0986",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0989",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0990",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0991",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0992",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0993",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0994",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0995",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0996",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA0997",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1004",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1005",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1011",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1012",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1013",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1014",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1016",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1017",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1018",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1021",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1023",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1024",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1025",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1026",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1027",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1029",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1030",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1031",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1033",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1034",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1035",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1038",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1040",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1041",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1042",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1044",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1046",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1047",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1048",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1049",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1050",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1052",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1053",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1067",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1068",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1069",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1072",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1073",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1074",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1075",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1076",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1077",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1078",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1079",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1081",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1082",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1083",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1086",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1087",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1088",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1090",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1091",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1092",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1093",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1094",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1096",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1098",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1099",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1103",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1105",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1106",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1109",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1110",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1111",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1112",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1113",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1114",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1115",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1118",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1119",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1121",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1122",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1123",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1124",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1125",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1126",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1127",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1128",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1129",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1130",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1132",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1134",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1135",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1136",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1137",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1138",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1139",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1140",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1141",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1142",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1143",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1144",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1146",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1150",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1153",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1154",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1156",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1157",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1158",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1159",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1160",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1161",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1164",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1166",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1167",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1169",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1170",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1171",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1172",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1173",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1174",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1176",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1177",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1178",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1181",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1182",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1183",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1184",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1185",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1187",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1189",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1190",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1191",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1192",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1193",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1194",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1196",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1197",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1199",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1200",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1202",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1205",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1207",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1208",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1209",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1210",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1211",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1212",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1216",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1218",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1219",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1220",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1221",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1223",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1224",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1228",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1230",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1232",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1233",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1235",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1236",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1237",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1238",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1241",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1242",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1243",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1244",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1245",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1246",
+          "reason": "no gold answer in public release"
+        },
+        {
+          "id": "FDA1247",
+          "reason": "no gold answer in public release"
+        }
+      ]
+    },
+    "sha256": "c3beac3645ece1bea6a6556dd940a12ec1b412c2060676da174bad5bc909943c",
+    "adapter_version": 1,
+    "adapter": "fdabench",
+    "source_order_seed": null,
+    "source_order": "native option order"
+  }
+}

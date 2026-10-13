@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.2.0",
+  "python": "3.9.13",
+  "dataset": "acpbench.jsonl",
+  "sha256": "ad74aefe95ba248961a7672f90d2709c166275b47d26cc3d723ed4aa7a88b9b6",
+  "format": "jsonl",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 895,
+  "total_loaded": 895,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "native option order",
+  "chance_accuracy": 0.25,
+  "answer_histogram": {
+    "A": 227,
+    "B": 214,
+    "C": 226,
+    "D": 228
+  },
+  "option_count_histogram": {
+    "4": 895
+  },
+  "option_type_histogram": {
+    "length": 895
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "xiaoming",
+      "correct": 181,
+      "accuracy": 0.2022346368715084,
+      "wilson_95": [
+        0.1772177841182142,
+        0.22979666234566903
+      ],
+      "lift_over_chance_pp": -4.776536312849161,
+      "shuffled_mean": 0.19486033519553073,
+      "shuffled_min": 0.1888268156424581,
+      "shuffled_max": 0.2011173184357542,
+      "shuffled_scores": [
+        0.1888268156424581,
+        0.19217877094972066,
+        0.19664804469273742,
+        0.2,
+        0.19553072625698323,
+        0.19553072625698323,
+        0.19217877094972066,
+        0.19441340782122904,
+        0.2011173184357542,
+        0.19217877094972066
+      ],
+      "choice_invariance": 0.8374301675977653,
+      "by_category": {
+        "app": {
+          "n": 130,
+          "correct": 26
+        },
+        "areach": {
+          "n": 120,
+          "correct": 22
+        },
+        "just": {
+          "n": 128,
+          "correct": 44
+        },
+        "land": {
+          "n": 130,
+          "correct": 32
+        },
+        "prog": {
+          "n": 130,
+          "correct": 11
+        },
+        "reach": {
+          "n": 127,
+          "correct": 22
+        },
+        "val": {
+          "n": 130,
+          "correct": 24
+        }
+      }
+    },
+    {
+      "strategy": "xiaohong",
+      "correct": 226,
+      "accuracy": 0.25251396648044694,
+      "wilson_95": [
+        0.22514985998749718,
+        0.281993479193554
+      ],
+      "lift_over_chance_pp": 0.25139664804469386,
+      "shuffled_mean": 0.2441340782122905,
+      "shuffled_min": 0.2212290502793296,
+      "shuffled_max": 0.26256983240223464,
+      "shuffled_scores": [
+        0.2424581005586592,
+        0.26256983240223464,
+        0.2581005586592179,
+        0.23128491620111732,
+        0.2581005586592179,
+        0.23128491620111732,
+        0.22793296089385476,
+        0.2212290502793296,
+        0.25921787709497207,
+        0.24916201117318434
+      ],
+      "choice_invariance": 0.2573184357541899,
+      "by_category": {
+        "app": {
+          "n": 130,
+          "correct": 35
+        },
+        "areach": {
+          "n": 120,
+          "correct": 35
+        },
+        "just": {
+          "n": 128,
+          "correct": 32
+        },
+        "land": {
+          "n": 130,
+          "correct": 35
+        },
+        "prog": {
+          "n": 130,
+          "correct": 32
+        },
+        "reach": {
+          "n": 127,
+          "correct": 30
+        },
+        "val": {
+          "n": 130,
+          "correct": 27
+        }
+      }
+    },
+    {
+      "strategy": "xiaogang",
+      "correct": 305,
+      "accuracy": 0.3407821229050279,
+      "wilson_95": [
+        0.31046954974300683,
+        0.37245562331929466
+      ],
+      "lift_over_chance_pp": 9.07821229050279,
+      "shuffled_mean": 0.33329608938547484,
+      "shuffled_min": 0.32625698324022345,
+      "shuffled_max": 0.34413407821229053,
+      "shuffled_scores": [
+        0.32625698324022345,
+        0.32849162011173183,
+        0.3329608938547486,
+        0.3329608938547486,
+        0.34413407821229053,
+        0.33519553072625696,
+        0.329608938547486,
+        0.329608938547486,
+        0.3340782122905028,
+        0.3396648044692737
+      ],
+      "choice_invariance": 0.912513966480447,
+      "by_category": {
+        "app": {
+          "n": 130,
+          "correct": 42
+        },
+        "areach": {
+          "n": 120,
+          "correct": 65
+        },
+        "just": {
+          "n": 128,
+          "correct": 34
+        },
+        "land": {
+          "n": 130,
+          "correct": 60
+        },
+        "prog": {
+          "n": 130,
+          "correct": 49
+        },
+        "reach": {
+          "n": 127,
+          "correct": 31
+        },
+        "val": {
+          "n": 130,
+          "correct": 24
+        }
+      }
+    },
+    {
+      "strategy": "random",
+      "correct": 264,
+      "accuracy": 0.29497206703910617,
+      "wilson_95": [
+        0.2660228183093355,
+        0.32567380805510193
+      ],
+      "lift_over_chance_pp": 4.497206703910617,
+      "shuffled_mean": 0.24770949720670393,
+      "shuffled_min": 0.20893854748603352,
+      "shuffled_max": 0.2860335195530726,
+      "shuffled_scores": [
+        0.2536312849162011,
+        0.2435754189944134,
+        0.2558659217877095,
+        0.2547486033519553,
+        0.2860335195530726,
+        0.23798882681564246,
+        0.2424581005586592,
+        0.2435754189944134,
+        0.25027932960893856,
+        0.20893854748603352
+      ],
+      "choice_invariance": 0.2463687150837989,
+      "by_category": {
+        "app": {
+          "n": 130,
+          "correct": 43
+        },
+        "areach": {
+          "n": 120,
+          "correct": 36
+        },
+        "just": {
+          "n": 128,
+          "correct": 39
+        },
+        "land": {
+          "n": 130,
+          "correct": 33
+        },
+        "prog": {
+          "n": 130,
+          "correct": 36
+        },
+        "reach": {
+          "n": 127,
+          "correct": 42
+        },
+        "val": {
+          "n": 130,
+          "correct": 35
+        }
+      }
+    }
+  ],
+  "source": {
+    "dataset": "ACPBench",
+    "url": "https://github.com/IBM/ACPBench",
+    "revision": "2ed9c925962d57b275bf8c4e7b5d6f564aac9d6d",
+    "license": "CDLA-Permissive-2.0",
+    "split": "all seven original MCQ test tasks; excludes boolean and generative tasks",
+    "sources": [
+      {
+        "path": "dataset/app/test.mcq.json.gz",
+        "url": "https://raw.githubusercontent.com/IBM/ACPBench/2ed9c925962d57b275bf8c4e7b5d6f564aac9d6d/dataset/app/test.mcq.json.gz",
+        "sha256": "c6ef656f230b2280319db5b3742ed0b12f997b6d8952446e70e9cf637e81a01c"
+      },
+      {
+        "path": "dataset/areach/test.mcq.json.gz",
+        "url": "https://raw.githubusercontent.com/IBM/ACPBench/2ed9c925962d57b275bf8c4e7b5d6f564aac9d6d/dataset/areach/test.mcq.json.gz",
+        "sha256": "b44fe30918b22d337ce76db1054bb14cbdfdd650479a56f23ae67993366a0daf"
+      },
+      {
+        "path": "dataset/just/test.mcq.json.gz",
+        "url": "https://raw.githubusercontent.com/IBM/ACPBench/2ed9c925962d57b275bf8c4e7b5d6f564aac9d6d/dataset/just/test.mcq.json.gz",
+        "sha256": "be3b2501a08298d33a495637d4cfee7749a44d8ebdcf11a030beefdddd6f9ff1"
+      },
+      {
+        "path": "dataset/land/test.mcq.json.gz",
+        "url": "https://raw.githubusercontent.com/IBM/ACPBench/2ed9c925962d57b275bf8c4e7b5d6f564aac9d6d/dataset/land/test.mcq.json.gz",
+        "sha256": "ae0ec008b757ed7723137dcd48dff2d8e38dbc5d808a27179e996bceaa80ccd1"
+      },
+      {
+        "path": "dataset/prog/test.mcq.json.gz",
+        "url": "https://raw.githubusercontent.com/IBM/ACPBench/2ed9c925962d57b275bf8c4e7b5d6f564aac9d6d/dataset/prog/test.mcq.json.gz",
+        "sha256": "0aa8af62c2d834bf5f43e2d908768cac5208407ccff5ca1feb877e271b2c1db8"
+      },
+      {
+        "path": "dataset/reach/test.mcq.json.gz",
+        "url": "https://raw.githubusercontent.com/IBM/ACPBench/2ed9c925962d57b275bf8c4e7b5d6f564aac9d6d/dataset/reach/test.mcq.json.gz",
+        "sha256": "852f2a875092f216187dec25d0ee0b7a14ea2faec63d5b73cd98059231468f44"
+      },
+      {
+        "path": "dataset/val/test.mcq.json.gz",
+        "url": "https://raw.githubusercontent.com/IBM/ACPBench/2ed9c925962d57b275bf8c4e7b5d6f564aac9d6d/dataset/val/test.mcq.json.gz",
+        "sha256": "5e71fb99fe21c436ecb31e9c5c3e831fad9a8fde53bb071ceeea6e645c9f26e8"
+      }
+    ],
+    "normalization": {
+      "candidate_count": 900,
+      "included_count": 895,
+      "excluded_count": 5,
+      "exclusions": [
+        {
+          "id": "just:-3502759454875738788",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "just:-3734750282693674640",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "reach:-1158805352936933551",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "reach:6860131839813234206",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "reach:6188646718296709750",
+          "reason": "duplicate option text after stripping"
+        }
+      ]
+    },
+    "sha256": "ad74aefe95ba248961a7672f90d2709c166275b47d26cc3d723ed4aa7a88b9b6",
+    "adapter_version": 1,
+    "adapter": "acpbench",
+    "source_order_seed": null,
+    "source_order": "native option order"
+  }
+}

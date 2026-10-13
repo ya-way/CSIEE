@@ -1,0 +1,5511 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.2.0",
+  "python": "3.9.13",
+  "dataset": "personamem-v2.csv",
+  "sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52",
+  "format": "personamem-v2",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 5000,
+  "total_loaded": 5000,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "seeded reconstruction; NOT official evaluation order",
+  "chance_accuracy": 0.25,
+  "answer_histogram": {
+    "A": 1298,
+    "B": 1248,
+    "C": 1234,
+    "D": 1220
+  },
+  "option_count_histogram": {
+    "4": 5000
+  },
+  "option_type_histogram": {
+    "length": 5000
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "xiaoming",
+      "correct": 2281,
+      "accuracy": 0.4562,
+      "wilson_95": [
+        0.44243312438295873,
+        0.4700341263074284
+      ],
+      "lift_over_chance_pp": 20.62,
+      "shuffled_mean": 0.45592000000000005,
+      "shuffled_min": 0.4548,
+      "shuffled_max": 0.457,
+      "shuffled_scores": [
+        0.4548,
+        0.457,
+        0.4558,
+        0.4552,
+        0.4562,
+        0.4566,
+        0.455,
+        0.4562,
+        0.456,
+        0.4564
+      ],
+      "choice_invariance": 0.98726,
+      "by_category": {
+        "Acting": {
+          "n": 1,
+          "correct": 0
+        },
+        "Activism": {
+          "n": 2,
+          "correct": 1
+        },
+        "Adjustment": {
+          "n": 1,
+          "correct": 0
+        },
+        "Adventure": {
+          "n": 1,
+          "correct": 0
+        },
+        "Ambience": {
+          "n": 1,
+          "correct": 0
+        },
+        "Antiques": {
+          "n": 1,
+          "correct": 1
+        },
+        "Anxiety": {
+          "n": 6,
+          "correct": 3
+        },
+        "Architecture": {
+          "n": 3,
+          "correct": 0
+        },
+        "Art": {
+          "n": 30,
+          "correct": 7
+        },
+        "Audiobooks": {
+          "n": 1,
+          "correct": 0
+        },
+        "Automotive": {
+          "n": 4,
+          "correct": 3
+        },
+        "Backup": {
+          "n": 1,
+          "correct": 0
+        },
+        "Baking": {
+          "n": 1,
+          "correct": 0
+        },
+        "Beauty": {
+          "n": 3,
+          "correct": 2
+        },
+        "Belonging": {
+          "n": 1,
+          "correct": 1
+        },
+        "Beverages": {
+          "n": 6,
+          "correct": 0
+        },
+        "Biotech": {
+          "n": 1,
+          "correct": 0
+        },
+        "Books": {
+          "n": 40,
+          "correct": 13
+        },
+        "Boundaries": {
+          "n": 1,
+          "correct": 0
+        },
+        "Burnout": {
+          "n": 1,
+          "correct": 0
+        },
+        "Business": {
+          "n": 7,
+          "correct": 5
+        },
+        "Camping": {
+          "n": 2,
+          "correct": 0
+        },
+        "Caregiving": {
+          "n": 3,
+          "correct": 0
+        },
+        "Celebration": {
+          "n": 7,
+          "correct": 4
+        },
+        "Celebrations": {
+          "n": 11,
+          "correct": 7
+        },
+        "Charity": {
+          "n": 2,
+          "correct": 2
+        },
+        "Cleaning": {
+          "n": 3,
+          "correct": 1
+        },
+        "Clothing": {
+          "n": 2,
+          "correct": 0
+        },
+        "Collaboration": {
+          "n": 1,
+          "correct": 0
+        },
+        "Collecting": {
+          "n": 4,
+          "correct": 2
+        },
+        "Communication": {
+          "n": 41,
+          "correct": 18
+        },
+        "Community": {
+          "n": 43,
+          "correct": 25
+        },
+        "Commute": {
+          "n": 1,
+          "correct": 1
+        },
+        "Confidence": {
+          "n": 12,
+          "correct": 0
+        },
+        "Conflict": {
+          "n": 1,
+          "correct": 0
+        },
+        "Cooking": {
+          "n": 11,
+          "correct": 1
+        },
+        "Crafting": {
+          "n": 1,
+          "correct": 1
+        },
+        "Crafts": {
+          "n": 6,
+          "correct": 4
+        },
+        "Craftsmanship": {
+          "n": 1,
+          "correct": 1
+        },
+        "Creativity": {
+          "n": 12,
+          "correct": 7
+        },
+        "Culture": {
+          "n": 28,
+          "correct": 14
+        },
+        "Cycling": {
+          "n": 2,
+          "correct": 1
+        },
+        "DIY": {
+          "n": 2,
+          "correct": 0
+        },
+        "Debate": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decision-Making": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decision-making": {
+          "n": 2,
+          "correct": 0
+        },
+        "Decluttering": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decor": {
+          "n": 16,
+          "correct": 3
+        },
+        "Decorating": {
+          "n": 16,
+          "correct": 8
+        },
+        "Decorations": {
+          "n": 2,
+          "correct": 1
+        },
+        "Design": {
+          "n": 2,
+          "correct": 0
+        },
+        "DevOps": {
+          "n": 7,
+          "correct": 2
+        },
+        "Documents": {
+          "n": 1,
+          "correct": 1
+        },
+        "Downsizing": {
+          "n": 1,
+          "correct": 0
+        },
+        "Drinks": {
+          "n": 1,
+          "correct": 0
+        },
+        "Driving": {
+          "n": 1,
+          "correct": 0
+        },
+        "Education": {
+          "n": 18,
+          "correct": 9
+        },
+        "Emotions": {
+          "n": 19,
+          "correct": 2
+        },
+        "Energy": {
+          "n": 2,
+          "correct": 2
+        },
+        "Entertainment": {
+          "n": 281,
+          "correct": 119
+        },
+        "Environment": {
+          "n": 8,
+          "correct": 1
+        },
+        "Etiquette": {
+          "n": 4,
+          "correct": 0
+        },
+        "Event": {
+          "n": 2,
+          "correct": 1
+        },
+        "Event Planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "Events": {
+          "n": 32,
+          "correct": 14
+        },
+        "Family": {
+          "n": 10,
+          "correct": 2
+        },
+        "Farewell": {
+          "n": 1,
+          "correct": 0
+        },
+        "Fashion": {
+          "n": 70,
+          "correct": 23
+        },
+        "Finance": {
+          "n": 18,
+          "correct": 10
+        },
+        "Fitness": {
+          "n": 43,
+          "correct": 20
+        },
+        "Food": {
+          "n": 437,
+          "correct": 219
+        },
+        "Food & Drink": {
+          "n": 1,
+          "correct": 1
+        },
+        "Friendship": {
+          "n": 7,
+          "correct": 0
+        },
+        "Furniture": {
+          "n": 2,
+          "correct": 0
+        },
+        "Games": {
+          "n": 8,
+          "correct": 3
+        },
+        "Gaming": {
+          "n": 2,
+          "correct": 0
+        },
+        "Gardening": {
+          "n": 17,
+          "correct": 5
+        },
+        "Genealogy": {
+          "n": 1,
+          "correct": 0
+        },
+        "Gifting": {
+          "n": 2,
+          "correct": 2
+        },
+        "Gifts": {
+          "n": 14,
+          "correct": 3
+        },
+        "Gratitude": {
+          "n": 1,
+          "correct": 0
+        },
+        "Grief": {
+          "n": 25,
+          "correct": 5
+        },
+        "Grooming": {
+          "n": 1,
+          "correct": 0
+        },
+        "Hairstyle": {
+          "n": 1,
+          "correct": 0
+        },
+        "Health": {
+          "n": 420,
+          "correct": 166
+        },
+        "Hiking": {
+          "n": 2,
+          "correct": 0
+        },
+        "Hiring": {
+          "n": 1,
+          "correct": 0
+        },
+        "History": {
+          "n": 15,
+          "correct": 5
+        },
+        "Hobbies": {
+          "n": 29,
+          "correct": 16
+        },
+        "Holidays": {
+          "n": 2,
+          "correct": 0
+        },
+        "Home": {
+          "n": 112,
+          "correct": 65
+        },
+        "Home Decor": {
+          "n": 10,
+          "correct": 5
+        },
+        "HomeDecor": {
+          "n": 4,
+          "correct": 0
+        },
+        "Homecare": {
+          "n": 1,
+          "correct": 0
+        },
+        "Home装修": {
+          "n": 1,
+          "correct": 0
+        },
+        "Hospitality": {
+          "n": 1,
+          "correct": 0
+        },
+        "Hosting": {
+          "n": 3,
+          "correct": 0
+        },
+        "Housework": {
+          "n": 1,
+          "correct": 0
+        },
+        "Housing": {
+          "n": 5,
+          "correct": 2
+        },
+        "Identity": {
+          "n": 4,
+          "correct": 2
+        },
+        "Innovation": {
+          "n": 2,
+          "correct": 2
+        },
+        "Inspiration": {
+          "n": 1,
+          "correct": 0
+        },
+        "Insurance": {
+          "n": 1,
+          "correct": 1
+        },
+        "Interior": {
+          "n": 3,
+          "correct": 2
+        },
+        "InteriorDesign": {
+          "n": 2,
+          "correct": 0
+        },
+        "Jewelry": {
+          "n": 1,
+          "correct": 0
+        },
+        "Journaling": {
+          "n": 2,
+          "correct": 0
+        },
+        "Language": {
+          "n": 1,
+          "correct": 0
+        },
+        "Leadership": {
+          "n": 1,
+          "correct": 1
+        },
+        "Learning": {
+          "n": 9,
+          "correct": 2
+        },
+        "Leisure": {
+          "n": 65,
+          "correct": 35
+        },
+        "Life Transitions": {
+          "n": 1,
+          "correct": 0
+        },
+        "Lifestyle": {
+          "n": 2,
+          "correct": 0
+        },
+        "Literature": {
+          "n": 5,
+          "correct": 2
+        },
+        "Loneliness": {
+          "n": 3,
+          "correct": 0
+        },
+        "Maintenance": {
+          "n": 2,
+          "correct": 0
+        },
+        "Marketing": {
+          "n": 1,
+          "correct": 0
+        },
+        "Memorials": {
+          "n": 1,
+          "correct": 1
+        },
+        "Memories": {
+          "n": 1,
+          "correct": 0
+        },
+        "Mental Health": {
+          "n": 108,
+          "correct": 32
+        },
+        "Mental health": {
+          "n": 12,
+          "correct": 0
+        },
+        "MentalHealth": {
+          "n": 8,
+          "correct": 2
+        },
+        "Mentorship": {
+          "n": 1,
+          "correct": 0
+        },
+        "Mindfulness": {
+          "n": 11,
+          "correct": 4
+        },
+        "Mindset": {
+          "n": 6,
+          "correct": 5
+        },
+        "Motivation": {
+          "n": 26,
+          "correct": 7
+        },
+        "Movies": {
+          "n": 1,
+          "correct": 1
+        },
+        "Museums": {
+          "n": 2,
+          "correct": 1
+        },
+        "Music": {
+          "n": 54,
+          "correct": 23
+        },
+        "Nature": {
+          "n": 16,
+          "correct": 7
+        },
+        "Networking": {
+          "n": 6,
+          "correct": 0
+        },
+        "News": {
+          "n": 10,
+          "correct": 7
+        },
+        "Nostalgia": {
+          "n": 1,
+          "correct": 0
+        },
+        "Organization": {
+          "n": 7,
+          "correct": 1
+        },
+        "Outdoors": {
+          "n": 91,
+          "correct": 55
+        },
+        "Parenting": {
+          "n": 4,
+          "correct": 1
+        },
+        "Parking": {
+          "n": 1,
+          "correct": 1
+        },
+        "Payments": {
+          "n": 2,
+          "correct": 0
+        },
+        "Pets": {
+          "n": 5,
+          "correct": 3
+        },
+        "Philosophy": {
+          "n": 2,
+          "correct": 0
+        },
+        "Photography": {
+          "n": 21,
+          "correct": 8
+        },
+        "Planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "Plants": {
+          "n": 1,
+          "correct": 1
+        },
+        "Podcasts": {
+          "n": 5,
+          "correct": 2
+        },
+        "Poetry": {
+          "n": 1,
+          "correct": 0
+        },
+        "Politics": {
+          "n": 5,
+          "correct": 3
+        },
+        "Preservation": {
+          "n": 1,
+          "correct": 1
+        },
+        "Productivity": {
+          "n": 17,
+          "correct": 6
+        },
+        "PublicSpeaking": {
+          "n": 7,
+          "correct": 0
+        },
+        "Quotes": {
+          "n": 1,
+          "correct": 0
+        },
+        "Reading": {
+          "n": 5,
+          "correct": 2
+        },
+        "RealEstate": {
+          "n": 2,
+          "correct": 1
+        },
+        "Recreation": {
+          "n": 3,
+          "correct": 3
+        },
+        "Reflection": {
+          "n": 1,
+          "correct": 0
+        },
+        "Regret": {
+          "n": 1,
+          "correct": 0
+        },
+        "Relationships": {
+          "n": 85,
+          "correct": 26
+        },
+        "Relaxation": {
+          "n": 44,
+          "correct": 21
+        },
+        "Religion": {
+          "n": 2,
+          "correct": 0
+        },
+        "Relocation": {
+          "n": 1,
+          "correct": 0
+        },
+        "Remembrance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Retirement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Romance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Routine": {
+          "n": 1,
+          "correct": 0
+        },
+        "School": {
+          "n": 1,
+          "correct": 0
+        },
+        "Science": {
+          "n": 6,
+          "correct": 2
+        },
+        "Security": {
+          "n": 5,
+          "correct": 3
+        },
+        "Self-Confidence": {
+          "n": 1,
+          "correct": 0
+        },
+        "Self-Improvement": {
+          "n": 2,
+          "correct": 1
+        },
+        "Self-Reflection": {
+          "n": 2,
+          "correct": 0
+        },
+        "Self-care": {
+          "n": 2,
+          "correct": 2
+        },
+        "Self-discovery": {
+          "n": 1,
+          "correct": 0
+        },
+        "Self-esteem": {
+          "n": 4,
+          "correct": 0
+        },
+        "Self-help": {
+          "n": 1,
+          "correct": 1
+        },
+        "Self-improvement": {
+          "n": 17,
+          "correct": 6
+        },
+        "SelfDiscovery": {
+          "n": 1,
+          "correct": 0
+        },
+        "SelfImprovement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Shopping": {
+          "n": 17,
+          "correct": 8
+        },
+        "Skateboarding": {
+          "n": 1,
+          "correct": 0
+        },
+        "Skincare": {
+          "n": 2,
+          "correct": 1
+        },
+        "Sleep": {
+          "n": 16,
+          "correct": 9
+        },
+        "Social": {
+          "n": 3,
+          "correct": 2
+        },
+        "Social Media": {
+          "n": 1,
+          "correct": 0
+        },
+        "Socializing": {
+          "n": 12,
+          "correct": 9
+        },
+        "Space": {
+          "n": 2,
+          "correct": 0
+        },
+        "Spirituality": {
+          "n": 1,
+          "correct": 0
+        },
+        "Sports": {
+          "n": 69,
+          "correct": 40
+        },
+        "Stationery": {
+          "n": 1,
+          "correct": 0
+        },
+        "Strategy": {
+          "n": 1,
+          "correct": 1
+        },
+        "Stress": {
+          "n": 13,
+          "correct": 1
+        },
+        "Stress Management": {
+          "n": 3,
+          "correct": 0
+        },
+        "StressManagement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Study": {
+          "n": 12,
+          "correct": 7
+        },
+        "Sustainability": {
+          "n": 4,
+          "correct": 1
+        },
+        "Teamwork": {
+          "n": 1,
+          "correct": 1
+        },
+        "Technology": {
+          "n": 20,
+          "correct": 6
+        },
+        "Traditions": {
+          "n": 1,
+          "correct": 0
+        },
+        "Transportation": {
+          "n": 6,
+          "correct": 4
+        },
+        "Travel": {
+          "n": 535,
+          "correct": 230
+        },
+        "Trends": {
+          "n": 1,
+          "correct": 1
+        },
+        "Utilities": {
+          "n": 1,
+          "correct": 1
+        },
+        "Values": {
+          "n": 1,
+          "correct": 0
+        },
+        "Volunteering": {
+          "n": 25,
+          "correct": 12
+        },
+        "Weather": {
+          "n": 2,
+          "correct": 0
+        },
+        "Wedding": {
+          "n": 3,
+          "correct": 0
+        },
+        "Wellbeing": {
+          "n": 16,
+          "correct": 11
+        },
+        "Wellness": {
+          "n": 52,
+          "correct": 14
+        },
+        "Wildfire": {
+          "n": 1,
+          "correct": 0
+        },
+        "Work": {
+          "n": 199,
+          "correct": 59
+        },
+        "Work-Life Balance": {
+          "n": 1,
+          "correct": 1
+        },
+        "Work-life balance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Workspaces": {
+          "n": 5,
+          "correct": 0
+        },
+        "Writing": {
+          "n": 9,
+          "correct": 1
+        },
+        "academic": {
+          "n": 1,
+          "correct": 0
+        },
+        "accounts": {
+          "n": 1,
+          "correct": 0
+        },
+        "activism": {
+          "n": 1,
+          "correct": 0
+        },
+        "anxiety": {
+          "n": 1,
+          "correct": 0
+        },
+        "architecture": {
+          "n": 1,
+          "correct": 0
+        },
+        "art": {
+          "n": 7,
+          "correct": 5
+        },
+        "automotive": {
+          "n": 14,
+          "correct": 11
+        },
+        "banking": {
+          "n": 6,
+          "correct": 4
+        },
+        "beauty": {
+          "n": 1,
+          "correct": 1
+        },
+        "books": {
+          "n": 4,
+          "correct": 2
+        },
+        "business": {
+          "n": 45,
+          "correct": 30
+        },
+        "career": {
+          "n": 2,
+          "correct": 1
+        },
+        "celebration": {
+          "n": 1,
+          "correct": 0
+        },
+        "celebrations": {
+          "n": 2,
+          "correct": 0
+        },
+        "charity": {
+          "n": 2,
+          "correct": 2
+        },
+        "collectibles": {
+          "n": 3,
+          "correct": 1
+        },
+        "commerce": {
+          "n": 3,
+          "correct": 3
+        },
+        "communication": {
+          "n": 9,
+          "correct": 6
+        },
+        "communications": {
+          "n": 2,
+          "correct": 1
+        },
+        "community": {
+          "n": 27,
+          "correct": 12
+        },
+        "commuting": {
+          "n": 2,
+          "correct": 0
+        },
+        "conference": {
+          "n": 2,
+          "correct": 0
+        },
+        "confidence": {
+          "n": 1,
+          "correct": 1
+        },
+        "cooking": {
+          "n": 1,
+          "correct": 1
+        },
+        "crafts": {
+          "n": 1,
+          "correct": 1
+        },
+        "creativity": {
+          "n": 1,
+          "correct": 1
+        },
+        "culture": {
+          "n": 1,
+          "correct": 1
+        },
+        "cybersecurity": {
+          "n": 1,
+          "correct": 0
+        },
+        "decor": {
+          "n": 7,
+          "correct": 3
+        },
+        "design": {
+          "n": 1,
+          "correct": 0
+        },
+        "development": {
+          "n": 1,
+          "correct": 1
+        },
+        "devops": {
+          "n": 3,
+          "correct": 2
+        },
+        "documentation": {
+          "n": 1,
+          "correct": 1
+        },
+        "drawing": {
+          "n": 1,
+          "correct": 0
+        },
+        "driving": {
+          "n": 2,
+          "correct": 2
+        },
+        "ecommerce": {
+          "n": 2,
+          "correct": 1
+        },
+        "education": {
+          "n": 3,
+          "correct": 3
+        },
+        "emotions": {
+          "n": 1,
+          "correct": 1
+        },
+        "entertaining": {
+          "n": 1,
+          "correct": 0
+        },
+        "entertainment": {
+          "n": 76,
+          "correct": 46
+        },
+        "etiquette": {
+          "n": 1,
+          "correct": 1
+        },
+        "event": {
+          "n": 9,
+          "correct": 2
+        },
+        "event planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "events": {
+          "n": 16,
+          "correct": 10
+        },
+        "family": {
+          "n": 1,
+          "correct": 0
+        },
+        "fashion": {
+          "n": 14,
+          "correct": 10
+        },
+        "finance": {
+          "n": 47,
+          "correct": 34
+        },
+        "fitness": {
+          "n": 6,
+          "correct": 3
+        },
+        "food": {
+          "n": 78,
+          "correct": 52
+        },
+        "fundraising": {
+          "n": 1,
+          "correct": 0
+        },
+        "games": {
+          "n": 1,
+          "correct": 0
+        },
+        "gaming": {
+          "n": 2,
+          "correct": 1
+        },
+        "gardening": {
+          "n": 2,
+          "correct": 0
+        },
+        "gathering": {
+          "n": 1,
+          "correct": 0
+        },
+        "gifts": {
+          "n": 3,
+          "correct": 2
+        },
+        "government": {
+          "n": 1,
+          "correct": 1
+        },
+        "grant": {
+          "n": 2,
+          "correct": 1
+        },
+        "grief": {
+          "n": 3,
+          "correct": 1
+        },
+        "health": {
+          "n": 111,
+          "correct": 56
+        },
+        "history": {
+          "n": 1,
+          "correct": 1
+        },
+        "hobbies": {
+          "n": 3,
+          "correct": 1
+        },
+        "home": {
+          "n": 48,
+          "correct": 28
+        },
+        "identification": {
+          "n": 3,
+          "correct": 3
+        },
+        "insurance": {
+          "n": 7,
+          "correct": 5
+        },
+        "legal": {
+          "n": 1,
+          "correct": 0
+        },
+        "leisure": {
+          "n": 19,
+          "correct": 15
+        },
+        "licensing": {
+          "n": 1,
+          "correct": 1
+        },
+        "lifestyle": {
+          "n": 6,
+          "correct": 3
+        },
+        "literature": {
+          "n": 1,
+          "correct": 0
+        },
+        "logistics": {
+          "n": 2,
+          "correct": 2
+        },
+        "marketing": {
+          "n": 1,
+          "correct": 1
+        },
+        "media": {
+          "n": 1,
+          "correct": 0
+        },
+        "mental health": {
+          "n": 30,
+          "correct": 18
+        },
+        "mentalhealth": {
+          "n": 2,
+          "correct": 1
+        },
+        "mentorship": {
+          "n": 1,
+          "correct": 0
+        },
+        "mindfulness": {
+          "n": 10,
+          "correct": 7
+        },
+        "music": {
+          "n": 13,
+          "correct": 8
+        },
+        "nature": {
+          "n": 4,
+          "correct": 2
+        },
+        "networking": {
+          "n": 1,
+          "correct": 1
+        },
+        "news": {
+          "n": 5,
+          "correct": 3
+        },
+        "nightlife": {
+          "n": 1,
+          "correct": 0
+        },
+        "outdoors": {
+          "n": 12,
+          "correct": 10
+        },
+        "parenting": {
+          "n": 1,
+          "correct": 1
+        },
+        "party": {
+          "n": 3,
+          "correct": 2
+        },
+        "payments": {
+          "n": 6,
+          "correct": 4
+        },
+        "pets": {
+          "n": 1,
+          "correct": 0
+        },
+        "photography": {
+          "n": 2,
+          "correct": 2
+        },
+        "podcasts": {
+          "n": 2,
+          "correct": 2
+        },
+        "privacy": {
+          "n": 1,
+          "correct": 0
+        },
+        "productivity": {
+          "n": 3,
+          "correct": 3
+        },
+        "reading": {
+          "n": 1,
+          "correct": 0
+        },
+        "registration": {
+          "n": 2,
+          "correct": 1
+        },
+        "relationships": {
+          "n": 14,
+          "correct": 7
+        },
+        "relaxation": {
+          "n": 5,
+          "correct": 2
+        },
+        "research": {
+          "n": 2,
+          "correct": 1
+        },
+        "running": {
+          "n": 1,
+          "correct": 0
+        },
+        "safety": {
+          "n": 1,
+          "correct": 1
+        },
+        "science": {
+          "n": 1,
+          "correct": 1
+        },
+        "security": {
+          "n": 44,
+          "correct": 34
+        },
+        "self-help": {
+          "n": 2,
+          "correct": 0
+        },
+        "self-improvement": {
+          "n": 17,
+          "correct": 6
+        },
+        "shopping": {
+          "n": 3,
+          "correct": 2
+        },
+        "sleep": {
+          "n": 2,
+          "correct": 2
+        },
+        "social": {
+          "n": 5,
+          "correct": 2
+        },
+        "socializing": {
+          "n": 1,
+          "correct": 0
+        },
+        "sports": {
+          "n": 35,
+          "correct": 16
+        },
+        "stress": {
+          "n": 1,
+          "correct": 1
+        },
+        "study": {
+          "n": 9,
+          "correct": 3
+        },
+        "sustainability": {
+          "n": 1,
+          "correct": 0
+        },
+        "tax": {
+          "n": 2,
+          "correct": 2
+        },
+        "technology": {
+          "n": 96,
+          "correct": 42
+        },
+        "trade": {
+          "n": 1,
+          "correct": 1
+        },
+        "transport": {
+          "n": 1,
+          "correct": 1
+        },
+        "transportation": {
+          "n": 2,
+          "correct": 2
+        },
+        "travel": {
+          "n": 175,
+          "correct": 115
+        },
+        "vehicles": {
+          "n": 1,
+          "correct": 0
+        },
+        "volunteer": {
+          "n": 7,
+          "correct": 4
+        },
+        "volunteering": {
+          "n": 8,
+          "correct": 6
+        },
+        "warranty": {
+          "n": 3,
+          "correct": 2
+        },
+        "wellbeing": {
+          "n": 2,
+          "correct": 2
+        },
+        "wellness": {
+          "n": 1,
+          "correct": 0
+        },
+        "work": {
+          "n": 50,
+          "correct": 36
+        },
+        "writing": {
+          "n": 1,
+          "correct": 0
+        }
+      }
+    },
+    {
+      "strategy": "xiaohong",
+      "correct": 1234,
+      "accuracy": 0.2468,
+      "wilson_95": [
+        0.23504675832138558,
+        0.25894200594359135
+      ],
+      "lift_over_chance_pp": -0.32000000000000084,
+      "shuffled_mean": 0.25217999999999996,
+      "shuffled_min": 0.2408,
+      "shuffled_max": 0.2608,
+      "shuffled_scores": [
+        0.2554,
+        0.2504,
+        0.256,
+        0.2608,
+        0.2506,
+        0.2556,
+        0.2548,
+        0.2408,
+        0.254,
+        0.2434
+      ],
+      "choice_invariance": 0.25032000000000004,
+      "by_category": {
+        "Acting": {
+          "n": 1,
+          "correct": 0
+        },
+        "Activism": {
+          "n": 2,
+          "correct": 0
+        },
+        "Adjustment": {
+          "n": 1,
+          "correct": 0
+        },
+        "Adventure": {
+          "n": 1,
+          "correct": 0
+        },
+        "Ambience": {
+          "n": 1,
+          "correct": 0
+        },
+        "Antiques": {
+          "n": 1,
+          "correct": 0
+        },
+        "Anxiety": {
+          "n": 6,
+          "correct": 0
+        },
+        "Architecture": {
+          "n": 3,
+          "correct": 1
+        },
+        "Art": {
+          "n": 30,
+          "correct": 8
+        },
+        "Audiobooks": {
+          "n": 1,
+          "correct": 1
+        },
+        "Automotive": {
+          "n": 4,
+          "correct": 1
+        },
+        "Backup": {
+          "n": 1,
+          "correct": 0
+        },
+        "Baking": {
+          "n": 1,
+          "correct": 0
+        },
+        "Beauty": {
+          "n": 3,
+          "correct": 1
+        },
+        "Belonging": {
+          "n": 1,
+          "correct": 0
+        },
+        "Beverages": {
+          "n": 6,
+          "correct": 1
+        },
+        "Biotech": {
+          "n": 1,
+          "correct": 0
+        },
+        "Books": {
+          "n": 40,
+          "correct": 15
+        },
+        "Boundaries": {
+          "n": 1,
+          "correct": 0
+        },
+        "Burnout": {
+          "n": 1,
+          "correct": 0
+        },
+        "Business": {
+          "n": 7,
+          "correct": 1
+        },
+        "Camping": {
+          "n": 2,
+          "correct": 0
+        },
+        "Caregiving": {
+          "n": 3,
+          "correct": 1
+        },
+        "Celebration": {
+          "n": 7,
+          "correct": 2
+        },
+        "Celebrations": {
+          "n": 11,
+          "correct": 4
+        },
+        "Charity": {
+          "n": 2,
+          "correct": 1
+        },
+        "Cleaning": {
+          "n": 3,
+          "correct": 0
+        },
+        "Clothing": {
+          "n": 2,
+          "correct": 1
+        },
+        "Collaboration": {
+          "n": 1,
+          "correct": 0
+        },
+        "Collecting": {
+          "n": 4,
+          "correct": 0
+        },
+        "Communication": {
+          "n": 41,
+          "correct": 11
+        },
+        "Community": {
+          "n": 43,
+          "correct": 7
+        },
+        "Commute": {
+          "n": 1,
+          "correct": 1
+        },
+        "Confidence": {
+          "n": 12,
+          "correct": 3
+        },
+        "Conflict": {
+          "n": 1,
+          "correct": 0
+        },
+        "Cooking": {
+          "n": 11,
+          "correct": 3
+        },
+        "Crafting": {
+          "n": 1,
+          "correct": 0
+        },
+        "Crafts": {
+          "n": 6,
+          "correct": 2
+        },
+        "Craftsmanship": {
+          "n": 1,
+          "correct": 0
+        },
+        "Creativity": {
+          "n": 12,
+          "correct": 4
+        },
+        "Culture": {
+          "n": 28,
+          "correct": 8
+        },
+        "Cycling": {
+          "n": 2,
+          "correct": 1
+        },
+        "DIY": {
+          "n": 2,
+          "correct": 0
+        },
+        "Debate": {
+          "n": 1,
+          "correct": 1
+        },
+        "Decision-Making": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decision-making": {
+          "n": 2,
+          "correct": 2
+        },
+        "Decluttering": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decor": {
+          "n": 16,
+          "correct": 4
+        },
+        "Decorating": {
+          "n": 16,
+          "correct": 1
+        },
+        "Decorations": {
+          "n": 2,
+          "correct": 0
+        },
+        "Design": {
+          "n": 2,
+          "correct": 1
+        },
+        "DevOps": {
+          "n": 7,
+          "correct": 0
+        },
+        "Documents": {
+          "n": 1,
+          "correct": 0
+        },
+        "Downsizing": {
+          "n": 1,
+          "correct": 0
+        },
+        "Drinks": {
+          "n": 1,
+          "correct": 1
+        },
+        "Driving": {
+          "n": 1,
+          "correct": 0
+        },
+        "Education": {
+          "n": 18,
+          "correct": 3
+        },
+        "Emotions": {
+          "n": 19,
+          "correct": 3
+        },
+        "Energy": {
+          "n": 2,
+          "correct": 1
+        },
+        "Entertainment": {
+          "n": 281,
+          "correct": 64
+        },
+        "Environment": {
+          "n": 8,
+          "correct": 3
+        },
+        "Etiquette": {
+          "n": 4,
+          "correct": 0
+        },
+        "Event": {
+          "n": 2,
+          "correct": 0
+        },
+        "Event Planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "Events": {
+          "n": 32,
+          "correct": 4
+        },
+        "Family": {
+          "n": 10,
+          "correct": 3
+        },
+        "Farewell": {
+          "n": 1,
+          "correct": 0
+        },
+        "Fashion": {
+          "n": 70,
+          "correct": 19
+        },
+        "Finance": {
+          "n": 18,
+          "correct": 5
+        },
+        "Fitness": {
+          "n": 43,
+          "correct": 8
+        },
+        "Food": {
+          "n": 437,
+          "correct": 110
+        },
+        "Food & Drink": {
+          "n": 1,
+          "correct": 0
+        },
+        "Friendship": {
+          "n": 7,
+          "correct": 2
+        },
+        "Furniture": {
+          "n": 2,
+          "correct": 1
+        },
+        "Games": {
+          "n": 8,
+          "correct": 2
+        },
+        "Gaming": {
+          "n": 2,
+          "correct": 0
+        },
+        "Gardening": {
+          "n": 17,
+          "correct": 5
+        },
+        "Genealogy": {
+          "n": 1,
+          "correct": 0
+        },
+        "Gifting": {
+          "n": 2,
+          "correct": 0
+        },
+        "Gifts": {
+          "n": 14,
+          "correct": 4
+        },
+        "Gratitude": {
+          "n": 1,
+          "correct": 0
+        },
+        "Grief": {
+          "n": 25,
+          "correct": 4
+        },
+        "Grooming": {
+          "n": 1,
+          "correct": 0
+        },
+        "Hairstyle": {
+          "n": 1,
+          "correct": 0
+        },
+        "Health": {
+          "n": 420,
+          "correct": 103
+        },
+        "Hiking": {
+          "n": 2,
+          "correct": 1
+        },
+        "Hiring": {
+          "n": 1,
+          "correct": 0
+        },
+        "History": {
+          "n": 15,
+          "correct": 2
+        },
+        "Hobbies": {
+          "n": 29,
+          "correct": 8
+        },
+        "Holidays": {
+          "n": 2,
+          "correct": 0
+        },
+        "Home": {
+          "n": 112,
+          "correct": 30
+        },
+        "Home Decor": {
+          "n": 10,
+          "correct": 1
+        },
+        "HomeDecor": {
+          "n": 4,
+          "correct": 3
+        },
+        "Homecare": {
+          "n": 1,
+          "correct": 0
+        },
+        "Home装修": {
+          "n": 1,
+          "correct": 0
+        },
+        "Hospitality": {
+          "n": 1,
+          "correct": 1
+        },
+        "Hosting": {
+          "n": 3,
+          "correct": 2
+        },
+        "Housework": {
+          "n": 1,
+          "correct": 0
+        },
+        "Housing": {
+          "n": 5,
+          "correct": 0
+        },
+        "Identity": {
+          "n": 4,
+          "correct": 0
+        },
+        "Innovation": {
+          "n": 2,
+          "correct": 0
+        },
+        "Inspiration": {
+          "n": 1,
+          "correct": 1
+        },
+        "Insurance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Interior": {
+          "n": 3,
+          "correct": 1
+        },
+        "InteriorDesign": {
+          "n": 2,
+          "correct": 0
+        },
+        "Jewelry": {
+          "n": 1,
+          "correct": 0
+        },
+        "Journaling": {
+          "n": 2,
+          "correct": 0
+        },
+        "Language": {
+          "n": 1,
+          "correct": 0
+        },
+        "Leadership": {
+          "n": 1,
+          "correct": 0
+        },
+        "Learning": {
+          "n": 9,
+          "correct": 3
+        },
+        "Leisure": {
+          "n": 65,
+          "correct": 18
+        },
+        "Life Transitions": {
+          "n": 1,
+          "correct": 0
+        },
+        "Lifestyle": {
+          "n": 2,
+          "correct": 1
+        },
+        "Literature": {
+          "n": 5,
+          "correct": 1
+        },
+        "Loneliness": {
+          "n": 3,
+          "correct": 2
+        },
+        "Maintenance": {
+          "n": 2,
+          "correct": 0
+        },
+        "Marketing": {
+          "n": 1,
+          "correct": 0
+        },
+        "Memorials": {
+          "n": 1,
+          "correct": 0
+        },
+        "Memories": {
+          "n": 1,
+          "correct": 0
+        },
+        "Mental Health": {
+          "n": 108,
+          "correct": 29
+        },
+        "Mental health": {
+          "n": 12,
+          "correct": 2
+        },
+        "MentalHealth": {
+          "n": 8,
+          "correct": 4
+        },
+        "Mentorship": {
+          "n": 1,
+          "correct": 0
+        },
+        "Mindfulness": {
+          "n": 11,
+          "correct": 2
+        },
+        "Mindset": {
+          "n": 6,
+          "correct": 1
+        },
+        "Motivation": {
+          "n": 26,
+          "correct": 8
+        },
+        "Movies": {
+          "n": 1,
+          "correct": 1
+        },
+        "Museums": {
+          "n": 2,
+          "correct": 1
+        },
+        "Music": {
+          "n": 54,
+          "correct": 15
+        },
+        "Nature": {
+          "n": 16,
+          "correct": 3
+        },
+        "Networking": {
+          "n": 6,
+          "correct": 2
+        },
+        "News": {
+          "n": 10,
+          "correct": 2
+        },
+        "Nostalgia": {
+          "n": 1,
+          "correct": 0
+        },
+        "Organization": {
+          "n": 7,
+          "correct": 1
+        },
+        "Outdoors": {
+          "n": 91,
+          "correct": 31
+        },
+        "Parenting": {
+          "n": 4,
+          "correct": 0
+        },
+        "Parking": {
+          "n": 1,
+          "correct": 0
+        },
+        "Payments": {
+          "n": 2,
+          "correct": 2
+        },
+        "Pets": {
+          "n": 5,
+          "correct": 1
+        },
+        "Philosophy": {
+          "n": 2,
+          "correct": 0
+        },
+        "Photography": {
+          "n": 21,
+          "correct": 6
+        },
+        "Planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "Plants": {
+          "n": 1,
+          "correct": 0
+        },
+        "Podcasts": {
+          "n": 5,
+          "correct": 1
+        },
+        "Poetry": {
+          "n": 1,
+          "correct": 0
+        },
+        "Politics": {
+          "n": 5,
+          "correct": 0
+        },
+        "Preservation": {
+          "n": 1,
+          "correct": 0
+        },
+        "Productivity": {
+          "n": 17,
+          "correct": 5
+        },
+        "PublicSpeaking": {
+          "n": 7,
+          "correct": 0
+        },
+        "Quotes": {
+          "n": 1,
+          "correct": 1
+        },
+        "Reading": {
+          "n": 5,
+          "correct": 1
+        },
+        "RealEstate": {
+          "n": 2,
+          "correct": 0
+        },
+        "Recreation": {
+          "n": 3,
+          "correct": 0
+        },
+        "Reflection": {
+          "n": 1,
+          "correct": 1
+        },
+        "Regret": {
+          "n": 1,
+          "correct": 0
+        },
+        "Relationships": {
+          "n": 85,
+          "correct": 22
+        },
+        "Relaxation": {
+          "n": 44,
+          "correct": 15
+        },
+        "Religion": {
+          "n": 2,
+          "correct": 1
+        },
+        "Relocation": {
+          "n": 1,
+          "correct": 0
+        },
+        "Remembrance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Retirement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Romance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Routine": {
+          "n": 1,
+          "correct": 0
+        },
+        "School": {
+          "n": 1,
+          "correct": 0
+        },
+        "Science": {
+          "n": 6,
+          "correct": 0
+        },
+        "Security": {
+          "n": 5,
+          "correct": 0
+        },
+        "Self-Confidence": {
+          "n": 1,
+          "correct": 0
+        },
+        "Self-Improvement": {
+          "n": 2,
+          "correct": 0
+        },
+        "Self-Reflection": {
+          "n": 2,
+          "correct": 0
+        },
+        "Self-care": {
+          "n": 2,
+          "correct": 0
+        },
+        "Self-discovery": {
+          "n": 1,
+          "correct": 0
+        },
+        "Self-esteem": {
+          "n": 4,
+          "correct": 2
+        },
+        "Self-help": {
+          "n": 1,
+          "correct": 0
+        },
+        "Self-improvement": {
+          "n": 17,
+          "correct": 2
+        },
+        "SelfDiscovery": {
+          "n": 1,
+          "correct": 1
+        },
+        "SelfImprovement": {
+          "n": 1,
+          "correct": 1
+        },
+        "Shopping": {
+          "n": 17,
+          "correct": 1
+        },
+        "Skateboarding": {
+          "n": 1,
+          "correct": 0
+        },
+        "Skincare": {
+          "n": 2,
+          "correct": 0
+        },
+        "Sleep": {
+          "n": 16,
+          "correct": 2
+        },
+        "Social": {
+          "n": 3,
+          "correct": 0
+        },
+        "Social Media": {
+          "n": 1,
+          "correct": 0
+        },
+        "Socializing": {
+          "n": 12,
+          "correct": 3
+        },
+        "Space": {
+          "n": 2,
+          "correct": 0
+        },
+        "Spirituality": {
+          "n": 1,
+          "correct": 0
+        },
+        "Sports": {
+          "n": 69,
+          "correct": 19
+        },
+        "Stationery": {
+          "n": 1,
+          "correct": 0
+        },
+        "Strategy": {
+          "n": 1,
+          "correct": 0
+        },
+        "Stress": {
+          "n": 13,
+          "correct": 2
+        },
+        "Stress Management": {
+          "n": 3,
+          "correct": 1
+        },
+        "StressManagement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Study": {
+          "n": 12,
+          "correct": 3
+        },
+        "Sustainability": {
+          "n": 4,
+          "correct": 1
+        },
+        "Teamwork": {
+          "n": 1,
+          "correct": 1
+        },
+        "Technology": {
+          "n": 20,
+          "correct": 3
+        },
+        "Traditions": {
+          "n": 1,
+          "correct": 0
+        },
+        "Transportation": {
+          "n": 6,
+          "correct": 3
+        },
+        "Travel": {
+          "n": 535,
+          "correct": 129
+        },
+        "Trends": {
+          "n": 1,
+          "correct": 1
+        },
+        "Utilities": {
+          "n": 1,
+          "correct": 1
+        },
+        "Values": {
+          "n": 1,
+          "correct": 0
+        },
+        "Volunteering": {
+          "n": 25,
+          "correct": 5
+        },
+        "Weather": {
+          "n": 2,
+          "correct": 1
+        },
+        "Wedding": {
+          "n": 3,
+          "correct": 1
+        },
+        "Wellbeing": {
+          "n": 16,
+          "correct": 2
+        },
+        "Wellness": {
+          "n": 52,
+          "correct": 16
+        },
+        "Wildfire": {
+          "n": 1,
+          "correct": 0
+        },
+        "Work": {
+          "n": 199,
+          "correct": 53
+        },
+        "Work-Life Balance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Work-life balance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Workspaces": {
+          "n": 5,
+          "correct": 0
+        },
+        "Writing": {
+          "n": 9,
+          "correct": 1
+        },
+        "academic": {
+          "n": 1,
+          "correct": 1
+        },
+        "accounts": {
+          "n": 1,
+          "correct": 0
+        },
+        "activism": {
+          "n": 1,
+          "correct": 0
+        },
+        "anxiety": {
+          "n": 1,
+          "correct": 0
+        },
+        "architecture": {
+          "n": 1,
+          "correct": 0
+        },
+        "art": {
+          "n": 7,
+          "correct": 1
+        },
+        "automotive": {
+          "n": 14,
+          "correct": 4
+        },
+        "banking": {
+          "n": 6,
+          "correct": 1
+        },
+        "beauty": {
+          "n": 1,
+          "correct": 1
+        },
+        "books": {
+          "n": 4,
+          "correct": 0
+        },
+        "business": {
+          "n": 45,
+          "correct": 12
+        },
+        "career": {
+          "n": 2,
+          "correct": 0
+        },
+        "celebration": {
+          "n": 1,
+          "correct": 0
+        },
+        "celebrations": {
+          "n": 2,
+          "correct": 1
+        },
+        "charity": {
+          "n": 2,
+          "correct": 0
+        },
+        "collectibles": {
+          "n": 3,
+          "correct": 1
+        },
+        "commerce": {
+          "n": 3,
+          "correct": 1
+        },
+        "communication": {
+          "n": 9,
+          "correct": 3
+        },
+        "communications": {
+          "n": 2,
+          "correct": 1
+        },
+        "community": {
+          "n": 27,
+          "correct": 7
+        },
+        "commuting": {
+          "n": 2,
+          "correct": 1
+        },
+        "conference": {
+          "n": 2,
+          "correct": 1
+        },
+        "confidence": {
+          "n": 1,
+          "correct": 0
+        },
+        "cooking": {
+          "n": 1,
+          "correct": 1
+        },
+        "crafts": {
+          "n": 1,
+          "correct": 0
+        },
+        "creativity": {
+          "n": 1,
+          "correct": 0
+        },
+        "culture": {
+          "n": 1,
+          "correct": 0
+        },
+        "cybersecurity": {
+          "n": 1,
+          "correct": 1
+        },
+        "decor": {
+          "n": 7,
+          "correct": 3
+        },
+        "design": {
+          "n": 1,
+          "correct": 0
+        },
+        "development": {
+          "n": 1,
+          "correct": 1
+        },
+        "devops": {
+          "n": 3,
+          "correct": 1
+        },
+        "documentation": {
+          "n": 1,
+          "correct": 0
+        },
+        "drawing": {
+          "n": 1,
+          "correct": 0
+        },
+        "driving": {
+          "n": 2,
+          "correct": 1
+        },
+        "ecommerce": {
+          "n": 2,
+          "correct": 1
+        },
+        "education": {
+          "n": 3,
+          "correct": 1
+        },
+        "emotions": {
+          "n": 1,
+          "correct": 0
+        },
+        "entertaining": {
+          "n": 1,
+          "correct": 0
+        },
+        "entertainment": {
+          "n": 76,
+          "correct": 24
+        },
+        "etiquette": {
+          "n": 1,
+          "correct": 1
+        },
+        "event": {
+          "n": 9,
+          "correct": 2
+        },
+        "event planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "events": {
+          "n": 16,
+          "correct": 5
+        },
+        "family": {
+          "n": 1,
+          "correct": 0
+        },
+        "fashion": {
+          "n": 14,
+          "correct": 4
+        },
+        "finance": {
+          "n": 47,
+          "correct": 12
+        },
+        "fitness": {
+          "n": 6,
+          "correct": 4
+        },
+        "food": {
+          "n": 78,
+          "correct": 14
+        },
+        "fundraising": {
+          "n": 1,
+          "correct": 0
+        },
+        "games": {
+          "n": 1,
+          "correct": 0
+        },
+        "gaming": {
+          "n": 2,
+          "correct": 0
+        },
+        "gardening": {
+          "n": 2,
+          "correct": 0
+        },
+        "gathering": {
+          "n": 1,
+          "correct": 1
+        },
+        "gifts": {
+          "n": 3,
+          "correct": 0
+        },
+        "government": {
+          "n": 1,
+          "correct": 0
+        },
+        "grant": {
+          "n": 2,
+          "correct": 0
+        },
+        "grief": {
+          "n": 3,
+          "correct": 0
+        },
+        "health": {
+          "n": 111,
+          "correct": 23
+        },
+        "history": {
+          "n": 1,
+          "correct": 0
+        },
+        "hobbies": {
+          "n": 3,
+          "correct": 1
+        },
+        "home": {
+          "n": 48,
+          "correct": 12
+        },
+        "identification": {
+          "n": 3,
+          "correct": 0
+        },
+        "insurance": {
+          "n": 7,
+          "correct": 1
+        },
+        "legal": {
+          "n": 1,
+          "correct": 0
+        },
+        "leisure": {
+          "n": 19,
+          "correct": 6
+        },
+        "licensing": {
+          "n": 1,
+          "correct": 0
+        },
+        "lifestyle": {
+          "n": 6,
+          "correct": 1
+        },
+        "literature": {
+          "n": 1,
+          "correct": 0
+        },
+        "logistics": {
+          "n": 2,
+          "correct": 1
+        },
+        "marketing": {
+          "n": 1,
+          "correct": 1
+        },
+        "media": {
+          "n": 1,
+          "correct": 0
+        },
+        "mental health": {
+          "n": 30,
+          "correct": 9
+        },
+        "mentalhealth": {
+          "n": 2,
+          "correct": 0
+        },
+        "mentorship": {
+          "n": 1,
+          "correct": 0
+        },
+        "mindfulness": {
+          "n": 10,
+          "correct": 3
+        },
+        "music": {
+          "n": 13,
+          "correct": 5
+        },
+        "nature": {
+          "n": 4,
+          "correct": 0
+        },
+        "networking": {
+          "n": 1,
+          "correct": 1
+        },
+        "news": {
+          "n": 5,
+          "correct": 2
+        },
+        "nightlife": {
+          "n": 1,
+          "correct": 0
+        },
+        "outdoors": {
+          "n": 12,
+          "correct": 0
+        },
+        "parenting": {
+          "n": 1,
+          "correct": 0
+        },
+        "party": {
+          "n": 3,
+          "correct": 2
+        },
+        "payments": {
+          "n": 6,
+          "correct": 0
+        },
+        "pets": {
+          "n": 1,
+          "correct": 0
+        },
+        "photography": {
+          "n": 2,
+          "correct": 1
+        },
+        "podcasts": {
+          "n": 2,
+          "correct": 0
+        },
+        "privacy": {
+          "n": 1,
+          "correct": 0
+        },
+        "productivity": {
+          "n": 3,
+          "correct": 2
+        },
+        "reading": {
+          "n": 1,
+          "correct": 0
+        },
+        "registration": {
+          "n": 2,
+          "correct": 1
+        },
+        "relationships": {
+          "n": 14,
+          "correct": 1
+        },
+        "relaxation": {
+          "n": 5,
+          "correct": 1
+        },
+        "research": {
+          "n": 2,
+          "correct": 0
+        },
+        "running": {
+          "n": 1,
+          "correct": 0
+        },
+        "safety": {
+          "n": 1,
+          "correct": 0
+        },
+        "science": {
+          "n": 1,
+          "correct": 0
+        },
+        "security": {
+          "n": 44,
+          "correct": 8
+        },
+        "self-help": {
+          "n": 2,
+          "correct": 1
+        },
+        "self-improvement": {
+          "n": 17,
+          "correct": 3
+        },
+        "shopping": {
+          "n": 3,
+          "correct": 1
+        },
+        "sleep": {
+          "n": 2,
+          "correct": 1
+        },
+        "social": {
+          "n": 5,
+          "correct": 3
+        },
+        "socializing": {
+          "n": 1,
+          "correct": 1
+        },
+        "sports": {
+          "n": 35,
+          "correct": 11
+        },
+        "stress": {
+          "n": 1,
+          "correct": 0
+        },
+        "study": {
+          "n": 9,
+          "correct": 1
+        },
+        "sustainability": {
+          "n": 1,
+          "correct": 0
+        },
+        "tax": {
+          "n": 2,
+          "correct": 0
+        },
+        "technology": {
+          "n": 96,
+          "correct": 29
+        },
+        "trade": {
+          "n": 1,
+          "correct": 0
+        },
+        "transport": {
+          "n": 1,
+          "correct": 1
+        },
+        "transportation": {
+          "n": 2,
+          "correct": 0
+        },
+        "travel": {
+          "n": 175,
+          "correct": 46
+        },
+        "vehicles": {
+          "n": 1,
+          "correct": 0
+        },
+        "volunteer": {
+          "n": 7,
+          "correct": 0
+        },
+        "volunteering": {
+          "n": 8,
+          "correct": 4
+        },
+        "warranty": {
+          "n": 3,
+          "correct": 1
+        },
+        "wellbeing": {
+          "n": 2,
+          "correct": 1
+        },
+        "wellness": {
+          "n": 1,
+          "correct": 0
+        },
+        "work": {
+          "n": 50,
+          "correct": 15
+        },
+        "writing": {
+          "n": 1,
+          "correct": 0
+        }
+      }
+    },
+    {
+      "strategy": "xiaogang",
+      "correct": 1845,
+      "accuracy": 0.369,
+      "wilson_95": [
+        0.35573041311054154,
+        0.3824707247990635
+      ],
+      "lift_over_chance_pp": 11.899999999999999,
+      "shuffled_mean": 0.37054000000000004,
+      "shuffled_min": 0.3692,
+      "shuffled_max": 0.372,
+      "shuffled_scores": [
+        0.372,
+        0.3696,
+        0.371,
+        0.3708,
+        0.3706,
+        0.3694,
+        0.3704,
+        0.3714,
+        0.3692,
+        0.371
+      ],
+      "choice_invariance": 0.9913000000000001,
+      "by_category": {
+        "Acting": {
+          "n": 1,
+          "correct": 1
+        },
+        "Activism": {
+          "n": 2,
+          "correct": 2
+        },
+        "Adjustment": {
+          "n": 1,
+          "correct": 0
+        },
+        "Adventure": {
+          "n": 1,
+          "correct": 1
+        },
+        "Ambience": {
+          "n": 1,
+          "correct": 0
+        },
+        "Antiques": {
+          "n": 1,
+          "correct": 0
+        },
+        "Anxiety": {
+          "n": 6,
+          "correct": 2
+        },
+        "Architecture": {
+          "n": 3,
+          "correct": 2
+        },
+        "Art": {
+          "n": 30,
+          "correct": 11
+        },
+        "Audiobooks": {
+          "n": 1,
+          "correct": 1
+        },
+        "Automotive": {
+          "n": 4,
+          "correct": 0
+        },
+        "Backup": {
+          "n": 1,
+          "correct": 0
+        },
+        "Baking": {
+          "n": 1,
+          "correct": 0
+        },
+        "Beauty": {
+          "n": 3,
+          "correct": 0
+        },
+        "Belonging": {
+          "n": 1,
+          "correct": 0
+        },
+        "Beverages": {
+          "n": 6,
+          "correct": 3
+        },
+        "Biotech": {
+          "n": 1,
+          "correct": 0
+        },
+        "Books": {
+          "n": 40,
+          "correct": 14
+        },
+        "Boundaries": {
+          "n": 1,
+          "correct": 0
+        },
+        "Burnout": {
+          "n": 1,
+          "correct": 0
+        },
+        "Business": {
+          "n": 7,
+          "correct": 2
+        },
+        "Camping": {
+          "n": 2,
+          "correct": 0
+        },
+        "Caregiving": {
+          "n": 3,
+          "correct": 3
+        },
+        "Celebration": {
+          "n": 7,
+          "correct": 5
+        },
+        "Celebrations": {
+          "n": 11,
+          "correct": 6
+        },
+        "Charity": {
+          "n": 2,
+          "correct": 1
+        },
+        "Cleaning": {
+          "n": 3,
+          "correct": 2
+        },
+        "Clothing": {
+          "n": 2,
+          "correct": 1
+        },
+        "Collaboration": {
+          "n": 1,
+          "correct": 1
+        },
+        "Collecting": {
+          "n": 4,
+          "correct": 1
+        },
+        "Communication": {
+          "n": 41,
+          "correct": 18
+        },
+        "Community": {
+          "n": 43,
+          "correct": 20
+        },
+        "Commute": {
+          "n": 1,
+          "correct": 1
+        },
+        "Confidence": {
+          "n": 12,
+          "correct": 6
+        },
+        "Conflict": {
+          "n": 1,
+          "correct": 0
+        },
+        "Cooking": {
+          "n": 11,
+          "correct": 4
+        },
+        "Crafting": {
+          "n": 1,
+          "correct": 1
+        },
+        "Crafts": {
+          "n": 6,
+          "correct": 6
+        },
+        "Craftsmanship": {
+          "n": 1,
+          "correct": 0
+        },
+        "Creativity": {
+          "n": 12,
+          "correct": 4
+        },
+        "Culture": {
+          "n": 28,
+          "correct": 9
+        },
+        "Cycling": {
+          "n": 2,
+          "correct": 1
+        },
+        "DIY": {
+          "n": 2,
+          "correct": 2
+        },
+        "Debate": {
+          "n": 1,
+          "correct": 1
+        },
+        "Decision-Making": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decision-making": {
+          "n": 2,
+          "correct": 1
+        },
+        "Decluttering": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decor": {
+          "n": 16,
+          "correct": 1
+        },
+        "Decorating": {
+          "n": 16,
+          "correct": 7
+        },
+        "Decorations": {
+          "n": 2,
+          "correct": 1
+        },
+        "Design": {
+          "n": 2,
+          "correct": 1
+        },
+        "DevOps": {
+          "n": 7,
+          "correct": 2
+        },
+        "Documents": {
+          "n": 1,
+          "correct": 0
+        },
+        "Downsizing": {
+          "n": 1,
+          "correct": 0
+        },
+        "Drinks": {
+          "n": 1,
+          "correct": 0
+        },
+        "Driving": {
+          "n": 1,
+          "correct": 0
+        },
+        "Education": {
+          "n": 18,
+          "correct": 8
+        },
+        "Emotions": {
+          "n": 19,
+          "correct": 12
+        },
+        "Energy": {
+          "n": 2,
+          "correct": 0
+        },
+        "Entertainment": {
+          "n": 281,
+          "correct": 119
+        },
+        "Environment": {
+          "n": 8,
+          "correct": 2
+        },
+        "Etiquette": {
+          "n": 4,
+          "correct": 2
+        },
+        "Event": {
+          "n": 2,
+          "correct": 1
+        },
+        "Event Planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "Events": {
+          "n": 32,
+          "correct": 17
+        },
+        "Family": {
+          "n": 10,
+          "correct": 4
+        },
+        "Farewell": {
+          "n": 1,
+          "correct": 0
+        },
+        "Fashion": {
+          "n": 70,
+          "correct": 25
+        },
+        "Finance": {
+          "n": 18,
+          "correct": 4
+        },
+        "Fitness": {
+          "n": 43,
+          "correct": 14
+        },
+        "Food": {
+          "n": 437,
+          "correct": 173
+        },
+        "Food & Drink": {
+          "n": 1,
+          "correct": 1
+        },
+        "Friendship": {
+          "n": 7,
+          "correct": 2
+        },
+        "Furniture": {
+          "n": 2,
+          "correct": 2
+        },
+        "Games": {
+          "n": 8,
+          "correct": 2
+        },
+        "Gaming": {
+          "n": 2,
+          "correct": 0
+        },
+        "Gardening": {
+          "n": 17,
+          "correct": 5
+        },
+        "Genealogy": {
+          "n": 1,
+          "correct": 0
+        },
+        "Gifting": {
+          "n": 2,
+          "correct": 2
+        },
+        "Gifts": {
+          "n": 14,
+          "correct": 3
+        },
+        "Gratitude": {
+          "n": 1,
+          "correct": 0
+        },
+        "Grief": {
+          "n": 25,
+          "correct": 9
+        },
+        "Grooming": {
+          "n": 1,
+          "correct": 0
+        },
+        "Hairstyle": {
+          "n": 1,
+          "correct": 1
+        },
+        "Health": {
+          "n": 420,
+          "correct": 160
+        },
+        "Hiking": {
+          "n": 2,
+          "correct": 2
+        },
+        "Hiring": {
+          "n": 1,
+          "correct": 0
+        },
+        "History": {
+          "n": 15,
+          "correct": 8
+        },
+        "Hobbies": {
+          "n": 29,
+          "correct": 10
+        },
+        "Holidays": {
+          "n": 2,
+          "correct": 0
+        },
+        "Home": {
+          "n": 112,
+          "correct": 41
+        },
+        "Home Decor": {
+          "n": 10,
+          "correct": 3
+        },
+        "HomeDecor": {
+          "n": 4,
+          "correct": 3
+        },
+        "Homecare": {
+          "n": 1,
+          "correct": 0
+        },
+        "Home装修": {
+          "n": 1,
+          "correct": 0
+        },
+        "Hospitality": {
+          "n": 1,
+          "correct": 0
+        },
+        "Hosting": {
+          "n": 3,
+          "correct": 2
+        },
+        "Housework": {
+          "n": 1,
+          "correct": 0
+        },
+        "Housing": {
+          "n": 5,
+          "correct": 0
+        },
+        "Identity": {
+          "n": 4,
+          "correct": 1
+        },
+        "Innovation": {
+          "n": 2,
+          "correct": 2
+        },
+        "Inspiration": {
+          "n": 1,
+          "correct": 0
+        },
+        "Insurance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Interior": {
+          "n": 3,
+          "correct": 2
+        },
+        "InteriorDesign": {
+          "n": 2,
+          "correct": 1
+        },
+        "Jewelry": {
+          "n": 1,
+          "correct": 0
+        },
+        "Journaling": {
+          "n": 2,
+          "correct": 0
+        },
+        "Language": {
+          "n": 1,
+          "correct": 1
+        },
+        "Leadership": {
+          "n": 1,
+          "correct": 1
+        },
+        "Learning": {
+          "n": 9,
+          "correct": 3
+        },
+        "Leisure": {
+          "n": 65,
+          "correct": 22
+        },
+        "Life Transitions": {
+          "n": 1,
+          "correct": 0
+        },
+        "Lifestyle": {
+          "n": 2,
+          "correct": 1
+        },
+        "Literature": {
+          "n": 5,
+          "correct": 1
+        },
+        "Loneliness": {
+          "n": 3,
+          "correct": 2
+        },
+        "Maintenance": {
+          "n": 2,
+          "correct": 0
+        },
+        "Marketing": {
+          "n": 1,
+          "correct": 1
+        },
+        "Memorials": {
+          "n": 1,
+          "correct": 1
+        },
+        "Memories": {
+          "n": 1,
+          "correct": 0
+        },
+        "Mental Health": {
+          "n": 108,
+          "correct": 56
+        },
+        "Mental health": {
+          "n": 12,
+          "correct": 9
+        },
+        "MentalHealth": {
+          "n": 8,
+          "correct": 4
+        },
+        "Mentorship": {
+          "n": 1,
+          "correct": 0
+        },
+        "Mindfulness": {
+          "n": 11,
+          "correct": 7
+        },
+        "Mindset": {
+          "n": 6,
+          "correct": 2
+        },
+        "Motivation": {
+          "n": 26,
+          "correct": 12
+        },
+        "Movies": {
+          "n": 1,
+          "correct": 1
+        },
+        "Museums": {
+          "n": 2,
+          "correct": 0
+        },
+        "Music": {
+          "n": 54,
+          "correct": 18
+        },
+        "Nature": {
+          "n": 16,
+          "correct": 5
+        },
+        "Networking": {
+          "n": 6,
+          "correct": 0
+        },
+        "News": {
+          "n": 10,
+          "correct": 7
+        },
+        "Nostalgia": {
+          "n": 1,
+          "correct": 1
+        },
+        "Organization": {
+          "n": 7,
+          "correct": 1
+        },
+        "Outdoors": {
+          "n": 91,
+          "correct": 36
+        },
+        "Parenting": {
+          "n": 4,
+          "correct": 2
+        },
+        "Parking": {
+          "n": 1,
+          "correct": 0
+        },
+        "Payments": {
+          "n": 2,
+          "correct": 0
+        },
+        "Pets": {
+          "n": 5,
+          "correct": 1
+        },
+        "Philosophy": {
+          "n": 2,
+          "correct": 1
+        },
+        "Photography": {
+          "n": 21,
+          "correct": 9
+        },
+        "Planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "Plants": {
+          "n": 1,
+          "correct": 0
+        },
+        "Podcasts": {
+          "n": 5,
+          "correct": 3
+        },
+        "Poetry": {
+          "n": 1,
+          "correct": 1
+        },
+        "Politics": {
+          "n": 5,
+          "correct": 3
+        },
+        "Preservation": {
+          "n": 1,
+          "correct": 0
+        },
+        "Productivity": {
+          "n": 17,
+          "correct": 7
+        },
+        "PublicSpeaking": {
+          "n": 7,
+          "correct": 4
+        },
+        "Quotes": {
+          "n": 1,
+          "correct": 0
+        },
+        "Reading": {
+          "n": 5,
+          "correct": 3
+        },
+        "RealEstate": {
+          "n": 2,
+          "correct": 0
+        },
+        "Recreation": {
+          "n": 3,
+          "correct": 2
+        },
+        "Reflection": {
+          "n": 1,
+          "correct": 0
+        },
+        "Regret": {
+          "n": 1,
+          "correct": 0
+        },
+        "Relationships": {
+          "n": 85,
+          "correct": 48
+        },
+        "Relaxation": {
+          "n": 44,
+          "correct": 18
+        },
+        "Religion": {
+          "n": 2,
+          "correct": 1
+        },
+        "Relocation": {
+          "n": 1,
+          "correct": 0
+        },
+        "Remembrance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Retirement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Romance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Routine": {
+          "n": 1,
+          "correct": 0
+        },
+        "School": {
+          "n": 1,
+          "correct": 0
+        },
+        "Science": {
+          "n": 6,
+          "correct": 4
+        },
+        "Security": {
+          "n": 5,
+          "correct": 1
+        },
+        "Self-Confidence": {
+          "n": 1,
+          "correct": 1
+        },
+        "Self-Improvement": {
+          "n": 2,
+          "correct": 1
+        },
+        "Self-Reflection": {
+          "n": 2,
+          "correct": 0
+        },
+        "Self-care": {
+          "n": 2,
+          "correct": 0
+        },
+        "Self-discovery": {
+          "n": 1,
+          "correct": 0
+        },
+        "Self-esteem": {
+          "n": 4,
+          "correct": 4
+        },
+        "Self-help": {
+          "n": 1,
+          "correct": 1
+        },
+        "Self-improvement": {
+          "n": 17,
+          "correct": 10
+        },
+        "SelfDiscovery": {
+          "n": 1,
+          "correct": 1
+        },
+        "SelfImprovement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Shopping": {
+          "n": 17,
+          "correct": 6
+        },
+        "Skateboarding": {
+          "n": 1,
+          "correct": 0
+        },
+        "Skincare": {
+          "n": 2,
+          "correct": 0
+        },
+        "Sleep": {
+          "n": 16,
+          "correct": 10
+        },
+        "Social": {
+          "n": 3,
+          "correct": 2
+        },
+        "Social Media": {
+          "n": 1,
+          "correct": 0
+        },
+        "Socializing": {
+          "n": 12,
+          "correct": 9
+        },
+        "Space": {
+          "n": 2,
+          "correct": 2
+        },
+        "Spirituality": {
+          "n": 1,
+          "correct": 0
+        },
+        "Sports": {
+          "n": 69,
+          "correct": 26
+        },
+        "Stationery": {
+          "n": 1,
+          "correct": 0
+        },
+        "Strategy": {
+          "n": 1,
+          "correct": 0
+        },
+        "Stress": {
+          "n": 13,
+          "correct": 4
+        },
+        "Stress Management": {
+          "n": 3,
+          "correct": 1
+        },
+        "StressManagement": {
+          "n": 1,
+          "correct": 1
+        },
+        "Study": {
+          "n": 12,
+          "correct": 5
+        },
+        "Sustainability": {
+          "n": 4,
+          "correct": 2
+        },
+        "Teamwork": {
+          "n": 1,
+          "correct": 0
+        },
+        "Technology": {
+          "n": 20,
+          "correct": 5
+        },
+        "Traditions": {
+          "n": 1,
+          "correct": 0
+        },
+        "Transportation": {
+          "n": 6,
+          "correct": 3
+        },
+        "Travel": {
+          "n": 535,
+          "correct": 227
+        },
+        "Trends": {
+          "n": 1,
+          "correct": 0
+        },
+        "Utilities": {
+          "n": 1,
+          "correct": 0
+        },
+        "Values": {
+          "n": 1,
+          "correct": 1
+        },
+        "Volunteering": {
+          "n": 25,
+          "correct": 16
+        },
+        "Weather": {
+          "n": 2,
+          "correct": 1
+        },
+        "Wedding": {
+          "n": 3,
+          "correct": 1
+        },
+        "Wellbeing": {
+          "n": 16,
+          "correct": 10
+        },
+        "Wellness": {
+          "n": 52,
+          "correct": 13
+        },
+        "Wildfire": {
+          "n": 1,
+          "correct": 0
+        },
+        "Work": {
+          "n": 199,
+          "correct": 80
+        },
+        "Work-Life Balance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Work-life balance": {
+          "n": 1,
+          "correct": 1
+        },
+        "Workspaces": {
+          "n": 5,
+          "correct": 0
+        },
+        "Writing": {
+          "n": 9,
+          "correct": 2
+        },
+        "academic": {
+          "n": 1,
+          "correct": 0
+        },
+        "accounts": {
+          "n": 1,
+          "correct": 0
+        },
+        "activism": {
+          "n": 1,
+          "correct": 0
+        },
+        "anxiety": {
+          "n": 1,
+          "correct": 0
+        },
+        "architecture": {
+          "n": 1,
+          "correct": 0
+        },
+        "art": {
+          "n": 7,
+          "correct": 3
+        },
+        "automotive": {
+          "n": 14,
+          "correct": 0
+        },
+        "banking": {
+          "n": 6,
+          "correct": 1
+        },
+        "beauty": {
+          "n": 1,
+          "correct": 1
+        },
+        "books": {
+          "n": 4,
+          "correct": 0
+        },
+        "business": {
+          "n": 45,
+          "correct": 5
+        },
+        "career": {
+          "n": 2,
+          "correct": 1
+        },
+        "celebration": {
+          "n": 1,
+          "correct": 1
+        },
+        "celebrations": {
+          "n": 2,
+          "correct": 0
+        },
+        "charity": {
+          "n": 2,
+          "correct": 1
+        },
+        "collectibles": {
+          "n": 3,
+          "correct": 0
+        },
+        "commerce": {
+          "n": 3,
+          "correct": 0
+        },
+        "communication": {
+          "n": 9,
+          "correct": 2
+        },
+        "communications": {
+          "n": 2,
+          "correct": 0
+        },
+        "community": {
+          "n": 27,
+          "correct": 8
+        },
+        "commuting": {
+          "n": 2,
+          "correct": 0
+        },
+        "conference": {
+          "n": 2,
+          "correct": 0
+        },
+        "confidence": {
+          "n": 1,
+          "correct": 1
+        },
+        "cooking": {
+          "n": 1,
+          "correct": 0
+        },
+        "crafts": {
+          "n": 1,
+          "correct": 0
+        },
+        "creativity": {
+          "n": 1,
+          "correct": 1
+        },
+        "culture": {
+          "n": 1,
+          "correct": 0
+        },
+        "cybersecurity": {
+          "n": 1,
+          "correct": 0
+        },
+        "decor": {
+          "n": 7,
+          "correct": 2
+        },
+        "design": {
+          "n": 1,
+          "correct": 0
+        },
+        "development": {
+          "n": 1,
+          "correct": 0
+        },
+        "devops": {
+          "n": 3,
+          "correct": 0
+        },
+        "documentation": {
+          "n": 1,
+          "correct": 1
+        },
+        "drawing": {
+          "n": 1,
+          "correct": 0
+        },
+        "driving": {
+          "n": 2,
+          "correct": 0
+        },
+        "ecommerce": {
+          "n": 2,
+          "correct": 0
+        },
+        "education": {
+          "n": 3,
+          "correct": 2
+        },
+        "emotions": {
+          "n": 1,
+          "correct": 1
+        },
+        "entertaining": {
+          "n": 1,
+          "correct": 0
+        },
+        "entertainment": {
+          "n": 76,
+          "correct": 33
+        },
+        "etiquette": {
+          "n": 1,
+          "correct": 0
+        },
+        "event": {
+          "n": 9,
+          "correct": 1
+        },
+        "event planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "events": {
+          "n": 16,
+          "correct": 3
+        },
+        "family": {
+          "n": 1,
+          "correct": 0
+        },
+        "fashion": {
+          "n": 14,
+          "correct": 4
+        },
+        "finance": {
+          "n": 47,
+          "correct": 6
+        },
+        "fitness": {
+          "n": 6,
+          "correct": 1
+        },
+        "food": {
+          "n": 78,
+          "correct": 30
+        },
+        "fundraising": {
+          "n": 1,
+          "correct": 0
+        },
+        "games": {
+          "n": 1,
+          "correct": 0
+        },
+        "gaming": {
+          "n": 2,
+          "correct": 0
+        },
+        "gardening": {
+          "n": 2,
+          "correct": 0
+        },
+        "gathering": {
+          "n": 1,
+          "correct": 0
+        },
+        "gifts": {
+          "n": 3,
+          "correct": 2
+        },
+        "government": {
+          "n": 1,
+          "correct": 0
+        },
+        "grant": {
+          "n": 2,
+          "correct": 0
+        },
+        "grief": {
+          "n": 3,
+          "correct": 1
+        },
+        "health": {
+          "n": 111,
+          "correct": 25
+        },
+        "history": {
+          "n": 1,
+          "correct": 0
+        },
+        "hobbies": {
+          "n": 3,
+          "correct": 1
+        },
+        "home": {
+          "n": 48,
+          "correct": 12
+        },
+        "identification": {
+          "n": 3,
+          "correct": 1
+        },
+        "insurance": {
+          "n": 7,
+          "correct": 0
+        },
+        "legal": {
+          "n": 1,
+          "correct": 0
+        },
+        "leisure": {
+          "n": 19,
+          "correct": 7
+        },
+        "licensing": {
+          "n": 1,
+          "correct": 0
+        },
+        "lifestyle": {
+          "n": 6,
+          "correct": 1
+        },
+        "literature": {
+          "n": 1,
+          "correct": 0
+        },
+        "logistics": {
+          "n": 2,
+          "correct": 0
+        },
+        "marketing": {
+          "n": 1,
+          "correct": 0
+        },
+        "media": {
+          "n": 1,
+          "correct": 0
+        },
+        "mental health": {
+          "n": 30,
+          "correct": 7
+        },
+        "mentalhealth": {
+          "n": 2,
+          "correct": 1
+        },
+        "mentorship": {
+          "n": 1,
+          "correct": 0
+        },
+        "mindfulness": {
+          "n": 10,
+          "correct": 4
+        },
+        "music": {
+          "n": 13,
+          "correct": 6
+        },
+        "nature": {
+          "n": 4,
+          "correct": 1
+        },
+        "networking": {
+          "n": 1,
+          "correct": 1
+        },
+        "news": {
+          "n": 5,
+          "correct": 3
+        },
+        "nightlife": {
+          "n": 1,
+          "correct": 0
+        },
+        "outdoors": {
+          "n": 12,
+          "correct": 5
+        },
+        "parenting": {
+          "n": 1,
+          "correct": 0
+        },
+        "party": {
+          "n": 3,
+          "correct": 1
+        },
+        "payments": {
+          "n": 6,
+          "correct": 0
+        },
+        "pets": {
+          "n": 1,
+          "correct": 0
+        },
+        "photography": {
+          "n": 2,
+          "correct": 1
+        },
+        "podcasts": {
+          "n": 2,
+          "correct": 2
+        },
+        "privacy": {
+          "n": 1,
+          "correct": 0
+        },
+        "productivity": {
+          "n": 3,
+          "correct": 1
+        },
+        "reading": {
+          "n": 1,
+          "correct": 0
+        },
+        "registration": {
+          "n": 2,
+          "correct": 0
+        },
+        "relationships": {
+          "n": 14,
+          "correct": 3
+        },
+        "relaxation": {
+          "n": 5,
+          "correct": 1
+        },
+        "research": {
+          "n": 2,
+          "correct": 1
+        },
+        "running": {
+          "n": 1,
+          "correct": 0
+        },
+        "safety": {
+          "n": 1,
+          "correct": 0
+        },
+        "science": {
+          "n": 1,
+          "correct": 1
+        },
+        "security": {
+          "n": 44,
+          "correct": 9
+        },
+        "self-help": {
+          "n": 2,
+          "correct": 0
+        },
+        "self-improvement": {
+          "n": 17,
+          "correct": 4
+        },
+        "shopping": {
+          "n": 3,
+          "correct": 1
+        },
+        "sleep": {
+          "n": 2,
+          "correct": 1
+        },
+        "social": {
+          "n": 5,
+          "correct": 1
+        },
+        "socializing": {
+          "n": 1,
+          "correct": 0
+        },
+        "sports": {
+          "n": 35,
+          "correct": 8
+        },
+        "stress": {
+          "n": 1,
+          "correct": 1
+        },
+        "study": {
+          "n": 9,
+          "correct": 4
+        },
+        "sustainability": {
+          "n": 1,
+          "correct": 0
+        },
+        "tax": {
+          "n": 2,
+          "correct": 0
+        },
+        "technology": {
+          "n": 96,
+          "correct": 9
+        },
+        "trade": {
+          "n": 1,
+          "correct": 0
+        },
+        "transport": {
+          "n": 1,
+          "correct": 0
+        },
+        "transportation": {
+          "n": 2,
+          "correct": 0
+        },
+        "travel": {
+          "n": 175,
+          "correct": 57
+        },
+        "vehicles": {
+          "n": 1,
+          "correct": 0
+        },
+        "volunteer": {
+          "n": 7,
+          "correct": 0
+        },
+        "volunteering": {
+          "n": 8,
+          "correct": 4
+        },
+        "warranty": {
+          "n": 3,
+          "correct": 1
+        },
+        "wellbeing": {
+          "n": 2,
+          "correct": 1
+        },
+        "wellness": {
+          "n": 1,
+          "correct": 0
+        },
+        "work": {
+          "n": 50,
+          "correct": 12
+        },
+        "writing": {
+          "n": 1,
+          "correct": 0
+        }
+      }
+    },
+    {
+      "strategy": "random",
+      "correct": 1222,
+      "accuracy": 0.2444,
+      "wilson_95": [
+        0.23268786712254672,
+        0.2565045821117665
+      ],
+      "lift_over_chance_pp": -0.5599999999999994,
+      "shuffled_mean": 0.25114000000000003,
+      "shuffled_min": 0.247,
+      "shuffled_max": 0.2576,
+      "shuffled_scores": [
+        0.2576,
+        0.2492,
+        0.2474,
+        0.248,
+        0.2488,
+        0.2522,
+        0.247,
+        0.2538,
+        0.2542,
+        0.2532
+      ],
+      "choice_invariance": 0.24791999999999997,
+      "by_category": {
+        "Acting": {
+          "n": 1,
+          "correct": 0
+        },
+        "Activism": {
+          "n": 2,
+          "correct": 0
+        },
+        "Adjustment": {
+          "n": 1,
+          "correct": 0
+        },
+        "Adventure": {
+          "n": 1,
+          "correct": 0
+        },
+        "Ambience": {
+          "n": 1,
+          "correct": 0
+        },
+        "Antiques": {
+          "n": 1,
+          "correct": 0
+        },
+        "Anxiety": {
+          "n": 6,
+          "correct": 1
+        },
+        "Architecture": {
+          "n": 3,
+          "correct": 1
+        },
+        "Art": {
+          "n": 30,
+          "correct": 8
+        },
+        "Audiobooks": {
+          "n": 1,
+          "correct": 0
+        },
+        "Automotive": {
+          "n": 4,
+          "correct": 0
+        },
+        "Backup": {
+          "n": 1,
+          "correct": 0
+        },
+        "Baking": {
+          "n": 1,
+          "correct": 0
+        },
+        "Beauty": {
+          "n": 3,
+          "correct": 1
+        },
+        "Belonging": {
+          "n": 1,
+          "correct": 1
+        },
+        "Beverages": {
+          "n": 6,
+          "correct": 1
+        },
+        "Biotech": {
+          "n": 1,
+          "correct": 0
+        },
+        "Books": {
+          "n": 40,
+          "correct": 7
+        },
+        "Boundaries": {
+          "n": 1,
+          "correct": 0
+        },
+        "Burnout": {
+          "n": 1,
+          "correct": 0
+        },
+        "Business": {
+          "n": 7,
+          "correct": 2
+        },
+        "Camping": {
+          "n": 2,
+          "correct": 2
+        },
+        "Caregiving": {
+          "n": 3,
+          "correct": 0
+        },
+        "Celebration": {
+          "n": 7,
+          "correct": 2
+        },
+        "Celebrations": {
+          "n": 11,
+          "correct": 4
+        },
+        "Charity": {
+          "n": 2,
+          "correct": 1
+        },
+        "Cleaning": {
+          "n": 3,
+          "correct": 0
+        },
+        "Clothing": {
+          "n": 2,
+          "correct": 0
+        },
+        "Collaboration": {
+          "n": 1,
+          "correct": 0
+        },
+        "Collecting": {
+          "n": 4,
+          "correct": 1
+        },
+        "Communication": {
+          "n": 41,
+          "correct": 12
+        },
+        "Community": {
+          "n": 43,
+          "correct": 12
+        },
+        "Commute": {
+          "n": 1,
+          "correct": 0
+        },
+        "Confidence": {
+          "n": 12,
+          "correct": 2
+        },
+        "Conflict": {
+          "n": 1,
+          "correct": 0
+        },
+        "Cooking": {
+          "n": 11,
+          "correct": 2
+        },
+        "Crafting": {
+          "n": 1,
+          "correct": 0
+        },
+        "Crafts": {
+          "n": 6,
+          "correct": 1
+        },
+        "Craftsmanship": {
+          "n": 1,
+          "correct": 0
+        },
+        "Creativity": {
+          "n": 12,
+          "correct": 3
+        },
+        "Culture": {
+          "n": 28,
+          "correct": 4
+        },
+        "Cycling": {
+          "n": 2,
+          "correct": 0
+        },
+        "DIY": {
+          "n": 2,
+          "correct": 0
+        },
+        "Debate": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decision-Making": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decision-making": {
+          "n": 2,
+          "correct": 1
+        },
+        "Decluttering": {
+          "n": 1,
+          "correct": 0
+        },
+        "Decor": {
+          "n": 16,
+          "correct": 2
+        },
+        "Decorating": {
+          "n": 16,
+          "correct": 6
+        },
+        "Decorations": {
+          "n": 2,
+          "correct": 1
+        },
+        "Design": {
+          "n": 2,
+          "correct": 0
+        },
+        "DevOps": {
+          "n": 7,
+          "correct": 1
+        },
+        "Documents": {
+          "n": 1,
+          "correct": 1
+        },
+        "Downsizing": {
+          "n": 1,
+          "correct": 0
+        },
+        "Drinks": {
+          "n": 1,
+          "correct": 1
+        },
+        "Driving": {
+          "n": 1,
+          "correct": 0
+        },
+        "Education": {
+          "n": 18,
+          "correct": 7
+        },
+        "Emotions": {
+          "n": 19,
+          "correct": 5
+        },
+        "Energy": {
+          "n": 2,
+          "correct": 0
+        },
+        "Entertainment": {
+          "n": 281,
+          "correct": 60
+        },
+        "Environment": {
+          "n": 8,
+          "correct": 3
+        },
+        "Etiquette": {
+          "n": 4,
+          "correct": 1
+        },
+        "Event": {
+          "n": 2,
+          "correct": 1
+        },
+        "Event Planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "Events": {
+          "n": 32,
+          "correct": 5
+        },
+        "Family": {
+          "n": 10,
+          "correct": 5
+        },
+        "Farewell": {
+          "n": 1,
+          "correct": 0
+        },
+        "Fashion": {
+          "n": 70,
+          "correct": 24
+        },
+        "Finance": {
+          "n": 18,
+          "correct": 4
+        },
+        "Fitness": {
+          "n": 43,
+          "correct": 7
+        },
+        "Food": {
+          "n": 437,
+          "correct": 121
+        },
+        "Food & Drink": {
+          "n": 1,
+          "correct": 0
+        },
+        "Friendship": {
+          "n": 7,
+          "correct": 2
+        },
+        "Furniture": {
+          "n": 2,
+          "correct": 0
+        },
+        "Games": {
+          "n": 8,
+          "correct": 1
+        },
+        "Gaming": {
+          "n": 2,
+          "correct": 0
+        },
+        "Gardening": {
+          "n": 17,
+          "correct": 9
+        },
+        "Genealogy": {
+          "n": 1,
+          "correct": 1
+        },
+        "Gifting": {
+          "n": 2,
+          "correct": 0
+        },
+        "Gifts": {
+          "n": 14,
+          "correct": 3
+        },
+        "Gratitude": {
+          "n": 1,
+          "correct": 0
+        },
+        "Grief": {
+          "n": 25,
+          "correct": 6
+        },
+        "Grooming": {
+          "n": 1,
+          "correct": 1
+        },
+        "Hairstyle": {
+          "n": 1,
+          "correct": 0
+        },
+        "Health": {
+          "n": 420,
+          "correct": 102
+        },
+        "Hiking": {
+          "n": 2,
+          "correct": 0
+        },
+        "Hiring": {
+          "n": 1,
+          "correct": 0
+        },
+        "History": {
+          "n": 15,
+          "correct": 3
+        },
+        "Hobbies": {
+          "n": 29,
+          "correct": 5
+        },
+        "Holidays": {
+          "n": 2,
+          "correct": 0
+        },
+        "Home": {
+          "n": 112,
+          "correct": 29
+        },
+        "Home Decor": {
+          "n": 10,
+          "correct": 1
+        },
+        "HomeDecor": {
+          "n": 4,
+          "correct": 0
+        },
+        "Homecare": {
+          "n": 1,
+          "correct": 0
+        },
+        "Home装修": {
+          "n": 1,
+          "correct": 0
+        },
+        "Hospitality": {
+          "n": 1,
+          "correct": 1
+        },
+        "Hosting": {
+          "n": 3,
+          "correct": 1
+        },
+        "Housework": {
+          "n": 1,
+          "correct": 1
+        },
+        "Housing": {
+          "n": 5,
+          "correct": 1
+        },
+        "Identity": {
+          "n": 4,
+          "correct": 0
+        },
+        "Innovation": {
+          "n": 2,
+          "correct": 1
+        },
+        "Inspiration": {
+          "n": 1,
+          "correct": 0
+        },
+        "Insurance": {
+          "n": 1,
+          "correct": 1
+        },
+        "Interior": {
+          "n": 3,
+          "correct": 1
+        },
+        "InteriorDesign": {
+          "n": 2,
+          "correct": 1
+        },
+        "Jewelry": {
+          "n": 1,
+          "correct": 0
+        },
+        "Journaling": {
+          "n": 2,
+          "correct": 0
+        },
+        "Language": {
+          "n": 1,
+          "correct": 0
+        },
+        "Leadership": {
+          "n": 1,
+          "correct": 0
+        },
+        "Learning": {
+          "n": 9,
+          "correct": 2
+        },
+        "Leisure": {
+          "n": 65,
+          "correct": 19
+        },
+        "Life Transitions": {
+          "n": 1,
+          "correct": 0
+        },
+        "Lifestyle": {
+          "n": 2,
+          "correct": 0
+        },
+        "Literature": {
+          "n": 5,
+          "correct": 2
+        },
+        "Loneliness": {
+          "n": 3,
+          "correct": 2
+        },
+        "Maintenance": {
+          "n": 2,
+          "correct": 1
+        },
+        "Marketing": {
+          "n": 1,
+          "correct": 1
+        },
+        "Memorials": {
+          "n": 1,
+          "correct": 0
+        },
+        "Memories": {
+          "n": 1,
+          "correct": 0
+        },
+        "Mental Health": {
+          "n": 108,
+          "correct": 44
+        },
+        "Mental health": {
+          "n": 12,
+          "correct": 2
+        },
+        "MentalHealth": {
+          "n": 8,
+          "correct": 4
+        },
+        "Mentorship": {
+          "n": 1,
+          "correct": 0
+        },
+        "Mindfulness": {
+          "n": 11,
+          "correct": 2
+        },
+        "Mindset": {
+          "n": 6,
+          "correct": 2
+        },
+        "Motivation": {
+          "n": 26,
+          "correct": 6
+        },
+        "Movies": {
+          "n": 1,
+          "correct": 1
+        },
+        "Museums": {
+          "n": 2,
+          "correct": 0
+        },
+        "Music": {
+          "n": 54,
+          "correct": 15
+        },
+        "Nature": {
+          "n": 16,
+          "correct": 5
+        },
+        "Networking": {
+          "n": 6,
+          "correct": 2
+        },
+        "News": {
+          "n": 10,
+          "correct": 2
+        },
+        "Nostalgia": {
+          "n": 1,
+          "correct": 0
+        },
+        "Organization": {
+          "n": 7,
+          "correct": 1
+        },
+        "Outdoors": {
+          "n": 91,
+          "correct": 22
+        },
+        "Parenting": {
+          "n": 4,
+          "correct": 2
+        },
+        "Parking": {
+          "n": 1,
+          "correct": 0
+        },
+        "Payments": {
+          "n": 2,
+          "correct": 1
+        },
+        "Pets": {
+          "n": 5,
+          "correct": 0
+        },
+        "Philosophy": {
+          "n": 2,
+          "correct": 0
+        },
+        "Photography": {
+          "n": 21,
+          "correct": 2
+        },
+        "Planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "Plants": {
+          "n": 1,
+          "correct": 1
+        },
+        "Podcasts": {
+          "n": 5,
+          "correct": 2
+        },
+        "Poetry": {
+          "n": 1,
+          "correct": 0
+        },
+        "Politics": {
+          "n": 5,
+          "correct": 2
+        },
+        "Preservation": {
+          "n": 1,
+          "correct": 0
+        },
+        "Productivity": {
+          "n": 17,
+          "correct": 4
+        },
+        "PublicSpeaking": {
+          "n": 7,
+          "correct": 0
+        },
+        "Quotes": {
+          "n": 1,
+          "correct": 0
+        },
+        "Reading": {
+          "n": 5,
+          "correct": 0
+        },
+        "RealEstate": {
+          "n": 2,
+          "correct": 0
+        },
+        "Recreation": {
+          "n": 3,
+          "correct": 1
+        },
+        "Reflection": {
+          "n": 1,
+          "correct": 0
+        },
+        "Regret": {
+          "n": 1,
+          "correct": 0
+        },
+        "Relationships": {
+          "n": 85,
+          "correct": 24
+        },
+        "Relaxation": {
+          "n": 44,
+          "correct": 8
+        },
+        "Religion": {
+          "n": 2,
+          "correct": 0
+        },
+        "Relocation": {
+          "n": 1,
+          "correct": 0
+        },
+        "Remembrance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Retirement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Romance": {
+          "n": 1,
+          "correct": 1
+        },
+        "Routine": {
+          "n": 1,
+          "correct": 0
+        },
+        "School": {
+          "n": 1,
+          "correct": 1
+        },
+        "Science": {
+          "n": 6,
+          "correct": 2
+        },
+        "Security": {
+          "n": 5,
+          "correct": 2
+        },
+        "Self-Confidence": {
+          "n": 1,
+          "correct": 0
+        },
+        "Self-Improvement": {
+          "n": 2,
+          "correct": 0
+        },
+        "Self-Reflection": {
+          "n": 2,
+          "correct": 1
+        },
+        "Self-care": {
+          "n": 2,
+          "correct": 0
+        },
+        "Self-discovery": {
+          "n": 1,
+          "correct": 0
+        },
+        "Self-esteem": {
+          "n": 4,
+          "correct": 0
+        },
+        "Self-help": {
+          "n": 1,
+          "correct": 0
+        },
+        "Self-improvement": {
+          "n": 17,
+          "correct": 4
+        },
+        "SelfDiscovery": {
+          "n": 1,
+          "correct": 0
+        },
+        "SelfImprovement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Shopping": {
+          "n": 17,
+          "correct": 2
+        },
+        "Skateboarding": {
+          "n": 1,
+          "correct": 1
+        },
+        "Skincare": {
+          "n": 2,
+          "correct": 1
+        },
+        "Sleep": {
+          "n": 16,
+          "correct": 4
+        },
+        "Social": {
+          "n": 3,
+          "correct": 2
+        },
+        "Social Media": {
+          "n": 1,
+          "correct": 0
+        },
+        "Socializing": {
+          "n": 12,
+          "correct": 5
+        },
+        "Space": {
+          "n": 2,
+          "correct": 0
+        },
+        "Spirituality": {
+          "n": 1,
+          "correct": 0
+        },
+        "Sports": {
+          "n": 69,
+          "correct": 21
+        },
+        "Stationery": {
+          "n": 1,
+          "correct": 0
+        },
+        "Strategy": {
+          "n": 1,
+          "correct": 0
+        },
+        "Stress": {
+          "n": 13,
+          "correct": 5
+        },
+        "Stress Management": {
+          "n": 3,
+          "correct": 1
+        },
+        "StressManagement": {
+          "n": 1,
+          "correct": 0
+        },
+        "Study": {
+          "n": 12,
+          "correct": 0
+        },
+        "Sustainability": {
+          "n": 4,
+          "correct": 2
+        },
+        "Teamwork": {
+          "n": 1,
+          "correct": 0
+        },
+        "Technology": {
+          "n": 20,
+          "correct": 5
+        },
+        "Traditions": {
+          "n": 1,
+          "correct": 0
+        },
+        "Transportation": {
+          "n": 6,
+          "correct": 3
+        },
+        "Travel": {
+          "n": 535,
+          "correct": 132
+        },
+        "Trends": {
+          "n": 1,
+          "correct": 1
+        },
+        "Utilities": {
+          "n": 1,
+          "correct": 0
+        },
+        "Values": {
+          "n": 1,
+          "correct": 0
+        },
+        "Volunteering": {
+          "n": 25,
+          "correct": 5
+        },
+        "Weather": {
+          "n": 2,
+          "correct": 0
+        },
+        "Wedding": {
+          "n": 3,
+          "correct": 1
+        },
+        "Wellbeing": {
+          "n": 16,
+          "correct": 3
+        },
+        "Wellness": {
+          "n": 52,
+          "correct": 11
+        },
+        "Wildfire": {
+          "n": 1,
+          "correct": 1
+        },
+        "Work": {
+          "n": 199,
+          "correct": 55
+        },
+        "Work-Life Balance": {
+          "n": 1,
+          "correct": 0
+        },
+        "Work-life balance": {
+          "n": 1,
+          "correct": 1
+        },
+        "Workspaces": {
+          "n": 5,
+          "correct": 0
+        },
+        "Writing": {
+          "n": 9,
+          "correct": 1
+        },
+        "academic": {
+          "n": 1,
+          "correct": 1
+        },
+        "accounts": {
+          "n": 1,
+          "correct": 0
+        },
+        "activism": {
+          "n": 1,
+          "correct": 1
+        },
+        "anxiety": {
+          "n": 1,
+          "correct": 1
+        },
+        "architecture": {
+          "n": 1,
+          "correct": 0
+        },
+        "art": {
+          "n": 7,
+          "correct": 0
+        },
+        "automotive": {
+          "n": 14,
+          "correct": 0
+        },
+        "banking": {
+          "n": 6,
+          "correct": 1
+        },
+        "beauty": {
+          "n": 1,
+          "correct": 1
+        },
+        "books": {
+          "n": 4,
+          "correct": 1
+        },
+        "business": {
+          "n": 45,
+          "correct": 17
+        },
+        "career": {
+          "n": 2,
+          "correct": 0
+        },
+        "celebration": {
+          "n": 1,
+          "correct": 1
+        },
+        "celebrations": {
+          "n": 2,
+          "correct": 0
+        },
+        "charity": {
+          "n": 2,
+          "correct": 1
+        },
+        "collectibles": {
+          "n": 3,
+          "correct": 0
+        },
+        "commerce": {
+          "n": 3,
+          "correct": 0
+        },
+        "communication": {
+          "n": 9,
+          "correct": 5
+        },
+        "communications": {
+          "n": 2,
+          "correct": 1
+        },
+        "community": {
+          "n": 27,
+          "correct": 6
+        },
+        "commuting": {
+          "n": 2,
+          "correct": 0
+        },
+        "conference": {
+          "n": 2,
+          "correct": 1
+        },
+        "confidence": {
+          "n": 1,
+          "correct": 1
+        },
+        "cooking": {
+          "n": 1,
+          "correct": 0
+        },
+        "crafts": {
+          "n": 1,
+          "correct": 0
+        },
+        "creativity": {
+          "n": 1,
+          "correct": 0
+        },
+        "culture": {
+          "n": 1,
+          "correct": 0
+        },
+        "cybersecurity": {
+          "n": 1,
+          "correct": 1
+        },
+        "decor": {
+          "n": 7,
+          "correct": 1
+        },
+        "design": {
+          "n": 1,
+          "correct": 1
+        },
+        "development": {
+          "n": 1,
+          "correct": 0
+        },
+        "devops": {
+          "n": 3,
+          "correct": 2
+        },
+        "documentation": {
+          "n": 1,
+          "correct": 0
+        },
+        "drawing": {
+          "n": 1,
+          "correct": 0
+        },
+        "driving": {
+          "n": 2,
+          "correct": 1
+        },
+        "ecommerce": {
+          "n": 2,
+          "correct": 0
+        },
+        "education": {
+          "n": 3,
+          "correct": 0
+        },
+        "emotions": {
+          "n": 1,
+          "correct": 0
+        },
+        "entertaining": {
+          "n": 1,
+          "correct": 0
+        },
+        "entertainment": {
+          "n": 76,
+          "correct": 17
+        },
+        "etiquette": {
+          "n": 1,
+          "correct": 1
+        },
+        "event": {
+          "n": 9,
+          "correct": 0
+        },
+        "event planning": {
+          "n": 1,
+          "correct": 0
+        },
+        "events": {
+          "n": 16,
+          "correct": 6
+        },
+        "family": {
+          "n": 1,
+          "correct": 0
+        },
+        "fashion": {
+          "n": 14,
+          "correct": 2
+        },
+        "finance": {
+          "n": 47,
+          "correct": 7
+        },
+        "fitness": {
+          "n": 6,
+          "correct": 1
+        },
+        "food": {
+          "n": 78,
+          "correct": 16
+        },
+        "fundraising": {
+          "n": 1,
+          "correct": 0
+        },
+        "games": {
+          "n": 1,
+          "correct": 0
+        },
+        "gaming": {
+          "n": 2,
+          "correct": 2
+        },
+        "gardening": {
+          "n": 2,
+          "correct": 1
+        },
+        "gathering": {
+          "n": 1,
+          "correct": 0
+        },
+        "gifts": {
+          "n": 3,
+          "correct": 0
+        },
+        "government": {
+          "n": 1,
+          "correct": 0
+        },
+        "grant": {
+          "n": 2,
+          "correct": 0
+        },
+        "grief": {
+          "n": 3,
+          "correct": 2
+        },
+        "health": {
+          "n": 111,
+          "correct": 27
+        },
+        "history": {
+          "n": 1,
+          "correct": 0
+        },
+        "hobbies": {
+          "n": 3,
+          "correct": 1
+        },
+        "home": {
+          "n": 48,
+          "correct": 8
+        },
+        "identification": {
+          "n": 3,
+          "correct": 1
+        },
+        "insurance": {
+          "n": 7,
+          "correct": 1
+        },
+        "legal": {
+          "n": 1,
+          "correct": 0
+        },
+        "leisure": {
+          "n": 19,
+          "correct": 5
+        },
+        "licensing": {
+          "n": 1,
+          "correct": 0
+        },
+        "lifestyle": {
+          "n": 6,
+          "correct": 3
+        },
+        "literature": {
+          "n": 1,
+          "correct": 0
+        },
+        "logistics": {
+          "n": 2,
+          "correct": 1
+        },
+        "marketing": {
+          "n": 1,
+          "correct": 0
+        },
+        "media": {
+          "n": 1,
+          "correct": 0
+        },
+        "mental health": {
+          "n": 30,
+          "correct": 2
+        },
+        "mentalhealth": {
+          "n": 2,
+          "correct": 0
+        },
+        "mentorship": {
+          "n": 1,
+          "correct": 1
+        },
+        "mindfulness": {
+          "n": 10,
+          "correct": 3
+        },
+        "music": {
+          "n": 13,
+          "correct": 7
+        },
+        "nature": {
+          "n": 4,
+          "correct": 3
+        },
+        "networking": {
+          "n": 1,
+          "correct": 0
+        },
+        "news": {
+          "n": 5,
+          "correct": 0
+        },
+        "nightlife": {
+          "n": 1,
+          "correct": 1
+        },
+        "outdoors": {
+          "n": 12,
+          "correct": 1
+        },
+        "parenting": {
+          "n": 1,
+          "correct": 1
+        },
+        "party": {
+          "n": 3,
+          "correct": 1
+        },
+        "payments": {
+          "n": 6,
+          "correct": 1
+        },
+        "pets": {
+          "n": 1,
+          "correct": 0
+        },
+        "photography": {
+          "n": 2,
+          "correct": 2
+        },
+        "podcasts": {
+          "n": 2,
+          "correct": 1
+        },
+        "privacy": {
+          "n": 1,
+          "correct": 0
+        },
+        "productivity": {
+          "n": 3,
+          "correct": 0
+        },
+        "reading": {
+          "n": 1,
+          "correct": 0
+        },
+        "registration": {
+          "n": 2,
+          "correct": 0
+        },
+        "relationships": {
+          "n": 14,
+          "correct": 1
+        },
+        "relaxation": {
+          "n": 5,
+          "correct": 0
+        },
+        "research": {
+          "n": 2,
+          "correct": 0
+        },
+        "running": {
+          "n": 1,
+          "correct": 0
+        },
+        "safety": {
+          "n": 1,
+          "correct": 1
+        },
+        "science": {
+          "n": 1,
+          "correct": 0
+        },
+        "security": {
+          "n": 44,
+          "correct": 7
+        },
+        "self-help": {
+          "n": 2,
+          "correct": 1
+        },
+        "self-improvement": {
+          "n": 17,
+          "correct": 4
+        },
+        "shopping": {
+          "n": 3,
+          "correct": 1
+        },
+        "sleep": {
+          "n": 2,
+          "correct": 0
+        },
+        "social": {
+          "n": 5,
+          "correct": 2
+        },
+        "socializing": {
+          "n": 1,
+          "correct": 0
+        },
+        "sports": {
+          "n": 35,
+          "correct": 5
+        },
+        "stress": {
+          "n": 1,
+          "correct": 0
+        },
+        "study": {
+          "n": 9,
+          "correct": 2
+        },
+        "sustainability": {
+          "n": 1,
+          "correct": 1
+        },
+        "tax": {
+          "n": 2,
+          "correct": 1
+        },
+        "technology": {
+          "n": 96,
+          "correct": 17
+        },
+        "trade": {
+          "n": 1,
+          "correct": 1
+        },
+        "transport": {
+          "n": 1,
+          "correct": 0
+        },
+        "transportation": {
+          "n": 2,
+          "correct": 0
+        },
+        "travel": {
+          "n": 175,
+          "correct": 41
+        },
+        "vehicles": {
+          "n": 1,
+          "correct": 0
+        },
+        "volunteer": {
+          "n": 7,
+          "correct": 3
+        },
+        "volunteering": {
+          "n": 8,
+          "correct": 3
+        },
+        "warranty": {
+          "n": 3,
+          "correct": 0
+        },
+        "wellbeing": {
+          "n": 2,
+          "correct": 0
+        },
+        "wellness": {
+          "n": 1,
+          "correct": 1
+        },
+        "work": {
+          "n": 50,
+          "correct": 8
+        },
+        "writing": {
+          "n": 1,
+          "correct": 0
+        }
+      }
+    }
+  ],
+  "source": {
+    "dataset": "bowen-upenn/PersonaMem-v2",
+    "revision": "ed956dea41521fc4499acbc63f966e0fd3c053ba",
+    "split": "benchmark_text",
+    "url": "https://huggingface.co/datasets/bowen-upenn/PersonaMem-v2/resolve/ed956dea41521fc4499acbc63f966e0fd3c053ba/benchmark/text/benchmark.csv",
+    "license": "CC-BY-4.0 (upstream data)",
+    "sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52"
+  }
+}

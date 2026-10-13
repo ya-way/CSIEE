@@ -10,12 +10,28 @@ from unittest.mock import patch
 
 from csiee.data import Question, load_questions, shuffled
 from csiee.evaluate import evaluate, save_report, wilson
-from csiee.strategies import STRATEGIES, predict
+from csiee.strategies import STRATEGIES, predict, classify_options
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class StrategyTests(unittest.TestCase):
+    def test_classmates(self):
+        self.assertEqual(predict('xiaoming', ['a', 'longest', 'b', 'c']), 1)
+        self.assertEqual(predict('xiaohong', ['a', 'b', 'c', 'd']), 2)
+        self.assertEqual(predict('xiaogang', ['10', '11', '12', '90']), 3)
+        self.assertEqual(predict('xiaogang', ['0', '98', '99', '100']), 0)
+        self.assertEqual(predict('xiaogang', ['a', 'long text one', 'long text two', 'long text six']), 0)
+
+    def test_type_router_and_units(self):
+        self.assertEqual(classify_options(['10 ms', '11 ms', '12 ms', '90 ms'])[0], 'numeric')
+        self.assertEqual(predict('xiaogang', ['10%', '.11', '12%', '.9']), 3)
+        self.assertEqual(classify_options(['10 kg', '11 ms', '12 ms', '90 ms'])[0], 'length')
+        self.assertEqual(classify_options(['1 cat', 'two cats', '3 cats', '4 cats'])[0], 'length')
+        self.assertEqual(classify_options(['1e999', '1', '2', '3'])[0], 'length')
+        self.assertEqual(predict('xiaogang', ['1', '1', '1', '1']), 2)
+        self.assertEqual(predict('xiaogang', ['-1e308', '1e308', '0', '0.1']), 0)
+
     def test_lite_c_and_short_ballot(self):
         self.assertEqual(predict('lite', ['a', 'b', 'c', 'd', 'e']), 2)
         self.assertEqual(predict('lite', ['a', 'b']), 1)

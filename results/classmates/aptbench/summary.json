@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.2.0",
+  "python": "3.9.13",
+  "dataset": "aptbench.jsonl",
+  "sha256": "35bf44c9b3c6337565c3871f3dab1d6edf66a165813037b1acdbc4dbf345842b",
+  "format": "jsonl",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 4215,
+  "total_loaded": 4215,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "native option order",
+  "chance_accuracy": 0.20841778229677627,
+  "answer_histogram": {
+    "A": 883,
+    "B": 835,
+    "C": 875,
+    "D": 925,
+    "E": 455,
+    "F": 171,
+    "G": 71
+  },
+  "option_count_histogram": {
+    "2": 1,
+    "3": 9,
+    "4": 1650,
+    "5": 1448,
+    "6": 619,
+    "7": 488
+  },
+  "option_type_histogram": {
+    "length": 4215
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "xiaoming",
+      "correct": 691,
+      "accuracy": 0.16393831553973903,
+      "wilson_95": [
+        0.15306864146387766,
+        0.17541999039101142
+      ],
+      "lift_over_chance_pp": -4.447946675703723,
+      "shuffled_mean": 0.1641043890865955,
+      "shuffled_min": 0.1594306049822064,
+      "shuffled_max": 0.16725978647686832,
+      "shuffled_scores": [
+        0.16631079478054567,
+        0.1634638196915777,
+        0.16441281138790034,
+        0.16702253855278767,
+        0.1655990510083037,
+        0.1641755634638197,
+        0.16725978647686832,
+        0.16298932384341638,
+        0.1594306049822064,
+        0.16037959667852905
+      ],
+      "choice_invariance": 0.8878766310794781,
+      "by_category": {
+        "agentic_math/action_cal": {
+          "n": 1101,
+          "correct": 157
+        },
+        "agentic_math/planning_single": {
+          "n": 1448,
+          "correct": 261
+        },
+        "deepresearch/plan_en": {
+          "n": 614,
+          "correct": 125
+        },
+        "env_setup/error": {
+          "n": 145,
+          "correct": 5
+        },
+        "env_setup/plan": {
+          "n": 432,
+          "correct": 31
+        },
+        "issue_fix/locate": {
+          "n": 272,
+          "correct": 55
+        },
+        "issue_fix/plan": {
+          "n": 203,
+          "correct": 57
+        }
+      }
+    },
+    {
+      "strategy": "xiaohong",
+      "correct": 875,
+      "accuracy": 0.20759193357058126,
+      "wilson_95": [
+        0.19561670550985433,
+        0.22009966495336541
+      ],
+      "lift_over_chance_pp": -0.08258487261950109,
+      "shuffled_mean": 0.20785290628706998,
+      "shuffled_min": 0.19905100830367733,
+      "shuffled_max": 0.21708185053380782,
+      "shuffled_scores": [
+        0.21186239620403322,
+        0.21138790035587188,
+        0.20735468564650059,
+        0.20094899169632266,
+        0.21091340450771057,
+        0.21708185053380782,
+        0.21091340450771057,
+        0.19905100830367733,
+        0.20759193357058126,
+        0.201423487544484
+      ],
+      "choice_invariance": 0.20832740213523132,
+      "by_category": {
+        "agentic_math/action_cal": {
+          "n": 1101,
+          "correct": 273
+        },
+        "agentic_math/planning_single": {
+          "n": 1448,
+          "correct": 304
+        },
+        "deepresearch/plan_en": {
+          "n": 614,
+          "correct": 104
+        },
+        "env_setup/error": {
+          "n": 145,
+          "correct": 26
+        },
+        "env_setup/plan": {
+          "n": 432,
+          "correct": 68
+        },
+        "issue_fix/locate": {
+          "n": 272,
+          "correct": 63
+        },
+        "issue_fix/plan": {
+          "n": 203,
+          "correct": 37
+        }
+      }
+    },
+    {
+      "strategy": "xiaogang",
+      "correct": 498,
+      "accuracy": 0.11814946619217082,
+      "wilson_95": [
+        0.10875082328928594,
+        0.12824349578621275
+      ],
+      "lift_over_chance_pp": -9.026831610460546,
+      "shuffled_mean": 0.11852906287069986,
+      "shuffled_min": 0.11411625148279952,
+      "shuffled_max": 0.12099644128113879,
+      "shuffled_scores": [
+        0.11411625148279952,
+        0.11838671411625148,
+        0.12099644128113879,
+        0.12004744958481613,
+        0.11909845788849348,
+        0.11577698695136418,
+        0.12075919335705812,
+        0.11720047449584817,
+        0.11886120996441281,
+        0.12004744958481613
+      ],
+      "choice_invariance": 0.9154448398576512,
+      "by_category": {
+        "agentic_math/action_cal": {
+          "n": 1101,
+          "correct": 41
+        },
+        "agentic_math/planning_single": {
+          "n": 1448,
+          "correct": 223
+        },
+        "deepresearch/plan_en": {
+          "n": 614,
+          "correct": 45
+        },
+        "env_setup/error": {
+          "n": 145,
+          "correct": 3
+        },
+        "env_setup/plan": {
+          "n": 432,
+          "correct": 82
+        },
+        "issue_fix/locate": {
+          "n": 272,
+          "correct": 43
+        },
+        "issue_fix/plan": {
+          "n": 203,
+          "correct": 61
+        }
+      }
+    },
+    {
+      "strategy": "random",
+      "correct": 827,
+      "accuracy": 0.19620403321470936,
+      "wilson_95": [
+        0.18449410846849496,
+        0.2084671997490733
+      ],
+      "lift_over_chance_pp": -1.2213749082066905,
+      "shuffled_mean": 0.20920521945432977,
+      "shuffled_min": 0.1981020166073547,
+      "shuffled_max": 0.21637010676156584,
+      "shuffled_scores": [
+        0.21352313167259787,
+        0.20047449584816132,
+        0.21637010676156584,
+        0.21186239620403322,
+        0.20521945432977462,
+        0.1981020166073547,
+        0.21423487544483985,
+        0.2099644128113879,
+        0.20877817319098457,
+        0.21352313167259787
+      ],
+      "choice_invariance": 0.2093238434163701,
+      "by_category": {
+        "agentic_math/action_cal": {
+          "n": 1101,
+          "correct": 266
+        },
+        "agentic_math/planning_single": {
+          "n": 1448,
+          "correct": 276
+        },
+        "deepresearch/plan_en": {
+          "n": 614,
+          "correct": 82
+        },
+        "env_setup/error": {
+          "n": 145,
+          "correct": 24
+        },
+        "env_setup/plan": {
+          "n": 432,
+          "correct": 62
+        },
+        "issue_fix/locate": {
+          "n": 272,
+          "correct": 70
+        },
+        "issue_fix/plan": {
+          "n": 203,
+          "correct": 47
+        }
+      }
+    }
+  ],
+  "source": {
+    "dataset": "APTBench",
+    "url": "https://github.com/TencentYoutuResearch/APTBench",
+    "revision": "9aab1301ab2c743be6bf11d1a2f3c3c6bc123ffc",
+    "license": "Apache-2.0 (upstream repository)",
+    "split": "all seven English labeled-choice tasks; excludes Chinese, boolean, open completion and tool-name completion",
+    "sources": [
+      {
+        "path": "data/agentic_math/action_cal/input_data.jsonl",
+        "url": "https://raw.githubusercontent.com/TencentYoutuResearch/APTBench/9aab1301ab2c743be6bf11d1a2f3c3c6bc123ffc/data/agentic_math/action_cal/input_data.jsonl",
+        "sha256": "ae78d7bc46d82570b1b2228155ef531bf52bf6b5e6661bce22951f7b70080bb9"
+      },
+      {
+        "path": "data/agentic_math/planning_single/input_data.jsonl",
+        "url": "https://raw.githubusercontent.com/TencentYoutuResearch/APTBench/9aab1301ab2c743be6bf11d1a2f3c3c6bc123ffc/data/agentic_math/planning_single/input_data.jsonl",
+        "sha256": "e3e4d46b1231cf8315d9e71399f620e8bd50adab6d36ffc1195431ffae8a427a"
+      },
+      {
+        "path": "data/deepresearch/plan_en/input_data.jsonl",
+        "url": "https://raw.githubusercontent.com/TencentYoutuResearch/APTBench/9aab1301ab2c743be6bf11d1a2f3c3c6bc123ffc/data/deepresearch/plan_en/input_data.jsonl",
+        "sha256": "81b95b9ee1769c7cfaf02616edefd4fb546ba762ea41868133d4808ae8669077"
+      },
+      {
+        "path": "data/env_setup/error/input_data.jsonl",
+        "url": "https://raw.githubusercontent.com/TencentYoutuResearch/APTBench/9aab1301ab2c743be6bf11d1a2f3c3c6bc123ffc/data/env_setup/error/input_data.jsonl",
+        "sha256": "f75fb00c722525d6cf343a16269be1eb15ebe7d9b463d3097397935deaf14ce8"
+      },
+      {
+        "path": "data/env_setup/plan/input_data.jsonl",
+        "url": "https://raw.githubusercontent.com/TencentYoutuResearch/APTBench/9aab1301ab2c743be6bf11d1a2f3c3c6bc123ffc/data/env_setup/plan/input_data.jsonl",
+        "sha256": "451246b153e689d9edf62b99b88e7343b29b26c93974d80adec4346d924c3371"
+      },
+      {
+        "path": "data/issue_fix/locate/input_data.jsonl",
+        "url": "https://raw.githubusercontent.com/TencentYoutuResearch/APTBench/9aab1301ab2c743be6bf11d1a2f3c3c6bc123ffc/data/issue_fix/locate/input_data.jsonl",
+        "sha256": "53a830c076167f1ef9df867664411d808578319a481e0b2c4f9ff386d0be1775"
+      },
+      {
+        "path": "data/issue_fix/plan/input_data.jsonl",
+        "url": "https://raw.githubusercontent.com/TencentYoutuResearch/APTBench/9aab1301ab2c743be6bf11d1a2f3c3c6bc123ffc/data/issue_fix/plan/input_data.jsonl",
+        "sha256": "fec0ea5371ebcfff7be78e572cab208ca7dab2971d03b63425094459b37a6f16"
+      }
+    ],
+    "normalization": {
+      "candidate_count": 4273,
+      "included_count": 4215,
+      "excluded_count": 58,
+      "exclusions": [
+        {
+          "id": "env_setup/error:c1f98c25-63ab-4b7c-a426-9069adabe434",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "env_setup/error:20d0c1d8-db26-4513-97b8-b4c9392fc743",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "env_setup/plan:f88f53ab-9fa9-4c9a-afaf-a176ed62b06d",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "env_setup/plan:aaa80a22-b5c0-4216-adc2-681b2b29eac5",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "env_setup/plan:aaa80a22-b5c0-4216-adc2-681b2b29eac5",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "env_setup/plan:1d7a1b86-3ad7-4586-990b-9002c9c478a9",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "env_setup/plan:78c605c2-033e-4430-91df-05c13fa6cda1",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/locate:727e36d3-6bfb-46e7-904d-6456ff9e3153",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "D",
+          "available_labels": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": "issue_fix/locate:9d3b9639-53ba-40ee-b363-fcef214c42e8",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "D",
+          "available_labels": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": "issue_fix/locate:d68209ce-34f4-4569-bb27-63e571c4f950",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "C",
+          "available_labels": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": "issue_fix/locate:80d1e5d1-4ac3-48c5-b499-5eb77b6b8c52",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "D",
+          "available_labels": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": "issue_fix/locate:7bb906d5-d275-4da6-b958-99a745412ed6",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "C",
+          "available_labels": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": "issue_fix/locate:77213bd2-4552-4683-b3f8-70f237a478bf",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "C",
+          "available_labels": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": "issue_fix/locate:8dea01ed-70ee-4ea6-89fa-856715f38d5d",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "D",
+          "available_labels": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "id": "issue_fix/locate:8bb72923-4237-4f94-bafe-0253ddfcb3cb",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "D",
+          "available_labels": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "id": "issue_fix/locate:42602a37-4a5b-498f-b1e0-eefa6f961222",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "C",
+          "available_labels": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": "issue_fix/locate:85ba47f6-6513-41f5-851f-6cdcf2890c31",
+          "reason": "ambiguous or nonconsecutive APT choice markers"
+        },
+        {
+          "id": "issue_fix/locate:626353d5-3c72-49d7-94de-9d48ed7b3c5f",
+          "reason": "source gold label absent from released choices",
+          "gold_label": "C",
+          "available_labels": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": "issue_fix/plan:d9ab032b-e29e-4447-ab68-593cdfbd007c",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:66492353-9033-4a00-877a-248ce4b54970",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:79b56ddd-c952-4407-aa54-1fd16ff5e663",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:c2e80abb-a24f-4b2a-a6b8-7e4a04a04bd4",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:959747a2-cd54-4fa4-b5aa-88dbc15ead4c",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:591ff59c-8205-4925-9f45-2560294aeb33",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:c84ec7ca-0e2c-4bfc-8c74-03e2fb7eef9a",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:53799485-154b-45e2-ba36-98d903a67e69",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:045ed868-a760-46e0-949e-8b09b803d5a6",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:a1ee537b-2e89-4c9e-84b2-d0f863abff16",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:4b1cd741-8153-4f94-9be9-9a3c2324ef11",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:1224793c-82e9-4c16-84eb-252f8cec19bd",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:c71238fd-9b7a-498f-a1d2-882166b10c3e",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:7143c74e-d344-4507-9e0e-0b701f00e24a",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:a0d0b969-d962-42a0-9ca5-4d682f7bd006",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:26992d4f-960a-4cff-8acb-6663b2f89de7",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:4a287247-6f18-4b28-83d3-c8476b6419ce",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:52e5567a-4ec9-470f-a2d4-bae4910d6841",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:bdb5d3e1-fd5f-417b-bddb-a28f8369034d",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:0d12fbee-ac07-4bb0-acf5-9e4b53659bf3",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:94c0e332-71be-486a-9c77-ff927ab627a5",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:7412bc94-6ab4-439f-80fd-26c22c386411",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:76b9ee7e-4338-4086-825f-95a43c95d27b",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:ffe44316-f72e-4f09-acdd-795c9051821d",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:a3595ed6-e23e-4b9b-aa6b-fedaa380d024",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:b545889e-128e-45e9-913b-ff29328449c0",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:57a638fe-a784-4645-af2b-739539e7e357",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:77392dac-29aa-4241-9f2a-b54a718992f2",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:59361074-0b1b-4d1f-9af2-17a58821c849",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:cf324ff5-b771-4dc8-8912-628ee1263de1",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:86218ba9-1651-49c1-b679-39bbbd781383",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:8e663c34-383c-4fc8-8bb9-a8a3c1e559b0",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:d1f23c49-f763-4533-921b-555aa6213e20",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:e2c35662-d5f3-46f1-9bc9-4deb82924785",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:a8080d65-822f-4c0b-a5d3-fd75c914b9ef",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:6879e190-ebd4-4f5f-9aad-2007ea574e17",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:d8907d9e-6724-4c75-a5f3-6c2d9ade8e0a",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:7accade2-680d-4eaa-96fd-d163f2856563",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:41b8a076-d6bf-4f32-bf76-dc05cb124f69",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "issue_fix/plan:316e6a2f-fed8-454b-8df9-2af5b25d3830",
+          "reason": "duplicate option text after stripping"
+        }
+      ]
+    },
+    "sha256": "35bf44c9b3c6337565c3871f3dab1d6edf66a165813037b1acdbc4dbf345842b",
+    "adapter_version": 1,
+    "adapter": "aptbench",
+    "source_order_seed": null,
+    "source_order": "native option order"
+  }
+}

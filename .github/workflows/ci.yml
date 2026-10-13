@@ -16,5 +16,5 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: python -m pip install .
       - run: python -m unittest discover -s tests -v
-      - run: csiee guess 10 40 20 30 --strategy numeric
+      - run: csiee guess 10 11 12 99 --strategy xiaogang
       - run: csiee eval data/demo.jsonl --shuffles 3 --output results/local

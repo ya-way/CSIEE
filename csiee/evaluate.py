@@ -10,7 +10,7 @@ from pathlib import Path
 
 from . import __version__
 from .data import load_questions, shuffled, stable_seed
-from .strategies import STRATEGIES, predict
+from .strategies import STRATEGIES, DEFAULT_STRATEGIES, predict, classify_options
 
 
 def wilson(correct, total):
@@ -33,7 +33,7 @@ def evaluate(path, format='jsonl', seed=42, shuffles=10, strategies=None, limit=
         raise ValueError('shuffles must be at least 1')
     if limit is not None and limit < 1:
         raise ValueError('limit must be positive')
-    names = list(STRATEGIES) + ['random'] if strategies is None else list(dict.fromkeys(strategies))
+    names = list(DEFAULT_STRATEGIES) if strategies is None else list(dict.fromkeys(strategies))
     if not names or any(name not in list(STRATEGIES) + ['random'] for name in names):
         raise ValueError('select at least one known strategy')
     path = Path(path)
@@ -52,7 +52,8 @@ def evaluate(path, format='jsonl', seed=42, shuffles=10, strategies=None, limit=
         'chance_accuracy': sum(1 / len(q.options) for q in questions) / n,
         'answer_histogram': dict(sorted(Counter(chr(65 + q.answer) for q in questions).items())),
         'option_count_histogram': dict(sorted(Counter(str(len(q.options)) for q in questions).items())),
-        'interval_note': 'Wilson 95% intervals assume independent questions; shared personas can violate this. Shuffle spread is sensitivity to order, not extra independent data.',
+        'option_type_histogram': dict(sorted(Counter(classify_options(q.options)[0] for q in questions).items())),
+        'interval_note': 'Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.',
         'results': [], 'predictions': [],
     }
     manifest = path.with_suffix(path.suffix + '.source.json')
@@ -61,6 +62,10 @@ def evaluate(path, format='jsonl', seed=42, shuffles=10, strategies=None, limit=
         if provenance.get('sha256') != report['sha256']:
             raise ValueError('source manifest hash does not match dataset')
         report['source'] = provenance
+        if 'source_order' in provenance:
+            report['source_order'] = provenance['source_order']
+        if provenance.get('adapter') == 'bixbench' and provenance.get('source_order_seed') != seed:
+            raise ValueError('BixBench source-order seed differs; download to a new path with the requested seed')
     controls = [[shuffled(q, stable_seed(seed, repeat)) for q in questions] for repeat in range(shuffles)]
     for name in names:
         predictions = [_prediction(name, q, seed) for q in questions]
@@ -75,6 +80,9 @@ def evaluate(path, format='jsonl', seed=42, shuffles=10, strategies=None, limit=
             'wilson_95': wilson(correct, n), 'lift_over_chance_pp': 100 * (correct / n - report['chance_accuracy']),
             'shuffled_mean': sum(scores) / shuffles, 'shuffled_min': min(scores), 'shuffled_max': max(scores),
             'shuffled_scores': scores, 'choice_invariance': sum(agreement) / shuffles,
+            'by_category': {category: {'n': sum(q.category == category for q in questions),
+                                      'correct': sum(p == q.answer and q.category == category for p, q in zip(predictions, questions))}
+                            for category in sorted({q.category for q in questions})},
         })
         report['predictions'].extend({'id': q.id, 'strategy': name, 'predicted': p, 'answer': q.answer, 'correct': p == q.answer} for q, p in zip(questions, predictions))
     return report
@@ -92,11 +100,14 @@ def markdown(report):
         low, high = row['wilson_95']
         lines.append(f"| {row['strategy']} | {row['accuracy']:.2%} | {low:.2%}–{high:.2%} | {row['lift_over_chance_pp']:+.2f} | {row['shuffled_mean']:.2%} | {row['shuffled_min']:.2%}–{row['shuffled_max']:.2%} | {row['choice_invariance']:.2%} |")
     lines += ['', f"Order: {report['source_order']}.", '', report['interval_note'], '',
-              '**Interpretation:** this audits answer-option artifacts. It does not measure memory or prove that a benchmark is invalid.', '',
+              '**Interpretation:** this audits answer-option artifacts. It does not measure end-to-end agent capability or prove that a benchmark is invalid.', '',
               f"SHA-256: `{report['sha256']}`", f"CSIEE {report['csiee_version']} / Python {report['python']}", '']
     if 'source' in report:
         source = report['source']
         lines += [f"Source: [{source['dataset']}]({source['url']})", f"Revision: `{source['revision']}` · License: {source['license']}", '']
+        if 'normalization' in source:
+            audit = source['normalization']
+            lines += [f"Released MCQ candidates: {audit['candidate_count']}; included: {audit['included_count']}; excluded: {audit['excluded_count']}. Every excluded ID/reason is in summary.json.", '']
     return '\n'.join(lines)
 
 

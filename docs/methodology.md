@@ -1,66 +1,72 @@
-# 方法与复现 / Methodology
+# Methods: a joke with an audit trail
 
-## What is being tested?
+CSIEE evaluates answer-option shortcuts in native multiple-choice components of agent-related benchmarks. It does not evaluate end-to-end agents. The three named predictors accept only a list of option strings: no question stem, conversation, tool output, dataset identity, gold label, or training step.
 
-CSIEE asks whether answer-option structure alone carries a useful signal. Its strategies receive **only a tuple of option strings**. They cannot see the question, correct index, user history, persona, category, or any LLM output. The evaluator holds labels separately. The implementation includes no trainable parameters, external inference calls, or test-set search.
+## The three rules
 
-This is an option-only diagnostic baseline, not an equivalent replacement for a memory system. A score above chance does not establish that a benchmark is invalid, that a model cheated, or that the same effect generalizes. A poor score is also a legitimate result. In particular, an artifact audit cannot infer whether data were AI-generated.
+| Strategy | Exact rule |
+| :-- | :-- |
+| `xiaoming` | Maximize Python `len(option.strip())`: Unicode code points, not tokens or bytes. |
+| `xiaohong` | Choose index 2 (C), or index 1 (B) if there are only two options. |
+| `xiaogang` | Infer numeric versus textual answer type from the entire option set. Maximize absolute distance from the median of the values or stripped character lengths. |
 
-## Fixed heuristics
+Ties in Xiaoming and Xiaogang prefer C if it is among the tied candidates; otherwise choose the earliest tied index. For two choices, B receives the same tie preference. No abstention or benchmark-specific rule is used.
 
-All lengths count Unicode code points after stripping outer whitespace. Internal whitespace and punctuation count. Thresholds and voting were fixed before the first benchmark run.
+Xiaogang is experimental. The numeric parser accepts signed scalar decimals, scientific notation, and an optional alphabetic, percent, or degree unit suffix. Every option must parse and have the same case-insensitive suffix; bare values and percentages may mix, with percentages divided by 100. It does not convert units. Finite numeric values are scaled by their maximum absolute magnitude before computing distances. This improves numerical stability but uses floating-point arithmetic.
 
-| Strategy | Rule | Fallback |
-| :-- | :-- | :-- |
-| `lite` | Choose C | With only two choices, B |
-| `pro` | If the longest is strictly >1.5× second-longest, choose it; otherwise if second-shortest is >1.5× shortest, choose shortest | C |
-| `promax` | One vote each from Pro, numeric rule, and cautious-wording rule; the latter two can abstain | A voting tie prefers C if tied, then lowest index |
-| `longest` / `shortest` | Always choose a length extremum | Tie prefers C, then lowest index |
-| `numeric` | When every option is a distinct pure number, choose the third-largest | C; fewer than three or tied values abstain in Pro Max |
-| `cautious` | Minimize whole-word occurrences of `always never only all must every impossible certainly` | Abstain if all counts match; otherwise tie prefers C, then lowest index |
-| `random` | Seeded uniform choice for each question | None |
+Everything else falls back to length: prose containing numbers, currency symbols, thousands separators, ranges, incompatible units, and nonfinite numeric values. This is a shallow **answer-type classifier**, not semantic classification of the question. All 12,984 featured questions use the length route. In the additional datasets, the numeric route handles 104/205 BixBench, 62/160 Backtrader-Bench, and 10/237 labeled FDABench questions. These results do not establish a benefit from numeric routing.
 
-The numeric rule accepts signs, decimals, scientific notation and percentages, normalizing percentages to fractions. It deliberately does not parse numbers embedded in sentences, units, currency, ranges, or thousands separators. Third-largest means descending rank 3, **not** the third option. Example: `[2, 8, 6, 4] → 4`.
+The strategy specification was written before the new screening runs. Dataset selection followed inspection of outcomes. This is exploratory work, not a preregistered study or a held-out benchmark validation.
 
-Pro generalizes the four-choice folklore to 2–26 options. Both outliers can exist; the longest rule has priority. Pro Max is a tiny fixed ensemble, not an exhaustive implementation of every folk saying. “Pro” is a product joke, not a promised accuracy ordering. Helper parsing and evaluation code are not included in the few-line strategy-body joke; all of it is visible in the repository.
+## Data and exclusions
 
-## PersonaMem-v2 adapter
+The [screening ledger](screening.md) names the evaluated releases, components, and excluded task types. Source revisions are pinned in the downloaders. Saved summaries include source URLs, revisions, SHA-256 hashes, and, for the new adapters, every excluded record ID and reason.
 
-Official sources:
+The canonical record has a unique string ID, 2–26 nonempty option strings, a zero-based integer answer index, and an optional category. Whitespace-stripped option text must be distinct. The adapters map explicit source labels to indices; they never infer a correct answer from its wording. Duplicate option texts are excluded because selecting the same content after a permutation would otherwise be ambiguous. APTBench additionally excludes unparseable choice markers and gold labels absent from the released choices. FDABench excludes rows without released gold answers. Remaining schema errors fail the run.
 
-- [Dataset and license](https://huggingface.co/datasets/bowen-upenn/PersonaMem-v2)
-- [Official evaluation implementation](https://github.com/bowen-upenn/PersonaMem-v2/blob/main/inference.py)
-- [Paper](https://arxiv.org/abs/2512.06688)
+APTBench's parser accepts sequential `(A)`, `(B)`, … markers, including inline semicolon-separated options. It removes separator semicolons. A repeated source ID can appear more than once in the exclusion ledger because distinct invalid source rows share an ID; included normalized IDs must be unique. Exclusions are structural, not based on whether a strategy would answer correctly.
 
-The source CSV stores `correct_answer` and `incorrect_answers` separately. CSIEE combines these into a choice set, then shuffles using a per-record SHA-256-derived seed. The correct index is remapped along with the options. It uses row index and persona ID as the record identity. JSON and Python literal lists are accepted; no `eval()` is used.
+PersonaMem-v2 releases correct and wrong answers separately. We combine them and deterministically shuffle per question before evaluation. BixBench's native MCQ format is similarly reconstructed from `ideal` plus its released `distractors`, without an optional refusal answer. BixBench's boolean `answer` field belongs to a separate hypothesis task and is not used as MCQ gold. No new distractors are generated. Other adapters preserve native option order.
 
-The pinned text benchmark revision is `ed956dea41521fc4499acbc63f966e0fd3c053ba`, path `benchmark/text/benchmark.csv`. The downloader saves an adjacent `.source.json` manifest with revision, source URL, split, license and SHA-256. Evaluation verifies the hash before copying this provenance into the report. No chat histories are downloaded. Upstream data remain under their upstream CC-BY-4.0 license; the MIT license covers this project's code and original demo only.
+Downloaded source data is ignored by Git. Only code, provenance, metrics, and prediction indices are committed. Upstream data keeps its own license; see the ledger and each source manifest. Users should consult upstream terms before downloading or reusing data.
 
-The official evaluator constructs MCQ order at runtime using a seed involving Python's `hash()`. CSIEE uses its own stable SHA-256-derived order to make separate-process runs reproducible. **Our accuracy uses a reconstructed order, not the official evaluation order.** Compare systems on the same exported choice order before making a head-to-head claim.
+## Evaluation protocol
 
-## Metrics and controls
+All current reports use CSIEE 0.2.0, seed **42**, all included records, and **10** independent deterministic permutations per question. The same questions and permutations are used for all strategies. A SHA-256-derived seed makes question-level randomness independent of Python's process hash randomization. Gold indices are remapped with the option text.
 
-### OpenBookQA comparison
+We report:
 
-The second experiment uses the complete 500-question test split from the official [OpenBookQA V1-Sep2018 archive](https://s3-us-west-2.amazonaws.com/ai2-website/data/OpenBookQA-V1-Sep2018.zip). The archive SHA-256 is pinned in the downloader, which reads only `Data/Main/test.jsonl`. The adapter preserves source option order and maps `answerKey` using each choice's explicit label, not an assumption about alphabetical order. The same unchanged strategies and permutation controls are used.
+- **Input-order accuracy:** correct predictions divided by included questions. PersonaMem and BixBench use the seeded reconstruction described above.
+- **Chance:** the mean of `1 / number_of_options` over questions. APTBench has varying option counts, so its chance is 20.84%, not 25%.
+- **Seeded random:** a uniform random index per question; this observed score can differ from exact expected chance.
+- **Shuffled mean and range:** accuracy over each of the ten option permutations. The range measures sensitivity to ordering, not sampling uncertainty.
+- **Same choice:** the fraction selecting identical option content before and after permutation, averaged across repeats. Position preferences and length ties can reduce it.
+- **Wilson 95% interval:** a descriptive binomial interval for input-order accuracy. Shared personas, scenarios, source problems, or task templates can violate the independence assumption. No cluster correction is claimed.
+- **Per-category counts:** available in `summary.json`, alongside answer-position and option-count histograms.
 
-Credit: [Mihaylov et al., EMNLP 2018](https://arxiv.org/abs/1809.02789), [official code](https://github.com/allenai/OpenBookQA). The [upstream dataset card](https://huggingface.co/datasets/allenai/openbookqa) lists the dataset license as unknown. We do not redistribute its question/answer text or apply the repository's MIT license to it; consult the upstream terms for reuse. Public results contain derived metrics and indices only.
+`predictions.jsonl` stores one input-order record per question and strategy. Permutation aggregate scores are in `summary.json`. The source manifest's dataset hash is verified before evaluation. For BixBench, a requested evaluation seed must match its reconstruction seed; to change it, download to a fresh path with `--seed`, then evaluate that path.
 
-### Metric definitions
+## Interpretation and selection
 
-- Accuracy is the fraction of correctly selected option indices. There is no LLM judge.
-- The exact expected uniform-random baseline is `mean(1 / number_of_options)`. Mixed choice counts need not have a 25% chance level.
-- A separate seeded random run gives one realization of that baseline.
-- Each strategy is evaluated on the source order and the same 10 independently seeded option permutations. Labels move with their answer text.
-- Shuffled mean/min/max describe sensitivity to option order. These repeated evaluations are **not independent new questions**.
-- Choice invariance compares selected answer **text**, not letters, across source and permuted inputs.
-- Wilson 95% intervals are descriptive question-level intervals. Questions from a shared persona can be correlated; these are not persona-cluster-adjusted intervals or claims of statistical significance.
-- Testing multiple heuristics and highlighting the best one introduces selection effects. Report every predeclared strategy, and confirm interesting signals on another dataset or a held-out split.
+The exploratory positive-signal rule was a shuffled mean more than **5 percentage points above chance** for a named strategy. PersonaMem-v2, AgentSense, and ACPBench meet it. APTBench and AgentHop are included for strong reverse signals: a named heuristic falls more than 5 points below chance after permutations. The reverse-signal presentation was chosen after inspecting outcomes; it is not an additional preregistered criterion.
 
-`--limit N` explicitly selects the **first N records**, not a random subsample. The full dataset hash, number loaded and selection rule are retained. Input errors and duplicate choices/IDs fail loudly rather than being silently excluded from the denominator.
+We report all eight completed screens, including BixBench and Backtrader-Bench's weak results and FDABench's selected public-label subset. The front-page five are a showcase, not a representative sample of agent benchmarks. Do not infer how frequently these artifacts occur across the field. Do not treat multiple permutations, multiple strategies, or benchmark selection as independent confirmatory evidence.
 
-## Reports
+High option-only accuracy can reflect answer verbosity, distractor construction, task format, or other correlations. Low accuracy can also reveal structure. Neither proves that a benchmark is invalid, that a model exploits the same shortcut, or that a ruler can perform an agent's underlying task. No scores from external agent leaderboards are used as direct comparisons. We deliberately publish no pooled score across heterogeneous benchmark families.
 
-Each run writes `summary.json`, `report.md`, and `predictions.jsonl`. Predictions record strategy, question ID, predicted index and correct index; they do not redistribute answer text or user histories. Summaries include software/Python version, input hash, source revision when available, seed, option count distribution, answer distribution, controls and metrics.
+## Reproduce
 
-The repository's committed PersonaMem-v2 results were generated using the commands in the README. `data/demo.jsonl` is deliberately synthetic and must never be described as real benchmark evidence. To add another benchmark, adapt it to the documented JSONL schema while preserving its official split and license, then use the same evaluation command.
+```bash
+python -m pip install .
+python -m unittest discover -s tests -v
+csiee suite --seed 42 --shuffles 10 --output results/local/suite
+csiee suite --all --seed 42 --shuffles 10 --output results/local/all
+```
+
+The suite downloads missing files to `data/raw/` and requires a valid adjacent `.source.json` manifest for reused files. It does not silently replace existing downloads. A source outage should fail visibly; previously downloaded official bytes can be normalized with `prepare_benchmark`, which records their actual hashes. Source hashes in the committed reports allow comparison with a later download.
+
+## Legacy ablations
+
+The CLI retains `lite` (C), `longest`, `shortest`, `pro` (1.5× length-gap rule), `numeric` (third-largest distinct numeric value), `cautious` (fewest absolute-word matches), and `promax` (a vote of the older rules). They are not the new Xiaogang policy. Request them explicitly with `--strategies` for ablations.
+
+The [earlier PersonaMem report](../results/personamem-v2/report.md) and [OpenBookQA report](../results/openbookqa/report.md) are v0.1 archives. OpenBookQA is a general QA sanity check, not one of the five agent-related benchmark families. Current results live in [results/classmates](../results/classmates/README.md).
