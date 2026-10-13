@@ -66,6 +66,9 @@ text(48, 763, 'CSIEE: 5,000 text MCQs, seed 42, reconstructed option order. Full
 out = ROOT / 'assets'
 fig.savefig(out / 'personamem-comparison.png', dpi=180, facecolor=BG)
 fig.savefig(out / 'personamem-comparison.svg', facecolor=BG, metadata={'Date': None, 'Creator': 'CSIEE / Matplotlib'})
+# Normalize Matplotlib's multiline path whitespace for clean Git diffs.
+svg_path = out / 'personamem-comparison.svg'
+svg_path.write_bytes(('\n'.join(line.rstrip() for line in svg_path.read_text(encoding='utf-8').splitlines()) + '\n').encode('utf-8'))
 plt.close(fig)
 
 table = ['| Method | History / memory | MCQ accuracy | Shuffled mean | Source |', '| :-- | :-- | --: | --: | :-- |']
