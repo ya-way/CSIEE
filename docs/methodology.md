@@ -52,7 +52,7 @@ The exploratory positive-signal rule was a shuffled mean more than **5 percentag
 
 We report all eight completed screens, including BixBench and Backtrader-Bench's weak results and FDABench's selected public-label subset. The front-page five are a showcase, not a representative sample of agent benchmarks. Do not infer how frequently these artifacts occur across the field. Do not treat multiple permutations, multiple strategies, or benchmark selection as independent confirmatory evidence.
 
-High option-only accuracy can reflect answer verbosity, distractor construction, task format, or other correlations. Low accuracy can also reveal structure. Neither proves that a benchmark is invalid, that a model exploits the same shortcut, or that a ruler can perform an agent's underlying task. No scores from external agent leaderboards are used as direct comparisons. We deliberately publish no pooled score across heterogeneous benchmark families.
+High option-only accuracy can reflect answer verbosity, distractor construction, task format, or other correlations. Low accuracy can also reveal structure. Neither proves that a benchmark is invalid, that a model exploits the same shortcut, or that a ruler can perform an agent's underlying task. The [PersonaMem comparison](personamem-comparison.md) places cited paper MCQ values and local results in one table, with input access and provenance labeled; those model scores were not rerun under the CSIEE protocol. It is contextual evidence, not a matched agent leaderboard. We deliberately publish no pooled score across heterogeneous benchmark families.
 
 ## Reproduce
 

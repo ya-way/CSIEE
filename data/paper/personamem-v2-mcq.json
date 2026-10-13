@@ -1,0 +1,23 @@
+{
+  "paper": "PersonaMem-v2: Towards Personalized Intelligence via Learning Implicit User Personas and Agentic Memory",
+  "authors": "Jiang et al.",
+  "version": "arXiv:2512.06688v1",
+  "url": "https://arxiv.org/abs/2512.06688v1",
+  "metric": "MCQ accuracy (%)",
+  "transcription": "Numeric labels printed in Figures 4 and 6; not estimates from bar heights. Open-ended values excluded.",
+  "verified_on": "2026-10-13",
+  "rows": [
+    {"method": "GPT-5-mini", "group": "frontier", "figure": 4, "context": "32k history", "accuracy": 48.7, "mcq_128k": 44.1},
+    {"method": "GPT-5-Chat", "group": "frontier", "figure": 4, "context": "32k history", "accuracy": 45.6, "mcq_128k": 41.4},
+    {"method": "o4-mini", "group": "frontier", "figure": 4, "context": "32k history", "accuracy": 39.1, "mcq_128k": 38.9},
+    {"method": "GPT-4.1", "group": "frontier", "figure": 4, "context": "32k history", "accuracy": 38.7, "mcq_128k": 38.2},
+    {"method": "GPT-5-nano", "group": "frontier", "figure": 4, "context": "32k history", "accuracy": 37.9, "mcq_128k": 33.9},
+    {"method": "GPT-4.1-mini", "group": "frontier", "figure": 4, "context": "32k history", "accuracy": 37.6, "mcq_128k": 37.5},
+    {"method": "Qwen3-4B · Agentic Memory", "group": "trained", "figure": 6, "context": "2k memory*", "accuracy": 55.2},
+    {"method": "Qwen3-4B · GRPO", "group": "trained", "figure": 6, "context": "32k history", "accuracy": 53.8},
+    {"method": "Qwen3-4B · GRPO (MCQ-only)", "group": "trained", "figure": 6, "context": "32k history", "accuracy": 55.5},
+    {"method": "Qwen3-4B · GRPO (OE-only)", "group": "trained", "figure": 6, "context": "32k history", "accuracy": 35.6},
+    {"method": "Qwen3-4B · SFT", "group": "trained", "figure": 6, "context": "32k history", "accuracy": 35.0},
+    {"method": "Qwen3-4B · Base", "group": "trained", "figure": 6, "context": "32k history", "accuracy": 30.5}
+  ]
+}

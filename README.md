@@ -37,6 +37,36 @@ $ csiee guess 10 11 12 99 --strategy xiaogang
 {"strategy": "xiaogang", "index": 3, "label": "D", "option": "99"}
 ```
 
+<!-- personamem:start -->
+## PersonaMem-v2: a ruler enters the chat
+
+![PersonaMem-v2: paper-reported MCQ results and the three CSIEE classmates, with input context and accuracy on a shared scale](assets/personamem-comparison.png)
+
+**Xiaoming: 45.62%. GPT-5-Chat, as reported in the paper: 45.6%.** One brought a ruler; the other received 32k of conversation history. These are different evaluation pipelines, not a claim of equivalent capability.
+
+<details>
+<summary><strong>The same table, in text — paper values and our measurements</strong></summary>
+
+| Method | History / memory | MCQ accuracy | Shuffled mean | Source |
+| :-- | :-- | --: | --: | :-- |
+| GPT-5-mini | 32k history | 48.7% | — | Paper Fig. 4 |
+| GPT-5-Chat | 32k history | 45.6% | — | Paper Fig. 4 |
+| Qwen3-4B · Agentic Memory | 2k memory* | 55.2% | — | Paper Fig. 6 |
+| Qwen3-4B · GRPO | 32k history | 53.8% | — | Paper Fig. 6 |
+| **Xiaoming · longest** | **Options only** | **45.62%** | 45.59% | CSIEE, n=5,000 |
+| **Xiaohong · C** | **Options only** | **24.68%** | 25.22% | CSIEE, n=5,000 |
+| **Xiaogang · outlier** | **Options only** | **36.90%** | 37.05% | CSIEE, n=5,000 |
+| Uniform chance | Options only | 25.00% | 25.00% (expected) | Analytical |
+
+Paper: [Jiang et al., Figs. 4 & 6](https://arxiv.org/html/2512.06688v1#S4); MCQ only, with 32k frontier results. *Agentic Memory builds a 2k memory from 32k history. CSIEE uses seed 42 and reconstructed option order on all 5,000 text MCQs. Published model scores were not rerun. Paper values retain one decimal; local scores retain two. “—” means no paper permutation control is available.
+
+</details>
+
+[Full comparison, 128k results & source notes](docs/personamem-comparison.md) · [Vector figure](assets/personamem-comparison.svg)
+
+Four paper references are shown for clarity; base/SFT models, training ablations and other frontier variants remain in the full comparison.
+<!-- personamem:end -->
+
 ## Report card
 
 Five agent-related benchmark families. Memory, social reasoning, planning, agentic subtasks, and scientific research. **Native multiple-choice components only**; these are not end-to-end agent scores.
