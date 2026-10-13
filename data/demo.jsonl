@@ -1,0 +1,8 @@
+{"id":"demo-01","options":["cat","dog","a surprisingly verbose answer with absolutely no evidence","bird"],"answer":2,"category":"synthetic-long"}
+{"id":"demo-02","options":["10","40","20","30"],"answer":2,"category":"synthetic-number"}
+{"id":"demo-03","options":["Always do it","It depends on context","Never do it","You must do it every time"],"answer":1,"category":"synthetic-wording"}
+{"id":"demo-04","options":["north","south","east","west"],"answer":0,"category":"synthetic-position"}
+{"id":"demo-05","options":["an unnecessarily lengthy first answer","no","an unnecessarily lengthy third answer","an unnecessarily lengthy fourth answer"],"answer":1,"category":"synthetic-short"}
+{"id":"demo-06","options":["2","8","6","4"],"answer":3,"category":"synthetic-number"}
+{"id":"demo-07","options":["one","two","six","ten"],"answer":3,"category":"synthetic-position"}
+{"id":"demo-08","options":["A rather long distractor chosen to tempt the baseline","yes","maybe","no"],"answer":2,"category":"synthetic-counterexample"}

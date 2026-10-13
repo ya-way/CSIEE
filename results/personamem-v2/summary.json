@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.1.0",
+  "python": "3.9.13",
+  "dataset": "personamem-v2.csv",
+  "sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52",
+  "format": "personamem-v2",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 5000,
+  "total_loaded": 5000,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "seeded reconstruction; NOT official evaluation order",
+  "chance_accuracy": 0.25,
+  "answer_histogram": {
+    "A": 1298,
+    "B": 1248,
+    "C": 1234,
+    "D": 1220
+  },
+  "option_count_histogram": {
+    "4": 5000
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "lite",
+      "correct": 1234,
+      "accuracy": 0.2468,
+      "wilson_95": [
+        0.23504675832138558,
+        0.25894200594359135
+      ],
+      "lift_over_chance_pp": -0.32000000000000084,
+      "shuffled_mean": 0.25217999999999996,
+      "shuffled_min": 0.2408,
+      "shuffled_max": 0.2608,
+      "shuffled_scores": [
+        0.2554,
+        0.2504,
+        0.256,
+        0.2608,
+        0.2506,
+        0.2556,
+        0.2548,
+        0.2408,
+        0.254,
+        0.2434
+      ],
+      "choice_invariance": 0.25032000000000004
+    },
+    {
+      "strategy": "pro",
+      "correct": 1204,
+      "accuracy": 0.2408,
+      "wilson_95": [
+        0.22915047350813697,
+        0.2528475031801806
+      ],
+      "lift_over_chance_pp": -0.9200000000000014,
+      "shuffled_mean": 0.24626,
+      "shuffled_min": 0.2362,
+      "shuffled_max": 0.2542,
+      "shuffled_scores": [
+        0.2502,
+        0.244,
+        0.251,
+        0.2542,
+        0.245,
+        0.2478,
+        0.25,
+        0.2362,
+        0.2478,
+        0.2364
+      ],
+      "choice_invariance": 0.27444
+    },
+    {
+      "strategy": "promax",
+      "correct": 1212,
+      "accuracy": 0.2424,
+      "wilson_95": [
+        0.23072250786083676,
+        0.25447301218125673
+      ],
+      "lift_over_chance_pp": -0.7599999999999996,
+      "shuffled_mean": 0.24764,
+      "shuffled_min": 0.2374,
+      "shuffled_max": 0.255,
+      "shuffled_scores": [
+        0.2514,
+        0.2452,
+        0.2524,
+        0.255,
+        0.2468,
+        0.2506,
+        0.251,
+        0.2374,
+        0.2492,
+        0.2374
+      ],
+      "choice_invariance": 0.26856
+    },
+    {
+      "strategy": "longest",
+      "correct": 2281,
+      "accuracy": 0.4562,
+      "wilson_95": [
+        0.44243312438295873,
+        0.4700341263074284
+      ],
+      "lift_over_chance_pp": 20.62,
+      "shuffled_mean": 0.45592000000000005,
+      "shuffled_min": 0.4548,
+      "shuffled_max": 0.457,
+      "shuffled_scores": [
+        0.4548,
+        0.457,
+        0.4558,
+        0.4552,
+        0.4562,
+        0.4566,
+        0.455,
+        0.4562,
+        0.456,
+        0.4564
+      ],
+      "choice_invariance": 0.98726
+    },
+    {
+      "strategy": "shortest",
+      "correct": 1164,
+      "accuracy": 0.2328,
+      "wilson_95": [
+        0.22129373212138814,
+        0.24471652779805048
+      ],
+      "lift_over_chance_pp": -1.7199999999999993,
+      "shuffled_mean": 0.23162000000000002,
+      "shuffled_min": 0.2306,
+      "shuffled_max": 0.2324,
+      "shuffled_scores": [
+        0.2316,
+        0.2306,
+        0.232,
+        0.2312,
+        0.232,
+        0.2318,
+        0.231,
+        0.2318,
+        0.2318,
+        0.2324
+      ],
+      "choice_invariance": 0.9936999999999999
+    },
+    {
+      "strategy": "numeric",
+      "correct": 1234,
+      "accuracy": 0.2468,
+      "wilson_95": [
+        0.23504675832138558,
+        0.25894200594359135
+      ],
+      "lift_over_chance_pp": -0.32000000000000084,
+      "shuffled_mean": 0.25217999999999996,
+      "shuffled_min": 0.2408,
+      "shuffled_max": 0.2608,
+      "shuffled_scores": [
+        0.2554,
+        0.2504,
+        0.256,
+        0.2608,
+        0.2506,
+        0.2556,
+        0.2548,
+        0.2408,
+        0.254,
+        0.2434
+      ],
+      "choice_invariance": 0.25032000000000004
+    },
+    {
+      "strategy": "cautious",
+      "correct": 1214,
+      "accuracy": 0.2428,
+      "wilson_95": [
+        0.23111555167444453,
+        0.25487935420609287
+      ],
+      "lift_over_chance_pp": -0.7200000000000012,
+      "shuffled_mean": 0.25022,
+      "shuffled_min": 0.2364,
+      "shuffled_max": 0.2592,
+      "shuffled_scores": [
+        0.2518,
+        0.2508,
+        0.2538,
+        0.2592,
+        0.2496,
+        0.2524,
+        0.251,
+        0.244,
+        0.2532,
+        0.2364
+      ],
+      "choice_invariance": 0.28891999999999995
+    },
+    {
+      "strategy": "random",
+      "correct": 1222,
+      "accuracy": 0.2444,
+      "wilson_95": [
+        0.23268786712254672,
+        0.2565045821117665
+      ],
+      "lift_over_chance_pp": -0.5599999999999994,
+      "shuffled_mean": 0.25114000000000003,
+      "shuffled_min": 0.247,
+      "shuffled_max": 0.2576,
+      "shuffled_scores": [
+        0.2576,
+        0.2492,
+        0.2474,
+        0.248,
+        0.2488,
+        0.2522,
+        0.247,
+        0.2538,
+        0.2542,
+        0.2532
+      ],
+      "choice_invariance": 0.24791999999999997
+    }
+  ],
+  "source": {
+    "dataset": "bowen-upenn/PersonaMem-v2",
+    "revision": "ed956dea41521fc4499acbc63f966e0fd3c053ba",
+    "split": "benchmark_text",
+    "url": "https://huggingface.co/datasets/bowen-upenn/PersonaMem-v2/resolve/ed956dea41521fc4499acbc63f966e0fd3c053ba/benchmark/text/benchmark.csv",
+    "license": "CC-BY-4.0 (upstream data)",
+    "sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52"
+  }
+}

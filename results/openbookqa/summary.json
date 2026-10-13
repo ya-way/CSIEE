@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.1.0",
+  "python": "3.9.13",
+  "dataset": "openbookqa.jsonl",
+  "sha256": "feb2bd9bfa6161dca4c44ce90e51e8cdada83eb5061407fcdc5005e44aaf2313",
+  "format": "openbookqa",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 500,
+  "total_loaded": 500,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "input order; labels mapped from source",
+  "chance_accuracy": 0.25,
+  "answer_histogram": {
+    "A": 138,
+    "B": 126,
+    "C": 132,
+    "D": 104
+  },
+  "option_count_histogram": {
+    "4": 500
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "lite",
+      "correct": 132,
+      "accuracy": 0.264,
+      "wilson_95": [
+        0.22726783141305193,
+        0.3043308572848008
+      ],
+      "lift_over_chance_pp": 1.4000000000000012,
+      "shuffled_mean": 0.2488,
+      "shuffled_min": 0.222,
+      "shuffled_max": 0.29,
+      "shuffled_scores": [
+        0.244,
+        0.25,
+        0.248,
+        0.222,
+        0.252,
+        0.23,
+        0.278,
+        0.232,
+        0.29,
+        0.242
+      ],
+      "choice_invariance": 0.2524
+    },
+    {
+      "strategy": "pro",
+      "correct": 141,
+      "accuracy": 0.282,
+      "wilson_95": [
+        0.2443364332272433,
+        0.32298777921399346
+      ],
+      "lift_over_chance_pp": 3.1999999999999975,
+      "shuffled_mean": 0.2854,
+      "shuffled_min": 0.266,
+      "shuffled_max": 0.312,
+      "shuffled_scores": [
+        0.288,
+        0.286,
+        0.278,
+        0.27,
+        0.29,
+        0.266,
+        0.302,
+        0.282,
+        0.312,
+        0.28
+      ],
+      "choice_invariance": 0.44060000000000005
+    },
+    {
+      "strategy": "promax",
+      "correct": 142,
+      "accuracy": 0.284,
+      "wilson_95": [
+        0.2462377719556586,
+        0.32505594312373204
+      ],
+      "lift_over_chance_pp": 3.3999999999999977,
+      "shuffled_mean": 0.28240000000000004,
+      "shuffled_min": 0.264,
+      "shuffled_max": 0.308,
+      "shuffled_scores": [
+        0.286,
+        0.282,
+        0.278,
+        0.266,
+        0.286,
+        0.264,
+        0.296,
+        0.28,
+        0.308,
+        0.278
+      ],
+      "choice_invariance": 0.43000000000000005
+    },
+    {
+      "strategy": "longest",
+      "correct": 183,
+      "accuracy": 0.366,
+      "wilson_95": [
+        0.32494760488221347,
+        0.40909571836148256
+      ],
+      "lift_over_chance_pp": 11.6,
+      "shuffled_mean": 0.36219999999999997,
+      "shuffled_min": 0.35,
+      "shuffled_max": 0.372,
+      "shuffled_scores": [
+        0.362,
+        0.35,
+        0.36,
+        0.368,
+        0.354,
+        0.372,
+        0.366,
+        0.368,
+        0.352,
+        0.37
+      ],
+      "choice_invariance": 0.9213999999999999
+    },
+    {
+      "strategy": "shortest",
+      "correct": 85,
+      "accuracy": 0.17,
+      "wilson_95": [
+        0.13962036610396117,
+        0.20541169860066333
+      ],
+      "lift_over_chance_pp": -7.999999999999999,
+      "shuffled_mean": 0.1566,
+      "shuffled_min": 0.146,
+      "shuffled_max": 0.166,
+      "shuffled_scores": [
+        0.154,
+        0.152,
+        0.146,
+        0.152,
+        0.166,
+        0.15,
+        0.158,
+        0.16,
+        0.166,
+        0.162
+      ],
+      "choice_invariance": 0.8606
+    },
+    {
+      "strategy": "numeric",
+      "correct": 132,
+      "accuracy": 0.264,
+      "wilson_95": [
+        0.22726783141305193,
+        0.3043308572848008
+      ],
+      "lift_over_chance_pp": 1.4000000000000012,
+      "shuffled_mean": 0.24779999999999996,
+      "shuffled_min": 0.22,
+      "shuffled_max": 0.288,
+      "shuffled_scores": [
+        0.242,
+        0.25,
+        0.248,
+        0.22,
+        0.252,
+        0.228,
+        0.276,
+        0.232,
+        0.288,
+        0.242
+      ],
+      "choice_invariance": 0.2548
+    },
+    {
+      "strategy": "cautious",
+      "correct": 132,
+      "accuracy": 0.264,
+      "wilson_95": [
+        0.22726783141305193,
+        0.3043308572848008
+      ],
+      "lift_over_chance_pp": 1.4000000000000012,
+      "shuffled_mean": 0.25039999999999996,
+      "shuffled_min": 0.228,
+      "shuffled_max": 0.288,
+      "shuffled_scores": [
+        0.248,
+        0.25,
+        0.248,
+        0.23,
+        0.25,
+        0.228,
+        0.278,
+        0.24,
+        0.288,
+        0.244
+      ],
+      "choice_invariance": 0.2574
+    },
+    {
+      "strategy": "random",
+      "correct": 116,
+      "accuracy": 0.232,
+      "wilson_95": [
+        0.19712923845271468,
+        0.2709574080346774
+      ],
+      "lift_over_chance_pp": -1.799999999999999,
+      "shuffled_mean": 0.24480000000000005,
+      "shuffled_min": 0.222,
+      "shuffled_max": 0.258,
+      "shuffled_scores": [
+        0.238,
+        0.242,
+        0.256,
+        0.248,
+        0.244,
+        0.248,
+        0.222,
+        0.258,
+        0.236,
+        0.256
+      ],
+      "choice_invariance": 0.24579999999999996
+    }
+  ],
+  "source": {
+    "dataset": "allenai/OpenBookQA",
+    "revision": "V1-Sep2018",
+    "split": "test",
+    "url": "https://s3-us-west-2.amazonaws.com/ai2-website/data/OpenBookQA-V1-Sep2018.zip",
+    "archive_sha256": "82368cf05df2e3b309c17d162e10b888b4d768fad6e171e0a041954c8553be46",
+    "member": "OpenBookQA-V1-Sep2018/Data/Main/test.jsonl",
+    "license": "Unspecified in upstream dataset card; consult upstream terms",
+    "sha256": "feb2bd9bfa6161dca4c44ce90e51e8cdada83eb5061407fcdc5005e44aaf2313"
+  }
+}
