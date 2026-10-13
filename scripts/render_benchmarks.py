@@ -167,7 +167,13 @@ def document(spec, paper, summary, rows, chance):
 
 def main():
     section = '## Five exams. Three students. No studying.\n\n'
-    section += 'Paper results and CSIEE measurements share each chart, sorted from highest to lowest. **Every baseline in the selected paper columns is retained, including low scores.** Teal is paper-reported; red is options-only. Different inputs and evaluation pipelines make these contextual comparisons, not matched agent leaderboards.\n\n'
+    section += '[01 Memory](#personamem-v2) · [02 Social reasoning](#agentsense) · [03 Planning](#acpbench) · [04 Agentic potential](#aptbench) · [05 Research](#agenthop)\n\n'
+    section += '**The literature meets the stationery aisle.** Teal bars are published model results; red bars are our three option-only rules. Every baseline in the selected paper columns stays on the page, sorted high to low. Different inputs and evaluation pipelines mean these are contextual comparisons, not a matched agent leaderboard.\n\n'
+    quips = ['5,000 memory questions. No memories consulted.',
+             'No conversation. Still 49.87% for Xiaoming.',
+             'Xiaogang brought a slightly larger ruler.',
+             'This is the part where the ruler loses.',
+             '0.89%. Even a ruler has a bad day.']
     gallery = '# Five benchmark comparisons\n\nVertical bars, descending accuracy, and all listed paper baselines. Each chart uses a zero-based 0–100% scale. Source notes explain differences in inputs, subsets and aggregation.\n\n'
     for i, spec in enumerate(SPECS, 1):
         paper, summary, rows, chance = load_rows(spec)
@@ -175,10 +181,10 @@ def main():
         table = document(spec, paper, summary, rows, chance)
         key, title = spec['key'], spec['title']
         caption = spec['subtitle']
-        section += f'### {title}\n\n![{title}: descending vertical bars, paper results and CSIEE](assets/{key}-comparison.png)\n\n'
-        section += f"{caption}. {spec['access']}\n\n"
-        section += f'<details>\n<summary>All values, in one table</summary>\n\n{table}\n\n</details>\n\n'
-        section += f'[Source notes and exact scope](docs/{key}-comparison.md) · [Vector figure](assets/{key}-comparison.svg)\n\n'
+        section += f'### {title}\n\n*{quips[i-1]}*\n\n![{title}: descending vertical bars, paper results and CSIEE](assets/{key}-comparison.png)\n\n'
+        section += f"{caption.rstrip('.')}. {spec['access']}\n\n"
+        section += f'<details>\n<summary><strong>Open the mark scheme — all {len(rows)} results and their sources</strong></summary>\n\n{table}\n\n</details>\n\n'
+        section += f'[Source notes & exact scope](docs/{key}-comparison.md) · [PNG](assets/{key}-comparison.png) · [SVG](assets/{key}-comparison.svg) · [Back to results](#report-card)\n\n'
         gallery += f'## {title}\n\n![{title}](../assets/{key}-comparison.png)\n\n{caption}. [Full table and sources]({key}-comparison.md).\n\n'
         print(f"{title}: {spec['count']} paper + 3 CSIEE bars; descending; chance {chance:.2f}%")
     gallery += 'APTBench shows the 614-question closed-ended Plan_EN subtask; ACPBench uses a seven-task macro-average. The full-screen report card keeps its original scope and question-weighted accuracy.\n'

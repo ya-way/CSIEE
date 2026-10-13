@@ -6,6 +6,14 @@ Visual direction: a cream exam-paper zine, black ink, red teacher annotations, m
 
 The illustration is a joke, not a diagram of an evaluated example. See `cover-prompt.txt` for the exact generation prompt.
 
+## Examination stationery
+
+The admission ticket, three student cards, end-of-paper colophon, Python badge and license badge are original, self-contained SVG designs. They use the same cream, charcoal, red and teal palette as the illustration. The ticket's question count is derived from the five committed benchmark summaries. Candidate cards describe the actual rules; their decorative diagrams are not benchmark measurements.
+
+The ticket and roster each have a mobile layout selected through GitHub's supported `picture` element. Text alternatives and the expandable plain-text rules keep the content accessible. All graphics load from this repository. The CI badge is supplied by GitHub Actions and reflects the actual workflow status.
+
+Regenerate the SVG artwork with `python scripts/render_homepage_assets.py` (standard library only). The [source script](../scripts/render_homepage_assets.py) and [homepage design notes](../docs/plans/2026-10-14-public-homepage-design.md) are included.
+
 ## Five benchmark comparisons
 
 `personamem-comparison`, `agentsense-comparison`, `acpbench-comparison`, `aptbench-comparison`, and `agenthop-comparison` each have PNG and SVG exports. These are original Matplotlib renderings of cited numerical results and local CSIEE counts, not generated illustrations or copies of paper figures. The cream, charcoal, teal and red palette carries the cover's visual direction into precise vertical bar charts. All selected paper baselines are retained and sorted by descending accuracy alongside the three classmates.
