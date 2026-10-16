@@ -85,10 +85,31 @@ def roster(mobile=False):
          'Xiaoming picks the longest. Xiaohong picks C, or B with two options. Xiaogang picks the number or length farthest from the median.', parts)
 
 
+def spotlight(mobile=False):
+    w, h = (420, 472) if mobile else (1200, 250)
+    parts = []
+    entries = [('perma', 'PERMA / TYPE 3', '580 questions · eight choices', 'Full Type-3 component; SD + MD'),
+               ('membench-msa', 'MEMBENCH / MSA SUBTASK', '500 questions · four choices', 'Selected subtask, not the full suite')]
+    for i, (key, label, scope, boundary) in enumerate(entries):
+        report = json.loads((ROOT/f'results/classmates/{key}/summary.json').read_text(encoding='utf-8'))
+        result = next(row for row in report['results'] if row['strategy'] == 'xiaoming')
+        x, y, cw, ch = (0, i*242, 420, 230) if mobile else (i*610, 0, 590, 250)
+        color = TEAL if i == 0 else RED
+        parts += [f'<g transform="translate({x} {y})"><rect x="1" y="1" width="{cw-2}" height="{ch-2}" rx="4" fill="{PAPER}" stroke="{RULE}"/>',
+                  f'<path d="M1 1H{cw-1}V7H1Z" fill="{color}"/>',
+                  text(24, 37, label, 14, color, 'monospace', '700'),
+                  text(24, 116, f"{result['shuffled_mean']:.2%}", 66 if mobile else 76, INK, 'Georgia, serif'),
+                  text(26, 146, 'SHUFFLED ACCURACY / PICK THE LONGEST', 12, color, 'monospace'),
+                  text(26, 181, scope, 15), text(26, 207, boundary, 13), '</g>']
+    save('spotlight-mobile.svg' if mobile else 'spotlight.svg', w, h,
+         'Selected option-only results: PERMA Type 3 and MemBench multi-session assistant subtask. Ten shuffles, unchanged longest-choice rule.', parts)
+
+
 def main():
     for mobile in [False, True]:
         ticket(mobile)
         roster(mobile)
+        spotlight(mobile)
     save('end-of-paper.svg', 1200, 146, 'End of paper. No questions were understood.', [
         f'<rect width="1200" height="146" fill="{PAPER}"/>',
         f'<path d="M35 37H465M735 37H1165" stroke="{RULE}"/>',
@@ -100,7 +121,7 @@ def main():
             f'<rect width="124" height="24" rx="3" fill="{INK}"/><path d="M73 0h48q3 0 3 3v18q0 3-3 3H73Z" fill="{TEAL}"/>',
             text(36, 16, left, 10, PAPER, 'monospace', extra='text-anchor="middle"'),
             text(98, 16, right, 11, PAPER, 'monospace', extra='text-anchor="middle"')])
-    print('Rendered seven original SVG assets, including mobile ticket and roster.')
+    print('Rendered nine original SVG assets, including responsive spotlight, ticket and roster.')
 
 
 if __name__ == '__main__':

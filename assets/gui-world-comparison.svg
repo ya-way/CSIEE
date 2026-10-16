@@ -1978,7 +1978,7 @@ L 1123.2 574.56
 " style="fill: none; stroke: #252927; stroke-width: 0.7; stroke-linecap: square"/>
   </g>
   <g id="text_33">
-   <!-- CSIEE / BENCHMARK NOTES                                      09 / 10 -->
+   <!-- CSIEE / BENCHMARK NOTES                                      04 / 10 -->
    <g style="fill: #ad493b" transform="translate(69.12 34.2) scale(0.11 -0.11)">
     <defs>
      <path id="DejaVuSans-Bold-53" d="M 3834 4519
@@ -2208,36 +2208,6 @@ L 31 3756
 L 31 4666
 z
 " transform="scale(0.015625)"/>
-     <path id="DejaVuSans-Bold-39" d="M 641 103
-L 641 966
-Q 928 831 1190 764
-Q 1453 697 1709 697
-Q 2247 697 2547 995
-Q 2847 1294 2900 1881
-Q 2688 1725 2447 1647
-Q 2206 1569 1925 1569
-Q 1209 1569 770 1986
-Q 331 2403 331 3084
-Q 331 3838 820 4291
-Q 1309 4744 2131 4744
-Q 3044 4744 3544 4128
-Q 4044 3513 4044 2388
-Q 4044 1231 3459 570
-Q 2875 -91 1856 -91
-Q 1528 -91 1228 -42
-Q 928 6 641 103
-z
-M 2125 2350
-Q 2441 2350 2600 2554
-Q 2759 2759 2759 3169
-Q 2759 3575 2600 3781
-Q 2441 3988 2125 3988
-Q 1809 3988 1650 3781
-Q 1491 3575 1491 3169
-Q 1491 2759 1650 2554
-Q 1809 2350 2125 2350
-z
-" transform="scale(0.015625)"/>
     </defs>
     <use xlink:href="#DejaVuSans-Bold-43"/>
     <use xlink:href="#DejaVuSans-Bold-53" x="75.263672"/>
@@ -2301,7 +2271,7 @@ z
     <use xlink:href="#DejaVuSans-Bold-20" x="2809.345703"/>
     <use xlink:href="#DejaVuSans-Bold-20" x="2844.160156"/>
     <use xlink:href="#DejaVuSans-Bold-30" x="2878.974609"/>
-    <use xlink:href="#DejaVuSans-Bold-39" x="2948.554688"/>
+    <use xlink:href="#DejaVuSans-Bold-34" x="2948.554688"/>
     <use xlink:href="#DejaVuSans-Bold-20" x="3018.134766"/>
     <use xlink:href="#DejaVuSans-Bold-2f" x="3052.949219"/>
     <use xlink:href="#DejaVuSans-Bold-20" x="3089.472656"/>

@@ -1,0 +1,66 @@
+{
+  "scope": "Post-hoc structural diagnostics, not new predictors or agent evaluations",
+  "datasets": {
+    "perma": {
+      "n": 580,
+      "normalized_sha256": "e72aee7e23bdc84ebe586a0219e59c414f61ffe0fee13533bfb8f699b458ae76",
+      "unique_longest_gold": 544,
+      "tied_longest_gold": 1,
+      "mean_gold_characters": 737.7241379310345,
+      "mean_distractor_characters": 431.76502463054186,
+      "median_gold_to_mean_distractor_length": 1.6800661845256126
+    },
+    "membench-msa": {
+      "n": 500,
+      "normalized_sha256": "773bc50897b8cbf1a253b5ef7ec5d1a748c8def7f2fd2263427214852e9a4c66",
+      "unique_longest_gold": 500,
+      "tied_longest_gold": 0,
+      "mean_gold_characters": 127.07,
+      "mean_distractor_characters": 93.402,
+      "median_gold_to_mean_distractor_length": 1.3433866279069768,
+      "list_distractors": 1385,
+      "list_distractors_omitting_one_gold_item": 1385,
+      "nonlist_distractors": 115,
+      "unique_longest_gold_with_comma_joined_lists": 500,
+      "item_count_patterns": [
+        {
+          "gold_items": 3,
+          "distractor_items": [
+            -1,
+            2,
+            2
+          ],
+          "n": 115
+        },
+        {
+          "gold_items": 4,
+          "distractor_items": [
+            3,
+            3,
+            3
+          ],
+          "n": 208
+        },
+        {
+          "gold_items": 5,
+          "distractor_items": [
+            4,
+            4,
+            4
+          ],
+          "n": 145
+        },
+        {
+          "gold_items": 6,
+          "distractor_items": [
+            5,
+            5,
+            5
+          ],
+          "n": 32
+        }
+      ],
+      "serialization_note": "-1 denotes a non-list answer. Comma joining is a diagnostic format check, not a changed published run."
+    }
+  }
+}

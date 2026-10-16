@@ -21,3 +21,7 @@ Regenerate the SVG artwork with `python scripts/render_homepage_assets.py` (stan
 See the [ten-figure gallery and source notes](../docs/benchmark-comparisons.md), [paper-value transcriptions](../data/paper), and [reproducible rendering script](../scripts/render_benchmarks.py). APTBench uses its Plan_EN subtask; ACPBench uses task-macro accuracy. Every figure labels its scope and distinguishes reported paper scores from measured options-only results.
 
 The expansion adds `perma-comparison`, `membench-msa-comparison`, `personamem-v1-comparison`, `gui-world-comparison`, and `mmbench-gui-l1-comparison`. Paper-comparable category weights and adjusted metrics are documented next to each figure. Score tables are rebuilt with `python scripts/render_report_cards.py`.
+
+## Spotlight score cards
+
+`spotlight.svg` and its mobile variant lead with PERMA Type 3 and the MemBench msa subtask. Scores are read from the saved Xiaoming shuffled means. Scope labels are part of the artwork; the score cards do not label these contextual comparisons as agent SOTA. Regenerate them with `render_homepage_assets.py`.

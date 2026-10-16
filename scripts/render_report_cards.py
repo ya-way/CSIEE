@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from csiee.benchmarks import FEATURED, EXTRA
+from homepage_order import ORDER
 
 LABELS = ['PersonaMem-v2', 'AgentSense', 'ACPBench', 'APTBench', 'AgentHop',
           'PERMA · Type 3', 'MemBench · msa subtask', 'PersonaMem-v1 · 128k',
@@ -24,7 +25,8 @@ def main():
             '| :-- | --: | --: | --: | --: | --: | --: |']
     total = featured_n = 0
     records = {}
-    for i, name in enumerate(FEATURED + EXTRA):
+    for name in ORDER + EXTRA:
+        i = (FEATURED + EXTRA).index(name)
         r = json.loads((ROOT / f'results/classmates/{name}/summary.json').read_text(encoding='utf-8'))
         assert (r['seed'], r['shuffle_repeats']) == (42, 10)
         assert [x['strategy'] for x in r['results']] == ['xiaoming', 'xiaohong', 'xiaogang', 'random']

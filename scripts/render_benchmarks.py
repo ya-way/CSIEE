@@ -2,6 +2,7 @@
 import json
 import math
 from pathlib import Path
+from homepage_order import ORDER
 
 import matplotlib
 matplotlib.use('Agg')
@@ -206,7 +207,10 @@ def document(spec, paper, summary, rows, chance):
 
 def main():
     section = '## Ten exams. Three students. No studying.\n\n'
-    section += '[01 Memory](#personamem-v2) · [02 Social reasoning](#agentsense) · [03 Planning](#acpbench) · [04 Agentic potential](#aptbench) · [05 Research](#agenthop)\n\n[06 PERMA](#perma--type-3) · [07 MemBench subtask](#membench--multi-session-assistant) · [08 PersonaMem-v1](#personamem-v1--128k) · [09 GUI-World](#gui-world) · [10 MMBench-GUI L1](#mmbench-gui--l1)\n\n'
+    anchors = {'perma': 'perma--type-3', 'membench-msa': 'membench--multi-session-assistant',
+               'personamem-v1': 'personamem-v1--128k', 'mmbench-gui-l1': 'mmbench-gui--l1'}
+    specs = sorted(SPECS, key=lambda spec: ORDER.index(spec['dataset']))
+    section += ' · '.join(f"[{i:02d} {spec['title']}](#{anchors.get(spec['dataset'], spec['dataset'])})" for i, spec in enumerate(specs, 1)) + '\n\n'
     section += '**The literature meets the stationery aisle.** Teal bars are published model results; red bars are our three option-only rules. Every baseline in the selected paper columns stays on the page, sorted high to low. Different inputs and evaluation pipelines mean these are contextual comparisons, not a matched agent leaderboard.\n\n'
     quips = ['5,000 memory questions. No memories consulted.',
              'No conversation. Still 49.87% for Xiaoming.',
@@ -219,14 +223,18 @@ def main():
              'The screen is off. The ruler is on.',
              'No screenshot was harmed in this evaluation.']
     gallery = '# Ten benchmark comparisons\n\nVertical bars, descending accuracy, and all listed paper baselines. Each chart uses a zero-based 0–100% scale. Source notes explain differences in inputs, subsets and aggregation.\n\n'
-    for i, spec in enumerate(SPECS, 1):
+    quips = {spec['dataset']: quip for spec, quip in zip(SPECS, quips)}
+    for i, spec in enumerate(specs, 1):
         paper, summary, rows, chance = load_rows(spec)
         render(spec, rows, chance, i)
         table = document(spec, paper, summary, rows, chance)
         key, title = spec['key'], spec['title']
         caption = spec['subtitle']
-        section += f'### {title}\n\n*{quips[i-1]}*\n\n![{title}: descending vertical bars, paper results and CSIEE](assets/{key}-comparison.png)\n\n'
+        quip = quips[spec['dataset']]
+        section += f'### {title}\n\n*{quip}*\n\n![{title}: descending vertical bars, paper results and CSIEE](assets/{key}-comparison.png)\n\n'
         section += f"{caption.rstrip('.')}. {spec['access']}\n\n"
+        if key in {'perma', 'membench-msa'}:
+            section += '**Spotlight:** ' + ('The 580-question Type-3 shuffled score is **93.93%**; this paper comparison uses the **423 single-domain** questions.' if key == 'perma' else '**100% on all 500 released msa questions**, including after shuffling. This is one selected subtask; the full MemBench screen has only **+2.60 pp** lift.') + ' [Why the ruler works →](docs/length-shortcuts.md)\n\n'
         section += f'<details>\n<summary><strong>Open the mark scheme — all {len(rows)} results and their sources</strong></summary>\n\n{table}\n\n</details>\n\n'
         section += f'[Source notes & exact scope](docs/{key}-comparison.md) · [PNG](assets/{key}-comparison.png) · [SVG](assets/{key}-comparison.svg) · [Back to results](#report-card)\n\n'
         gallery += f'## {title}\n\n![{title}](../assets/{key}-comparison.png)\n\n{caption}. [Full table and sources]({key}-comparison.md).\n\n'
