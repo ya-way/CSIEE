@@ -1,0 +1,100 @@
+{
+  "paper": "PERMA: Benchmarking Personalized Memory Agents via Event-Driven Preference and Realistic Task Environments",
+  "version": "arXiv:2603.23231v1",
+  "url": "https://arxiv.org/html/2603.23231v1",
+  "source": "Table 4, MCQ Acc. (Clean, single-domain)",
+  "metric": "Accuracy (%)",
+  "verified_on": "2026-10-16",
+  "precision": 1,
+  "transcription": "Printed numeric values; no estimates from bar heights.",
+  "rows": [
+    {
+      "method": "MiniMax-M2.5",
+      "accuracy": 79.7,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "GLM-5",
+      "accuracy": 81.10000000000001,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Kimi-K2.5",
+      "accuracy": 88.2,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Qwen3-32B",
+      "accuracy": 87.0,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Qwen2.5-72B",
+      "accuracy": 79.0,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Qwen2.5-14B-1M",
+      "accuracy": 75.9,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Llama3.3-70B",
+      "accuracy": 81.8,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Gemini2.5-Flash",
+      "accuracy": 87.0,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "GLM-4.7-Flash",
+      "accuracy": 86.8,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "GPT-4o-mini",
+      "accuracy": 78.0,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "RAG (BGE-M3)",
+      "accuracy": 70.19999999999999,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "MemOS",
+      "accuracy": 81.10000000000001,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Mem0",
+      "accuracy": 68.60000000000001,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Lightmem",
+      "accuracy": 65.7,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Memobase",
+      "accuracy": 73.3,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "EverMemOS",
+      "accuracy": 72.8,
+      "context": "Clean single-domain; history or memory"
+    },
+    {
+      "method": "Supermemory",
+      "accuracy": 65.5,
+      "context": "Clean single-domain; history or memory"
+    }
+  ],
+  "local_category": "SD",
+  "local_n": 423,
+  "local_options_per_question": 8
+}

@@ -28,7 +28,7 @@ def main(argv=None):
     fetch.add_argument('dataset', choices=['personamem-v2', 'openbookqa'] + list(REGISTRY))
     fetch.add_argument('--output')
     fetch.add_argument('--seed', type=int, default=42, help='source-order seed for answer-first native MCQ data')
-    suite = sub.add_parser('suite', help='download and evaluate the five featured agent benchmark families')
+    suite = sub.add_parser('suite', help='download and evaluate the ten featured benchmark components')
     suite.add_argument('--all', action='store_true', help='also include BixBench, Backtrader and the public labeled FDABench subset')
     suite.add_argument('--seed', type=int, default=42)
     suite.add_argument('--shuffles', type=int, default=10)

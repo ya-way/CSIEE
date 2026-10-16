@@ -19,7 +19,7 @@ def save(name, width, height, title, parts):
 
 
 def ticket(mobile=False):
-    families = ['personamem-v2', 'agentsense', 'acpbench', 'aptbench', 'agenthop']
+    families = ['personamem-v2', 'agentsense', 'acpbench', 'aptbench', 'agenthop', 'perma', 'membench-msa', 'personamem-v1', 'gui-world', 'mmbench-gui-l1']
     n = sum(json.loads((ROOT/f'results/classmates/{key}/summary.json').read_text())['n'] for key in families)
     w, h = (420, 282) if mobile else (1200, 190)
     parts = [f'<rect width="{w}" height="{h}" rx="4" fill="{INK}"/>']
@@ -27,17 +27,17 @@ def ticket(mobile=False):
               f'<path d="M28 53H{w-28}" stroke="#59605A" stroke-dasharray="4 5"/>']
     if mobile:
         stats = [('0', 'PARAMETERS', 28, 108), ('0', 'API CALLS', 230, 108),
-                 ('5', 'BENCHMARK FAMILIES', 28, 200), (f'{n:,}', 'QUESTIONS SCREENED', 230, 200)]
+                 ('10', 'BENCHMARK COMPONENTS', 28, 200), (f'{n:,}', 'QUESTIONS SCREENED', 230, 200)]
     else:
         stats = [('0', 'PARAMETERS', 32, 121), ('0', 'API CALLS', 310, 121),
-                 ('5', 'BENCHMARK FAMILIES', 588, 121), (f'{n:,}', 'QUESTIONS SCREENED', 866, 121)]
+                 ('10', 'BENCHMARK COMPONENTS', 588, 121), (f'{n:,}', 'QUESTIONS SCREENED', 866, 121)]
     for value, label, x, y in stats:
         parts += [text(x, y, value, 44, '#E3A58A' if value=='0' else PAPER, 'Georgia, serif'),
                   text(x, y+28, label, 12 if mobile else 15, '#C6CABE', 'monospace')]
     if mobile:
         parts += [text(28, 263, 'ALLOWED MATERIALS: THE ANSWER CHOICES.', 11, '#C6CABE', 'monospace')]
     save('exam-ticket-mobile.svg' if mobile else 'exam-ticket.svg', w, h,
-         f'Zero parameters. Zero API calls. Five featured benchmark families. {n:,} questions screened.', parts)
+         f'Zero parameters. Zero API calls. Ten featured benchmark components. {n:,} questions screened.', parts)
 
 
 def card(index, x, y):

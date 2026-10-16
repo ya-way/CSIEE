@@ -44,7 +44,7 @@ Local bars use input-order results, seed 42. “—” means unavailable for thi
 - [Paper-value transcription](../data/paper/acpbench-mcq.json)
 - [Local summary](../results/classmates/acpbench/summary.json) and [predictions](../results/classmates/acpbench/predictions.jsonl)
 - [PNG](../assets/acpbench-comparison.png) / [SVG](../assets/acpbench-comparison.svg)
-- [Renderer](../scripts/render_benchmarks.py) / [all five comparisons](benchmark-comparisons.md)
+- [Renderer](../scripts/render_benchmarks.py) / [all ten comparisons](benchmark-comparisons.md)
 
 Local dataset SHA-256: `ad74aefe95ba248961a7672f90d2709c166275b47d26cc3d723ed4aa7a88b9b6`.
 

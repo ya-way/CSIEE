@@ -1,0 +1,87 @@
+{
+  "paper": "Know Me, Respond to Me: Benchmarking LLMs for Dynamic User Profiling and Personalized Responses at Scale",
+  "version": "arXiv:2504.14225v2",
+  "url": "https://arxiv.org/html/2504.14225v2",
+  "source": "Figure 4, upper panel (128k), Overall column",
+  "metric": "Accuracy (%)",
+  "verified_on": "2026-10-16",
+  "precision": 0,
+  "transcription": "Printed numeric values; no estimates from bar heights.",
+  "rows": [
+    {
+      "method": "Gemini-1.5-Flash",
+      "accuracy": 52,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "GPT-4.5",
+      "accuracy": 52,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "GPT-4.1",
+      "accuracy": 52,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "o1",
+      "accuracy": 50,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "Gemini-2.0-Flash",
+      "accuracy": 49,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "o4-mini",
+      "accuracy": 48,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "Gemini-2.0-Flash-Lite",
+      "accuracy": 48,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "GPT-4o",
+      "accuracy": 45,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "DeepSeek-R1-671B",
+      "accuracy": 45,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "Llama-4-Maverick",
+      "accuracy": 43,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "o3-mini",
+      "accuracy": 39,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "GPT-4o-mini",
+      "accuracy": 39,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "Llama-3.1-8B",
+      "accuracy": 31,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "Claude-3.5-Haiku",
+      "accuracy": 30,
+      "context": "128k conversation history + question"
+    },
+    {
+      "method": "Claude-3.7-Sonnet",
+      "accuracy": 26,
+      "context": "128k conversation history + question"
+    }
+  ]
+}

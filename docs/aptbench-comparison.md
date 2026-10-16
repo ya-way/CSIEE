@@ -36,7 +36,7 @@ Local bars use input-order results, seed 42. “—” means unavailable for thi
 - [Paper-value transcription](../data/paper/aptbench-plan-en.json)
 - [Local summary](../results/classmates/aptbench/summary.json) and [predictions](../results/classmates/aptbench/predictions.jsonl)
 - [PNG](../assets/aptbench-comparison.png) / [SVG](../assets/aptbench-comparison.svg)
-- [Renderer](../scripts/render_benchmarks.py) / [all five comparisons](benchmark-comparisons.md)
+- [Renderer](../scripts/render_benchmarks.py) / [all ten comparisons](benchmark-comparisons.md)
 
 Local dataset SHA-256: `35bf44c9b3c6337565c3871f3dab1d6edf66a165813037b1acdbc4dbf345842b`.
 

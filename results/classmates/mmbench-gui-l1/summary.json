@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.2.0",
+  "python": "3.9.13",
+  "dataset": "mmbench-gui-l1.jsonl",
+  "sha256": "2a4d1d95b30d0b267e06fcd952ede4740571b87fadc9691f1fa30aa333eb068d",
+  "format": "jsonl",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 3561,
+  "total_loaded": 3561,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "native option order",
+  "chance_accuracy": 0.22076663858467277,
+  "answer_histogram": {
+    "A": 911,
+    "B": 1269,
+    "C": 1010,
+    "D": 270,
+    "E": 99,
+    "F": 2
+  },
+  "option_count_histogram": {
+    "2": 2,
+    "3": 3,
+    "4": 1489,
+    "5": 2022,
+    "6": 45
+  },
+  "option_type_histogram": {
+    "length": 3425,
+    "numeric": 136
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "xiaoming",
+      "correct": 1648,
+      "accuracy": 0.462791350744173,
+      "wilson_95": [
+        0.4464635302002232,
+        0.47919936306974387
+      ],
+      "lift_over_chance_pp": 24.202471215950023,
+      "shuffled_mean": 0.4545633249087335,
+      "shuffled_min": 0.44987363100252736,
+      "shuffled_max": 0.4597023308059534,
+      "shuffled_scores": [
+        0.454366750912665,
+        0.4597023308059534,
+        0.4538051109238978,
+        0.45324347093513057,
+        0.4546475709070486,
+        0.45408593091828137,
+        0.44987363100252736,
+        0.4560516708789666,
+        0.45745577085088457,
+        0.45240101095197977
+      ],
+      "choice_invariance": 0.9177197416456053,
+      "by_category": {
+        "os_android": {
+          "n": 915,
+          "correct": 419
+        },
+        "os_ios": {
+          "n": 345,
+          "correct": 134
+        },
+        "os_linux": {
+          "n": 582,
+          "correct": 279
+        },
+        "os_mac": {
+          "n": 252,
+          "correct": 107
+        },
+        "os_web": {
+          "n": 657,
+          "correct": 326
+        },
+        "os_windows": {
+          "n": 810,
+          "correct": 383
+        }
+      },
+      "by_option_count": {
+        "2": {
+          "n": 2,
+          "correct": 2
+        },
+        "3": {
+          "n": 3,
+          "correct": 2
+        },
+        "4": {
+          "n": 1489,
+          "correct": 679
+        },
+        "5": {
+          "n": 2022,
+          "correct": 949
+        },
+        "6": {
+          "n": 45,
+          "correct": 16
+        }
+      }
+    },
+    {
+      "strategy": "xiaohong",
+      "correct": 1011,
+      "accuracy": 0.2839090143218197,
+      "wilson_95": [
+        0.2693386796869805,
+        0.29894506651105496
+      ],
+      "lift_over_chance_pp": 6.314237573714693,
+      "shuffled_mean": 0.22033136759337263,
+      "shuffled_min": 0.2064026958719461,
+      "shuffled_max": 0.2333614153327717,
+      "shuffled_scores": [
+        0.21117663577646728,
+        0.2333614153327717,
+        0.22999157540016849,
+        0.20949171581016568,
+        0.2064026958719461,
+        0.21623139567537208,
+        0.2311148553777029,
+        0.2294299354114013,
+        0.21623139567537208,
+        0.21988205560235888
+      ],
+      "choice_invariance": 0.2233642235327155,
+      "by_category": {
+        "os_android": {
+          "n": 915,
+          "correct": 254
+        },
+        "os_ios": {
+          "n": 345,
+          "correct": 95
+        },
+        "os_linux": {
+          "n": 582,
+          "correct": 149
+        },
+        "os_mac": {
+          "n": 252,
+          "correct": 78
+        },
+        "os_web": {
+          "n": 657,
+          "correct": 200
+        },
+        "os_windows": {
+          "n": 810,
+          "correct": 235
+        }
+      },
+      "by_option_count": {
+        "2": {
+          "n": 2,
+          "correct": 1
+        },
+        "3": {
+          "n": 3,
+          "correct": 1
+        },
+        "4": {
+          "n": 1489,
+          "correct": 233
+        },
+        "5": {
+          "n": 2022,
+          "correct": 762
+        },
+        "6": {
+          "n": 45,
+          "correct": 14
+        }
+      }
+    },
+    {
+      "strategy": "xiaogang",
+      "correct": 1284,
+      "accuracy": 0.36057287278854255,
+      "wilson_95": [
+        0.34496008667753403,
+        0.3764861511227579
+      ],
+      "lift_over_chance_pp": 13.980623420386978,
+      "shuffled_mean": 0.3587194608256108,
+      "shuffled_min": 0.35607975287840493,
+      "shuffled_max": 0.36057287278854255,
+      "shuffled_scores": [
+        0.35804549283909015,
+        0.35973041280539175,
+        0.35916877281662457,
+        0.35944959281100813,
+        0.35832631283347377,
+        0.35607975287840493,
+        0.35720303285593935,
+        0.35916877281662457,
+        0.36057287278854255,
+        0.35944959281100813
+      ],
+      "choice_invariance": 0.9296826734063467,
+      "by_category": {
+        "os_android": {
+          "n": 915,
+          "correct": 310
+        },
+        "os_ios": {
+          "n": 345,
+          "correct": 104
+        },
+        "os_linux": {
+          "n": 582,
+          "correct": 207
+        },
+        "os_mac": {
+          "n": 252,
+          "correct": 104
+        },
+        "os_web": {
+          "n": 657,
+          "correct": 267
+        },
+        "os_windows": {
+          "n": 810,
+          "correct": 292
+        }
+      },
+      "by_option_count": {
+        "2": {
+          "n": 2,
+          "correct": 1
+        },
+        "3": {
+          "n": 3,
+          "correct": 2
+        },
+        "4": {
+          "n": 1489,
+          "correct": 523
+        },
+        "5": {
+          "n": 2022,
+          "correct": 747
+        },
+        "6": {
+          "n": 45,
+          "correct": 11
+        }
+      }
+    },
+    {
+      "strategy": "random",
+      "correct": 778,
+      "accuracy": 0.2184779556304409,
+      "wilson_95": [
+        0.20521347382848035,
+        0.2323491714782521
+      ],
+      "lift_over_chance_pp": -0.22886829542318743,
+      "shuffled_mean": 0.21651221566975573,
+      "shuffled_min": 0.2066835158663297,
+      "shuffled_max": 0.2322381353552373,
+      "shuffled_scores": [
+        0.21482729570345407,
+        0.2229710755405785,
+        0.2066835158663297,
+        0.21454647570907048,
+        0.2212861555742769,
+        0.2322381353552373,
+        0.20864925582701488,
+        0.20864925582701488,
+        0.21286155574276888,
+        0.22240943555181128
+      ],
+      "choice_invariance": 0.22238135355237293,
+      "by_category": {
+        "os_android": {
+          "n": 915,
+          "correct": 183
+        },
+        "os_ios": {
+          "n": 345,
+          "correct": 78
+        },
+        "os_linux": {
+          "n": 582,
+          "correct": 121
+        },
+        "os_mac": {
+          "n": 252,
+          "correct": 56
+        },
+        "os_web": {
+          "n": 657,
+          "correct": 140
+        },
+        "os_windows": {
+          "n": 810,
+          "correct": 200
+        }
+      },
+      "by_option_count": {
+        "2": {
+          "n": 2,
+          "correct": 2
+        },
+        "3": {
+          "n": 3,
+          "correct": 1
+        },
+        "4": {
+          "n": 1489,
+          "correct": 371
+        },
+        "5": {
+          "n": 2022,
+          "correct": 398
+        },
+        "6": {
+          "n": 45,
+          "correct": 6
+        }
+      }
+    }
+  ],
+  "source": {
+    "dataset": "MMBench-GUI (L1)",
+    "url": "https://huggingface.co/datasets/OpenGVLab/MMBench-GUI",
+    "revision": "e27757e3910e0d5995b811f916b509b4e34a4690",
+    "license": "Consult upstream dataset card",
+    "split": "all 3561 L1 questions across three difficulty levels; not L2-L4 agent tasks",
+    "sources": [
+      {
+        "path": "L1_annotations.json",
+        "url": "https://huggingface.co/datasets/OpenGVLab/MMBench-GUI/resolve/e27757e3910e0d5995b811f916b509b4e34a4690/L1_annotations.json",
+        "sha256": "da097f17d1aee28cd5949d830e6749d7098905e5dbd0f63a2866d01c38c22207"
+      }
+    ],
+    "normalization": {
+      "candidate_count": 3561,
+      "included_count": 3561,
+      "excluded_count": 0,
+      "exclusions": []
+    },
+    "sha256": "2a4d1d95b30d0b267e06fcd952ede4740571b87fadc9691f1fa30aa333eb068d",
+    "adapter_version": 1,
+    "adapter": "mmbench-gui-l1",
+    "source_order_seed": null,
+    "source_order": "native option order"
+  }
+}

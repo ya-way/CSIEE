@@ -10,7 +10,7 @@
 
 [![Tests](https://github.com/ya-way/CSIEE/actions/workflows/ci.yml/badge.svg)](https://github.com/ya-way/CSIEE/actions/workflows/ci.yml) [![Python 3.9+](assets/python-badge.svg)](pyproject.toml) [![MIT license](assets/license-badge.svg)](LICENSE)
 
-[**The results**](#report-card) &nbsp; / &nbsp; [**The classmates**](#meet-the-class) &nbsp; / &nbsp; [**The five exams**](#five-exams-three-students-no-studying) &nbsp; / &nbsp; [**Run it yourself**](#run-it)
+[**The results**](#report-card) &nbsp; / &nbsp; [**The classmates**](#meet-the-class) &nbsp; / &nbsp; [**The ten exams**](#ten-exams-three-students-no-studying) &nbsp; / &nbsp; [**Run it yourself**](#run-it)
 
 </div>
 
@@ -18,7 +18,7 @@
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/exam-ticket-mobile.svg">
-  <img src="assets/exam-ticket.svg" alt="Zero parameters. Zero API calls. Five featured benchmark families. 12,984 questions screened." width="100%">
+  <img src="assets/exam-ticket.svg" alt="Zero parameters. Zero API calls. Ten featured benchmark components. 23,880 questions screened." width="100%">
 </picture>
 
 The students never see the question, conversation, tools, or environment. **Only the answer choices.** Xiaoming measures them. Xiaohong picks C. Xiaogang looks for an outlier. Then they go home.
@@ -27,7 +27,7 @@ The students never see the question, conversation, tools, or environment. **Only
 
 ## Report card
 
-Five agent-related benchmark families. Memory, social reasoning, planning, agentic subtasks, and scientific research. **Native multiple-choice components only**; these are not end-to-end agent scores.
+Ten evaluated components across nine benchmark families. Memory, social reasoning, planning, research, personalization, and GUI understanding. **Native multiple-choice components only**; these are not end-to-end agent scores.
 
 Accuracy on the recorded input order, seed **42**. “Chance” is the exact expected score of uniform guessing for each question's number of options.
 
@@ -39,11 +39,16 @@ Accuracy on the recorded input order, seed **42**. “Chance” is the exact exp
 | [ACPBench](results/classmates/acpbench/report.md) · seven planning tasks | 895 | 25.00% | 20.22% | 25.25% | 34.08% |
 | [APTBench](results/classmates/aptbench/report.md) · seven English MCQ tasks | 4,215 | 20.84% | 16.39% | 20.76% | 11.81% |
 | [AgentHop](results/classmates/agenthop/report.md) · research MCQs | 1,011 | 25.00% | 0.89% | 27.50% | 18.40% |
+| [PERMA · Type 3](results/classmates/perma/report.md) · single- and multi-domain | 580 | 12.50% | 93.97% | 14.14% | 91.38% |
+| [MemBench · msa subtask](results/classmates/membench-msa/report.md) · multi-session assistant only | 500 | 25.00% | 100.00% | 24.60% | 63.80% |
+| [PersonaMem-v1 · 128k](results/classmates/personamem-v1/report.md) · earlier PersonaMem version | 2,612 | 25.00% | 44.33% | 21.09% | 52.53% |
+| [GUI-World · MCQs](results/classmates/gui-world/report.md) · six GUI categories | 3,643 | 25.00% | 51.03% | 41.20% | 41.53% |
+| [MMBench-GUI · L1](results/classmates/mmbench-gui-l1/report.md) · content understanding only | 3,561 | 22.08% | 46.28% | 28.39% | 36.06% |
 <!-- report-card:end -->
 
 > **Teacher's note:** Xiaoming gets 49.87% on AgentSense and 0.89% on AgentHop. The ruler has range. Unfortunately, so do the consequences.
 
-Three families show a positive shortcut signal. Two show a strong **reverse signal**: the heuristic systematically underperforms chance. Five interesting results, not five victories.
+The original five include two strong **reverse signals**: the heuristic systematically underperforms chance. They stay on the page. The new five were selected for stronger positive option-only signals, with their version and subtask boundaries labeled below.
 
 <details>
 <summary><strong>We moved the answers around. Here is what happened.</strong></summary>
@@ -58,15 +63,36 @@ Mean accuracy across **10 label-preserving option permutations** per question, u
 | ACPBench | 19.49% | 24.41% | 33.33% | 24.77% |
 | APTBench | 16.41% | 20.79% | 11.85% | 20.92% |
 | AgentHop | 0.98% | 25.00% | 18.46% | 24.81% |
+| PERMA · Type 3 | 93.93% | 12.31% | 91.31% | 12.17% |
+| MemBench · msa subtask | 100.00% | 23.92% | 63.52% | 24.76% |
+| PersonaMem-v1 · 128k | 44.29% | 24.69% | 52.51% | 25.34% |
+| GUI-World · MCQs | 50.49% | 25.05% | 41.24% | 24.95% |
+| MMBench-GUI · L1 | 45.46% | 22.03% | 35.87% | 21.65% |
 <!-- shuffle-card:end -->
 
-Xiaohong's faith in C returns to roughly chance. The length-based signals survive. PersonaMem's initial order is a seeded reconstruction from its released correct/wrong answer fields, not the official evaluation order.
+Xiaohong's faith in C returns to roughly chance. The length-based signals survive. PersonaMem-v2's initial order is a seeded reconstruction from its released correct/wrong answer fields, not the official evaluation order.
 
 The [individual reports](results/classmates/README.md) include uncertainty intervals, permutation ranges, choice invariance, per-category counts, source revisions, and data hashes. Repeated permutations are sensitivity checks, not extra independent questions.
 
 </details>
 
-This showcase is **exploratory and selected after screening**. BixBench, Backtrader-Bench, and the publicly labeled FDABench subset are also reported, including weak and negative outcomes. Read the [screening ledger](docs/screening.md) for all eight, exclusions, and scope. We did not invent MCQs for open-ended tasks or tune a rule per benchmark.
+### Extra credit. Still no studying.
+
+Five additions clear the PersonaMem-v2 reference of **+20.59 percentage points above chance after shuffling**. This criterion compares the best of the three unchanged rules, not raw accuracy or superiority over a paper model. MMBench-GUI has four or five choices; PERMA has eight.
+
+<!-- added-signals:start -->
+| Added component | Best unchanged rule | Shuffled accuracy | Chance | Lift over chance |
+| :-- | :-- | --: | --: | --: |
+| [PERMA · Type 3](results/classmates/perma/report.md) | Xiaoming | 93.93% | 12.50% | **+81.43 pp** |
+| [MemBench · msa subtask](results/classmates/membench-msa/report.md) | Xiaoming | 100.00% | 25.00% | **+75.00 pp** |
+| [PersonaMem-v1 · 128k](results/classmates/personamem-v1/report.md) | Xiaogang | 52.51% | 25.00% | **+27.51 pp** |
+| [GUI-World · MCQs](results/classmates/gui-world/report.md) | Xiaoming | 50.49% | 25.00% | **+25.49 pp** |
+| [MMBench-GUI · L1](results/classmates/mmbench-gui-l1/report.md) | Xiaoming | 45.46% | 22.08% | **+23.38 pp** |
+<!-- added-signals:end -->
+
+**Scope matters:** PersonaMem-v1 is an earlier version of the same family. MemBench is the **500-question multi-session assistant subtask**, selected after the full MemBench screen showed only +2.60 pp. These are five additional components, not five new independent benchmark families. All signals are exploratory; selection used these same datasets, with no held-out confirmation.
+
+BixBench, Backtrader-Bench, FDABench, and the additional weak or negative pilots remain in the [screening ledger](docs/screening.md). We did not invent MCQs for open-ended tasks or tune a rule per benchmark.
 
 ## Meet the class
 
@@ -91,9 +117,11 @@ Three candidates. One shared commitment to inadequate preparation.
 Xiaogang is **experimental**: his classifier is a regex. For ties, Xiaoming and Xiaogang prefer C (B with two choices) if it is tied, then the earliest tied option. [Exact rules, numeric parsing & limitations →](docs/methodology.md#the-three-rules)
 
 <!-- personamem:start -->
-## Five exams. Three students. No studying.
+## Ten exams. Three students. No studying.
 
 [01 Memory](#personamem-v2) · [02 Social reasoning](#agentsense) · [03 Planning](#acpbench) · [04 Agentic potential](#aptbench) · [05 Research](#agenthop)
+
+[06 PERMA](#perma--type-3) · [07 MemBench subtask](#membench--multi-session-assistant) · [08 PersonaMem-v1](#personamem-v1--128k) · [09 GUI-World](#gui-world) · [10 MMBench-GUI L1](#mmbench-gui--l1)
 
 **The literature meets the stationery aisle.** Teal bars are published model results; red bars are our three option-only rules. Every baseline in the selected paper columns stays on the page, sorted high to low. Different inputs and evaluation pipelines mean these are contextual comparisons, not a matched agent leaderboard.
 
@@ -285,6 +313,172 @@ Scientific research MCQs · answer accuracy. Paper: agents with paper-search too
 
 [Source notes & exact scope](docs/agenthop-comparison.md) · [PNG](assets/agenthop-comparison.png) · [SVG](assets/agenthop-comparison.svg) · [Back to results](#report-card)
 
+### PERMA · Type 3
+
+*Your memory system remembers preferences. The ruler remembers nothing.*
+
+![PERMA · Type 3: descending vertical bars, paper results and CSIEE](assets/perma-comparison.png)
+
+Clean single-domain MCQs · post-intervention checkpoint. Paper: history or memory. CSIEE: options only, n=423 single-domain Type-3 questions.
+
+<details>
+<summary><strong>Open the mark scheme — all 20 results and their sources</strong></summary>
+
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| **Xiaoming · longest** | **93.85%** | Options only | CSIEE: Saved CSIEE counts | — |
+| **Xiaogang · outlier** | **91.96%** | Options only | CSIEE: Saved CSIEE counts | — |
+| Kimi-K2.5 | 88.2% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| Gemini2.5-Flash | 87.0% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| Qwen3-32B | 87.0% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| GLM-4.7-Flash | 86.8% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| Llama3.3-70B | 81.8% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| GLM-5 | 81.1% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| MemOS | 81.1% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| MiniMax-M2.5 | 79.7% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| Qwen2.5-72B | 79.0% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| GPT-4o-mini | 78.0% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| Qwen2.5-14B-1M | 75.9% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| Memobase | 73.3% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| EverMemOS | 72.8% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| RAG (BGE-M3) | 70.2% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| Mem0 | 68.6% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| Lightmem | 65.7% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| Supermemory | 65.5% | Clean single-domain; history or memory | Paper: Table 4, MCQ Acc. (Clean, single-domain) | — |
+| **Xiaohong · C** | **13.71%** | Options only | CSIEE: Saved CSIEE counts | — |
+| Uniform chance | 12.50% | Options only | Analytical expectation | — |
+
+</details>
+
+[Source notes & exact scope](docs/perma-comparison.md) · [PNG](assets/perma-comparison.png) · [SVG](assets/perma-comparison.svg) · [Back to results](#report-card)
+
+### MemBench · multi-session assistant
+
+*A perfect score. On one very specific exam.*
+
+![MemBench · multi-session assistant: descending vertical bars, paper results and CSIEE](assets/membench-msa-comparison.png)
+
+A selected subtask · factual participation / msa. Paper: 10k memory context, sampled evaluation. CSIEE: all 500 released msa questions, options only.
+
+<details>
+<summary><strong>Open the mark scheme — all 10 results and their sources</strong></summary>
+
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| **Xiaoming · longest** | **100.00%** | Options only | CSIEE: Saved CSIEE counts | 100.00% |
+| **Xiaogang · outlier** | **63.80%** | Options only | CSIEE: Saved CSIEE counts | 63.52% |
+| FullMemory | 55.0% | 10k factual participation; memory mechanism | Paper: Table 11, msa (multi-session assistant) column | — |
+| GenerativeAgent | 55.0% | 10k factual participation; memory mechanism | Paper: Table 11, msa (multi-session assistant) column | — |
+| RecentMemory | 50.0% | 10k factual participation; memory mechanism | Paper: Table 11, msa (multi-session assistant) column | — |
+| MemGPT | 45.0% | 10k factual participation; memory mechanism | Paper: Table 11, msa (multi-session assistant) column | — |
+| MemoryBank | 40.0% | 10k factual participation; memory mechanism | Paper: Table 11, msa (multi-session assistant) column | — |
+| RetrievalMemmory | 30.0% | 10k factual participation; memory mechanism | Paper: Table 11, msa (multi-session assistant) column | — |
+| **Xiaohong · C** | **24.60%** | Options only | CSIEE: Saved CSIEE counts | 23.92% |
+| SCMemory | 10.0% | 10k factual participation; memory mechanism | Paper: Table 11, msa (multi-session assistant) column | — |
+| Uniform chance | 25.00% | Options only | Analytical expectation | — |
+
+</details>
+
+[Source notes & exact scope](docs/membench-msa-comparison.md) · [PNG](assets/membench-msa-comparison.png) · [SVG](assets/membench-msa-comparison.svg) · [Back to results](#report-card)
+
+### PersonaMem-v1 · 128k
+
+*Same family. Earlier syllabus. Still suspiciously measurable.*
+
+![PersonaMem-v1 · 128k: descending vertical bars, paper results and CSIEE](assets/personamem-v1-comparison.png)
+
+An earlier version of the PersonaMem family · discriminative MCQs. Paper: 128k history + query. CSIEE: options only, n=2,612; 115 duplicate-option rows excluded.
+
+<details>
+<summary><strong>Open the mark scheme — all 18 results and their sources</strong></summary>
+
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| **Xiaogang · outlier** | **52.53%** | Options only | CSIEE: Saved CSIEE counts | 52.51% |
+| GPT-4.1 | 52% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| GPT-4.5 | 52% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| Gemini-1.5-Flash | 52% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| o1 | 50% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| Gemini-2.0-Flash | 49% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| Gemini-2.0-Flash-Lite | 48% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| o4-mini | 48% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| DeepSeek-R1-671B | 45% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| GPT-4o | 45% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| **Xiaoming · longest** | **44.33%** | Options only | CSIEE: Saved CSIEE counts | 44.29% |
+| Llama-4-Maverick | 43% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| GPT-4o-mini | 39% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| o3-mini | 39% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| Llama-3.1-8B | 31% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| Claude-3.5-Haiku | 30% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| Claude-3.7-Sonnet | 26% | 128k conversation history + question | Paper: Figure 4, upper panel (128k), Overall column | — |
+| **Xiaohong · C** | **21.09%** | Options only | CSIEE: Saved CSIEE counts | 24.69% |
+| Uniform chance | 25.00% | Options only | Analytical expectation | — |
+
+</details>
+
+[Source notes & exact scope](docs/personamem-v1-comparison.md) · [PNG](assets/personamem-v1-comparison.png) · [SVG](assets/personamem-v1-comparison.svg) · [Back to results](#report-card)
+
+### GUI-World
+
+*The screen is off. The ruler is on.*
+
+![GUI-World: descending vertical bars, paper results and CSIEE](assets/gui-world-comparison.png)
+
+Video GUI understanding · six-category macro-average MCQ accuracy. Paper: GUI video/keyframes + query. CSIEE: options only, n=3,643; six categories equally weighted.
+
+<details>
+<summary><strong>Open the mark scheme — all 13 results and their sources</strong></summary>
+
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| GPT-4o | 84.8% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| Gemini-Pro-1.5 | 81.3% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| GPT-4V | 81.2% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| Qwen-VL-Max | 74.0% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| GUI-Vid | 54.6% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| **Xiaoming · longest** | **52.51%** | Options only | CSIEE: Saved CSIEE counts | — |
+| LLaVA-OV-7B | 50.0% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| Video-LLaVA | 49.4% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| VideoChat2 | 42.9% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| **Xiaogang · outlier** | **42.44%** | Options only | CSIEE: Saved CSIEE counts | — |
+| **Xiaohong · C** | **40.10%** | Options only | CSIEE: Saved CSIEE counts | — |
+| ChatUnivi | 22.4% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| Minigpt4Video | 16.8% | GUI video / keyframes + question | Paper: Table 3, Avg. / MC (macro-average of six categories) | — |
+| Uniform chance | 25.00% | Options only | Analytical expectation | — |
+
+</details>
+
+[Source notes & exact scope](docs/gui-world-comparison.md) · [PNG](assets/gui-world-comparison.png) · [SVG](assets/gui-world-comparison.svg) · [Back to results](#report-card)
+
+### MMBench-GUI · L1
+
+*No screenshot was harmed in this evaluation.*
+
+![MMBench-GUI · L1: descending vertical bars, paper results and CSIEE](assets/mmbench-gui-l1-comparison.png)
+
+GUI content understanding · option-count-adjusted score. Paper: screenshots + query. CSIEE: options only, n=3,561; score = mean[(m−1)/m × correct].
+
+<details>
+<summary><strong>Open the mark scheme — all 10 results and their sources</strong></summary>
+
+| Method | Accuracy | Input / protocol | Source | Shuffled mean |
+| :-- | --: | :-- | :-- | --: |
+| InternVL3-72B | 77.58% | Screenshot + question; mean of Easy/Medium/Hard | Paper: Table 5, Overall columns; arithmetic mean of three difficulties | — |
+| Qwen2.5-VL-72B | 66.33% | Screenshot + question; mean of Easy/Medium/Hard | Paper: Table 5, Overall columns; arithmetic mean of three difficulties | — |
+| Qwen-Max-VL | 65.76% | Screenshot + question; mean of Easy/Medium/Hard | Paper: Table 5, Overall columns; arithmetic mean of three difficulties | — |
+| GPT-4o | 56.96% | Screenshot + question; mean of Easy/Medium/Hard | Paper: Table 5, Overall columns; arithmetic mean of three difficulties | — |
+| Claude-3.5 | 40.12% | Screenshot + question; mean of Easy/Medium/Hard | Paper: Table 5, Overall columns; arithmetic mean of three difficulties | — |
+| UI-TARS-72B-DPO | 39.24% | Screenshot + question; mean of Easy/Medium/Hard | Paper: Table 5, Overall columns; arithmetic mean of three difficulties | — |
+| Claude-3.7 | 37.71% | Screenshot + question; mean of Easy/Medium/Hard | Paper: Table 5, Overall columns; arithmetic mean of three difficulties | — |
+| **Xiaoming · longest** | **36.06%** | Options only | CSIEE: Saved CSIEE counts | — |
+| **Xiaogang · outlier** | **28.11%** | Options only | CSIEE: Saved CSIEE counts | — |
+| **Xiaohong · C** | **22.39%** | Options only | CSIEE: Saved CSIEE counts | — |
+| Uniform chance | 17.13% | Options only | Analytical expectation | — |
+
+</details>
+
+[Source notes & exact scope](docs/mmbench-gui-l1-comparison.md) · [PNG](assets/mmbench-gui-l1-comparison.png) · [SVG](assets/mmbench-gui-l1-comparison.svg) · [Back to results](#report-card)
+
 <!-- personamem:end -->
 
 ## Run it
@@ -299,7 +493,7 @@ python -m pip install .
 # A tiny synthetic fixture: tests the plumbing, proves no scientific point.
 csiee eval data/demo.jsonl --shuffles 10 --output results/local/demo
 
-# Download pinned releases and reproduce the five-family report card.
+# Download pinned releases and reproduce the ten-component report card.
 csiee suite --seed 42 --shuffles 10 --output results/local/suite
 
 # Include all three additional screened datasets.
@@ -354,7 +548,7 @@ No. It identifies answer-option patterns worth investigating. Correlated questio
 
 **Is Xiaogang intelligent?**
 
-He brought `statistics.median` to an exam. Please respect his journey. All five featured datasets route to his length rule; numeric routing is exercised in the additional datasets.
+He brought `statistics.median` to an exam. Please respect his journey. Only 163 of the 23,880 featured questions use his numeric route; the rest use character length.
 
 **Where did Lite / Pro / Pro Max go?**
 
@@ -368,7 +562,7 @@ Found another shortcut? Bring a rule, a pinned dataset and the embarrassing resu
 | I want to… | Start here |
 | :-- | :-- |
 | Add a strategy or benchmark | [Contributing guide](CONTRIBUTING.md) |
-| Check every result, including weak signals | [All eight screens](results/classmates/README.md) |
+| Check every result, including weak signals | [Full reports and screening record](results/classmates/README.md) |
 | Audit what was included and excluded | [Screening ledger](docs/screening.md) · [Methods](docs/methodology.md) |
 | Reuse the figures | [PNG / SVG gallery & sources](docs/benchmark-comparisons.md) |
 | Report a problem or propose an experiment | [Open an issue](https://github.com/ya-way/CSIEE/issues/new) |

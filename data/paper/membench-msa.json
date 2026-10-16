@@ -1,0 +1,47 @@
+{
+  "paper": "MemBench: Towards More Comprehensive Evaluation on the Memory of LLM-based Agents",
+  "version": "arXiv:2506.21605v1",
+  "url": "https://arxiv.org/html/2506.21605v1",
+  "source": "Table 11, msa (multi-session assistant) column",
+  "metric": "Accuracy (%)",
+  "verified_on": "2026-10-16",
+  "precision": 1,
+  "transcription": "Printed numeric values; no estimates from bar heights.",
+  "rows": [
+    {
+      "method": "FullMemory",
+      "accuracy": 55.00000000000001,
+      "context": "10k factual participation; memory mechanism"
+    },
+    {
+      "method": "RecentMemory",
+      "accuracy": 50.0,
+      "context": "10k factual participation; memory mechanism"
+    },
+    {
+      "method": "RetrievalMemmory",
+      "accuracy": 30.0,
+      "context": "10k factual participation; memory mechanism"
+    },
+    {
+      "method": "GenerativeAgent",
+      "accuracy": 55.00000000000001,
+      "context": "10k factual participation; memory mechanism"
+    },
+    {
+      "method": "MemoryBank",
+      "accuracy": 40.0,
+      "context": "10k factual participation; memory mechanism"
+    },
+    {
+      "method": "MemGPT",
+      "accuracy": 45.0,
+      "context": "10k factual participation; memory mechanism"
+    },
+    {
+      "method": "SCMemory",
+      "accuracy": 10.0,
+      "context": "10k factual participation; memory mechanism"
+    }
+  ]
+}

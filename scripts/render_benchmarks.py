@@ -1,4 +1,4 @@
-"""Render five cited comparisons. Optional dependency: matplotlib==3.9.4."""
+"""Render cited comparisons. Optional dependency: matplotlib==3.9.4."""
 import json
 import math
 from pathlib import Path
@@ -42,6 +42,34 @@ SPECS = [
          note="All 19 models from Table 2 are retained, including models below chance. The paper's **Outcome / Accuracy** fractions are multiplied by 100; three-decimal fractions become one-decimal percentages. This is neither paper recall nor synthesis conversion. The paper evaluates agents with a scientific-paper tool environment and resource caps; failed submissions count against accuracy. CSIEE evaluates the pinned 1,011 released MCQs without questions, tools or trajectories. We have not established item-by-item identity between that pinned release and every paper run, and these are not matched reruns."),
 ]
 
+SPECS.extend([
+    dict(key='perma', dataset='perma', paper='perma-clean-sd', title='PERMA · Type 3',
+         subtitle='Clean single-domain MCQs · post-intervention checkpoint', count=17,
+         source='arXiv:2603.23231v1 / Table 4, MCQ Acc.',
+         access='Paper: history or memory. CSIEE: options only, n=423 single-domain Type-3 questions.',
+         note='All 17 Table 4 baselines are retained, including every GPT-4o-mini memory system. The chart uses the **423 single-domain Type-3 questions**; the report card includes all **580** single- and multi-domain Type-3 questions. Type 1 and Type 2 are separate checkpoint variants and are not counted as additional questions here. The clean/noisy histories never enter CSIEE. This is an answer-choice audit, not an interactive task-completion score. Published and local pipelines differ; item-by-item identity of paper runs is not independently established.'),
+    dict(key='membench-msa', dataset='membench-msa', paper='membench-msa', title='MemBench · multi-session assistant',
+         subtitle='A selected subtask · factual participation / msa', count=7,
+         source='arXiv:2506.21605v1 / Table 11, msa column',
+         access='Paper: 10k memory context, sampled evaluation. CSIEE: all 500 released msa questions, options only.',
+         note='This is **one selected subtask, not the whole MemBench benchmark**. All seven memory mechanisms in Table 11, `msa`, are retained, including the lowest result. CSIEE uses the full 500-question `FirstAgent/RecMultiSession.json` pool. The paper uses sampled trajectories with a 10k memory context, so these are different denominators and not paired runs. List-valued choices are rendered with Python `str`, matching upstream `MembenchAgent.py` string interpolation. The complete 25,874-question valid MemBench screen has only +2.60 pp best shuffled lift; the 100% result does not generalize to it. The subtask was selected after screening.'),
+    dict(key='personamem-v1', dataset='personamem-v1', paper='personamem-v1-128k', title='PersonaMem-v1 · 128k',
+         subtitle='An earlier version of the PersonaMem family · discriminative MCQs', count=15,
+         source='Jiang et al. / arXiv:2504.14225v2 / Figure 4, upper-panel Overall column',
+         access='Paper: 128k history + query. CSIEE: options only, n=2,612; 115 duplicate-option rows excluded.',
+         note='All 15 model rows from Figure 4\'s **128k upper panel, Overall column**, are retained. The printed two-decimal fractions become integer percentages; neither the Average aggregate nor Random Guess is treated as another model. This is **PersonaMem-v1**, an earlier version of the same family as PersonaMem-v2, not an independent family. CSIEE evaluates 2,612 of 2,727 released 128k questions, excluding 115 duplicate-option records. The initial 32k screen is also retained in the screening ledger; 128k was selected to align with the paper\'s complete model comparison. Coarse printed precision and differing exclusions preclude a meaningful claimed win over a nearby paper score.'),
+    dict(key='gui-world', dataset='gui-world', paper='gui-world-mcq', title='GUI-World',
+         subtitle='Video GUI understanding · six-category macro-average MCQ accuracy', count=10,
+         source='Chen et al. / arXiv:2406.10819v2 / Table 3, Avg. / MC',
+         access='Paper: GUI video/keyframes + query. CSIEE: options only, n=3,643; six categories equally weighted.',
+         note='All ten Table 3 models are retained, including the low-scoring video baselines. **Avg. / MC** is a macro-average across Software, Website, XR, Multi, IOS and Android; the CSIEE chart applies the same equal-category weighting. The report card is question-weighted. The pinned release contains 3,646 native MCQ candidates, of which three are excluded (one duplicate-option row and two unmappable gold answers). Exact answer text is mapped only on a unique exact match, never by semantic guessing. The release covers 1,823 video records, while the paper describes a 1,677-video test set: this release/paper difference is unresolved, so the comparison is contextual rather than item-matched.'),
+    dict(key='mmbench-gui-l1', dataset='mmbench-gui-l1', paper='mmbench-gui-l1', title='MMBench-GUI · L1',
+         subtitle='GUI content understanding · option-count-adjusted score', count=7,
+         source='arXiv:2507.19478v1 / Table 5 + Equations 3–4',
+         access='Paper: screenshots + query. CSIEE: options only, n=3,561; score = mean[(m−1)/m × correct].',
+         note='All seven models in Table 5 are shown. Each model bar is the **arithmetic mean of its three printed Overall scores** (Easy, Medium, Hard); the paper gives equal difficulty counts, so no difficulty is selected for advantage. These bars are derived aggregates, not a separately printed total. Equations 3–4 discount each correct answer by `(m−1)/m`, with `m` choices. CSIEE and the chance line apply that same formula from saved per-option-count counts; the report card and screening criterion use ordinary accuracy. The released L1 file contains 3,561 questions, versus 3,582 described in the paper. The upstream repository flags figures for revalidation; these are specifically the cited v1 values, not a claim of validated current leaderboard performance. L2–L4 execution tasks are outside scope.'),
+])
+
 
 def write(path, value):
     path.write_bytes(value.encode('utf-8'))
@@ -64,13 +92,24 @@ def load_rows(spec):
             assert set(categories) == {'app', 'areach', 'just', 'land', 'prog', 'reach', 'val'}
             accuracy = sum(c['correct'] / c['n'] for c in categories.values()) / 7
             shuffled = None  # Only question-weighted shuffle aggregates were saved.
-        elif spec['key'] == 'aptbench':
+        elif spec['key'] in {'aptbench', 'perma'}:
             category = result['by_category'][paper['local_category']]
             n = category['n']
             assert n == paper['local_n']
             accuracy = category['correct'] / n
             chance = 100 / paper['local_options_per_question']
             shuffled = None  # The full-screen permutation mean is not this subset's mean.
+        elif spec['key'] == 'gui-world':
+            categories = result['by_category']
+            assert set(categories) == {'software', 'website', 'XR', 'multi', 'IOS', 'android'}
+            accuracy = sum(c['correct'] / c['n'] for c in categories.values()) / 6
+            shuffled = None
+        elif spec['key'] == 'mmbench-gui-l1':
+            buckets = result['by_option_count']
+            assert sum(c['n'] for c in buckets.values()) == n
+            accuracy = sum((int(m)-1)/int(m) * c['correct'] for m, c in buckets.items()) / n
+            chance = 100 * sum((int(m)-1)/(int(m)**2) * c['n'] for m, c in buckets.items()) / n
+            shuffled = None
         rows.append(dict(method=label, origin='CSIEE', context='Options only',
                          accuracy=100 * accuracy, precision=2, n=n,
                          shuffled=shuffled, source='Saved CSIEE counts'))
@@ -84,7 +123,7 @@ def render(spec, rows, chance, number):
     matplotlib.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 11,
                                'svg.hashsalt': 'csiee-five-benchmarks-v1', 'axes.unicode_minus': False})
     fig = plt.figure(figsize=(16, 9.5), facecolor=BG)
-    fig.text(.06, .95, f'CSIEE / BENCHMARK NOTES                                      {number:02d} / 05',
+    fig.text(.06, .95, f'CSIEE / BENCHMARK NOTES                                      {number:02d} / {len(SPECS):02d}',
              fontsize=11, color=RED, weight='bold')
     fig.text(.06, .893, spec['title'], fontsize=30, color=INK, family='DejaVu Serif')
     fig.text(.06, .852, spec['subtitle'], fontsize=13, color=MUTED)
@@ -117,7 +156,7 @@ def render(spec, rows, chance, number):
                 ha='center', va='bottom', fontsize=10.5,
                 color=RED if row['origin'] == 'CSIEE' else INK,
                 weight='bold' if row['origin'] == 'CSIEE' else 'normal')
-    legend = [Patch(color=TEAL, label=f"Paper / reported ({spec['count']})"),
+    legend = [Patch(color=TEAL, label=f"Paper / {'derived' if spec['key'] == 'mmbench-gui-l1' else 'reported'} ({spec['count']})"),
               Patch(color=RED, label='CSIEE / options only (3)'),
               Line2D([0], [0], color=MUTED, ls=(0, (4, 4)), label=f'Uniform chance / {chance:.2f}%')]
     fig.legend(handles=legend, loc='upper left', bbox_to_anchor=(.06, .819), frameon=False,
@@ -159,22 +198,27 @@ def document(spec, paper, summary, rows, chance):
             if 'mcq_128k' in row:
                 text += f"| {row['method']} | {row['accuracy']:.1f}% | {row['mcq_128k']:.1f}% |\n"
         text += '\nThe figure consistently uses 32k frontier scores; it does not select each model\'s best context length.\n\n'
-    text += f"## Reproduce and inspect\n\n- [Paper-value transcription](../data/paper/{spec['paper']}.json)\n- [Local summary](../results/classmates/{spec['dataset']}/summary.json) and [predictions](../results/classmates/{spec['dataset']}/predictions.jsonl)\n- [PNG](../assets/{key}-comparison.png) / [SVG](../assets/{key}-comparison.svg)\n- [Renderer](../scripts/render_benchmarks.py) / [all five comparisons](benchmark-comparisons.md)\n\n"
+    text += f"## Reproduce and inspect\n\n- [Paper-value transcription](../data/paper/{spec['paper']}.json)\n- [Local summary](../results/classmates/{spec['dataset']}/summary.json) and [predictions](../results/classmates/{spec['dataset']}/predictions.jsonl)\n- [PNG](../assets/{key}-comparison.png) / [SVG](../assets/{key}-comparison.svg)\n- [Renderer](../scripts/render_benchmarks.py) / [all ten comparisons](benchmark-comparisons.md)\n\n"
     text += f"Local dataset SHA-256: `{summary['sha256']}`.\n\n```bash\npython -m pip install matplotlib==3.9.4\npython scripts/render_benchmarks.py\n```\n\nRendering uses committed numerical records only; no API calls or raw dataset downloads are required. Matplotlib is an optional figure-building dependency.\n"
     write(ROOT / f'docs/{key}-comparison.md', text)
     return '\n'.join(table)
 
 
 def main():
-    section = '## Five exams. Three students. No studying.\n\n'
-    section += '[01 Memory](#personamem-v2) · [02 Social reasoning](#agentsense) · [03 Planning](#acpbench) · [04 Agentic potential](#aptbench) · [05 Research](#agenthop)\n\n'
+    section = '## Ten exams. Three students. No studying.\n\n'
+    section += '[01 Memory](#personamem-v2) · [02 Social reasoning](#agentsense) · [03 Planning](#acpbench) · [04 Agentic potential](#aptbench) · [05 Research](#agenthop)\n\n[06 PERMA](#perma--type-3) · [07 MemBench subtask](#membench--multi-session-assistant) · [08 PersonaMem-v1](#personamem-v1--128k) · [09 GUI-World](#gui-world) · [10 MMBench-GUI L1](#mmbench-gui--l1)\n\n'
     section += '**The literature meets the stationery aisle.** Teal bars are published model results; red bars are our three option-only rules. Every baseline in the selected paper columns stays on the page, sorted high to low. Different inputs and evaluation pipelines mean these are contextual comparisons, not a matched agent leaderboard.\n\n'
     quips = ['5,000 memory questions. No memories consulted.',
              'No conversation. Still 49.87% for Xiaoming.',
              'Xiaogang brought a slightly larger ruler.',
              'This is the part where the ruler loses.',
-             '0.89%. Even a ruler has a bad day.']
-    gallery = '# Five benchmark comparisons\n\nVertical bars, descending accuracy, and all listed paper baselines. Each chart uses a zero-based 0–100% scale. Source notes explain differences in inputs, subsets and aggregation.\n\n'
+             '0.89%. Even a ruler has a bad day.',
+             'Your memory system remembers preferences. The ruler remembers nothing.',
+             'A perfect score. On one very specific exam.',
+             'Same family. Earlier syllabus. Still suspiciously measurable.',
+             'The screen is off. The ruler is on.',
+             'No screenshot was harmed in this evaluation.']
+    gallery = '# Ten benchmark comparisons\n\nVertical bars, descending accuracy, and all listed paper baselines. Each chart uses a zero-based 0–100% scale. Source notes explain differences in inputs, subsets and aggregation.\n\n'
     for i, spec in enumerate(SPECS, 1):
         paper, summary, rows, chance = load_rows(spec)
         render(spec, rows, chance, i)
@@ -187,7 +231,7 @@ def main():
         section += f'[Source notes & exact scope](docs/{key}-comparison.md) · [PNG](assets/{key}-comparison.png) · [SVG](assets/{key}-comparison.svg) · [Back to results](#report-card)\n\n'
         gallery += f'## {title}\n\n![{title}](../assets/{key}-comparison.png)\n\n{caption}. [Full table and sources]({key}-comparison.md).\n\n'
         print(f"{title}: {spec['count']} paper + 3 CSIEE bars; descending; chance {chance:.2f}%")
-    gallery += 'APTBench shows the 614-question closed-ended Plan_EN subtask; ACPBench uses a seven-task macro-average. The full-screen report card keeps its original scope and question-weighted accuracy.\n'
+    gallery += 'PERMA shows its single-domain Type-3 subset; MemBench shows only msa; PersonaMem-v1 is an earlier version of an existing family. GUI-World uses category-macro accuracy and MMBench-GUI uses the paper\'s adjusted score. APTBench shows the 614-question closed-ended Plan_EN subtask; ACPBench uses a seven-task macro-average. The full-screen report card keeps its original scope and question-weighted accuracy.\n'
     write(ROOT / 'docs/benchmark-comparisons.md', gallery)
     readme_path = ROOT / 'README.md'
     readme = readme_path.read_text(encoding='utf-8')

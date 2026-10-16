@@ -33,7 +33,7 @@ Local bars use input-order results, seed 42. “—” means unavailable for thi
 - [Paper-value transcription](../data/paper/agentsense-info.json)
 - [Local summary](../results/classmates/agentsense/summary.json) and [predictions](../results/classmates/agentsense/predictions.jsonl)
 - [PNG](../assets/agentsense-comparison.png) / [SVG](../assets/agentsense-comparison.svg)
-- [Renderer](../scripts/render_benchmarks.py) / [all five comparisons](benchmark-comparisons.md)
+- [Renderer](../scripts/render_benchmarks.py) / [all ten comparisons](benchmark-comparisons.md)
 
 Local dataset SHA-256: `efbcf0bc3f37b093fe977f579990db79df6b8317a50b1a81f5a0e1ba384805cf`.
 

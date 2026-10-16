@@ -83,6 +83,9 @@ def evaluate(path, format='jsonl', seed=42, shuffles=10, strategies=None, limit=
             'by_category': {category: {'n': sum(q.category == category for q in questions),
                                       'correct': sum(p == q.answer and q.category == category for p, q in zip(predictions, questions))}
                             for category in sorted({q.category for q in questions})},
+            'by_option_count': {str(m): {'n': sum(len(q.options) == m for q in questions),
+                                        'correct': sum(p == q.answer and len(q.options) == m for p, q in zip(predictions, questions))}
+                                for m in sorted({len(q.options) for q in questions})},
         })
         report['predictions'].extend({'id': q.id, 'strategy': name, 'predicted': p, 'answer': q.answer, 'correct': p == q.answer} for q, p in zip(questions, predictions))
     return report

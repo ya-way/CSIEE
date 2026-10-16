@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.2.0",
+  "python": "3.9.13",
+  "dataset": "membench-msa.jsonl",
+  "sha256": "773bc50897b8cbf1a253b5ef7ec5d1a748c8def7f2fd2263427214852e9a4c66",
+  "format": "jsonl",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 500,
+  "total_loaded": 500,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "native option order",
+  "chance_accuracy": 0.25,
+  "answer_histogram": {
+    "A": 134,
+    "B": 112,
+    "C": 123,
+    "D": 131
+  },
+  "option_count_histogram": {
+    "4": 500
+  },
+  "option_type_histogram": {
+    "length": 500
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "xiaoming",
+      "correct": 500,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.9923756595384479,
+        1
+      ],
+      "lift_over_chance_pp": 75.0,
+      "shuffled_mean": 1.0,
+      "shuffled_min": 1.0,
+      "shuffled_max": 1.0,
+      "shuffled_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "choice_invariance": 1.0,
+      "by_category": {
+        "multi_agent": {
+          "n": 500,
+          "correct": 500
+        }
+      },
+      "by_option_count": {
+        "4": {
+          "n": 500,
+          "correct": 500
+        }
+      }
+    },
+    {
+      "strategy": "xiaohong",
+      "correct": 123,
+      "accuracy": 0.246,
+      "wilson_95": [
+        0.2102809916856707,
+        0.2855921732687978
+      ],
+      "lift_over_chance_pp": -0.40000000000000036,
+      "shuffled_mean": 0.2392,
+      "shuffled_min": 0.22,
+      "shuffled_max": 0.266,
+      "shuffled_scores": [
+        0.224,
+        0.232,
+        0.248,
+        0.22,
+        0.266,
+        0.228,
+        0.23,
+        0.252,
+        0.254,
+        0.238
+      ],
+      "choice_invariance": 0.24980000000000002,
+      "by_category": {
+        "multi_agent": {
+          "n": 500,
+          "correct": 123
+        }
+      },
+      "by_option_count": {
+        "4": {
+          "n": 500,
+          "correct": 123
+        }
+      }
+    },
+    {
+      "strategy": "xiaogang",
+      "correct": 319,
+      "accuracy": 0.638,
+      "wilson_95": [
+        0.5949717262107974,
+        0.6789239558218143
+      ],
+      "lift_over_chance_pp": 38.800000000000004,
+      "shuffled_mean": 0.6352,
+      "shuffled_min": 0.63,
+      "shuffled_max": 0.642,
+      "shuffled_scores": [
+        0.638,
+        0.638,
+        0.634,
+        0.642,
+        0.636,
+        0.636,
+        0.634,
+        0.63,
+        0.632,
+        0.632
+      ],
+      "choice_invariance": 0.9872000000000002,
+      "by_category": {
+        "multi_agent": {
+          "n": 500,
+          "correct": 319
+        }
+      },
+      "by_option_count": {
+        "4": {
+          "n": 500,
+          "correct": 319
+        }
+      }
+    },
+    {
+      "strategy": "random",
+      "correct": 133,
+      "accuracy": 0.266,
+      "wilson_95": [
+        0.2291604018204711,
+        0.30640778951553543
+      ],
+      "lift_over_chance_pp": 1.6000000000000014,
+      "shuffled_mean": 0.2476,
+      "shuffled_min": 0.212,
+      "shuffled_max": 0.29,
+      "shuffled_scores": [
+        0.244,
+        0.212,
+        0.26,
+        0.224,
+        0.22,
+        0.26,
+        0.282,
+        0.22,
+        0.29,
+        0.264
+      ],
+      "choice_invariance": 0.24020000000000002,
+      "by_category": {
+        "multi_agent": {
+          "n": 500,
+          "correct": 133
+        }
+      },
+      "by_option_count": {
+        "4": {
+          "n": 500,
+          "correct": 133
+        }
+      }
+    }
+  ],
+  "source": {
+    "dataset": "MemBench (multi-session assistant subtask)",
+    "url": "https://github.com/import-myself/Membench",
+    "revision": "f66d8d1028d3f68627d00f77a967b93fbb8694b6",
+    "license": "Consult upstream repository terms",
+    "split": "all 500 FirstAgent/RecMultiSession questions; NOT the whole MemBench suite",
+    "sources": [
+      {
+        "path": "MemData/FirstAgent/RecMultiSession.json",
+        "url": "https://raw.githubusercontent.com/import-myself/Membench/f66d8d1028d3f68627d00f77a967b93fbb8694b6/MemData/FirstAgent/RecMultiSession.json",
+        "sha256": "c8c97a2fdfa1ac1a68615483c0c6764024d19e97a3fafb03b590e3e15a81e7ec"
+      }
+    ],
+    "normalization": {
+      "candidate_count": 500,
+      "included_count": 500,
+      "excluded_count": 0,
+      "exclusions": []
+    },
+    "sha256": "773bc50897b8cbf1a253b5ef7ec5d1a748c8def7f2fd2263427214852e9a4c66",
+    "adapter_version": 1,
+    "adapter": "membench-msa",
+    "source_order_seed": null,
+    "source_order": "native option order"
+  }
+}

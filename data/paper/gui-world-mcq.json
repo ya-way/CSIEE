@@ -1,0 +1,142 @@
+{
+  "paper": "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding",
+  "version": "arXiv:2406.10819v2",
+  "url": "https://arxiv.org/html/2406.10819v2",
+  "source": "Table 3, Avg. / MC (macro-average of six categories)",
+  "metric": "Accuracy (%)",
+  "verified_on": "2026-10-16",
+  "precision": 1,
+  "transcription": "Printed numeric values; no estimates from bar heights.",
+  "rows": [
+    {
+      "method": "LLaVA-OV-7B",
+      "accuracy": 50.0,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 56.9,
+        "website": 48.4,
+        "XR": 59.6,
+        "multi": 52.9,
+        "IOS": 58.1,
+        "android": 24.3
+      }
+    },
+    {
+      "method": "Gemini-Pro-1.5",
+      "accuracy": 81.3,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 82.9,
+        "website": 79.2,
+        "XR": 83.3,
+        "multi": 83.4,
+        "IOS": 80.3,
+        "android": 78.5
+      }
+    },
+    {
+      "method": "Qwen-VL-Max",
+      "accuracy": 74.0,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 75.8,
+        "website": 75.5,
+        "XR": 77.6,
+        "multi": 66.9,
+        "IOS": 74.3,
+        "android": 74.2
+      }
+    },
+    {
+      "method": "GPT-4V",
+      "accuracy": 81.2,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 86.0,
+        "website": 79.8,
+        "XR": 83.4,
+        "multi": 76.9,
+        "IOS": 79.9,
+        "android": 81.3
+      }
+    },
+    {
+      "method": "GPT-4o",
+      "accuracy": 84.8,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 86.5,
+        "website": 83.3,
+        "XR": 84.3,
+        "multi": 81.1,
+        "IOS": 83.3,
+        "android": 90.0
+      }
+    },
+    {
+      "method": "ChatUnivi",
+      "accuracy": 22.4,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 28.4,
+        "website": 22.2,
+        "XR": 20.6,
+        "multi": 17.5,
+        "IOS": 22.6,
+        "android": 23.0
+      }
+    },
+    {
+      "method": "Minigpt4Video",
+      "accuracy": 16.8,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 18.9,
+        "website": 15.3,
+        "XR": 16.3,
+        "multi": 15.4,
+        "IOS": 20.1,
+        "android": 14.6
+      }
+    },
+    {
+      "method": "VideoChat2",
+      "accuracy": 42.9,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 45.5,
+        "website": 42.6,
+        "XR": 44.0,
+        "multi": 40.4,
+        "IOS": 40.2,
+        "android": 44.7
+      }
+    },
+    {
+      "method": "Video-LLaVA",
+      "accuracy": 49.4,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 52.9,
+        "website": 52.4,
+        "XR": 44.2,
+        "multi": 45.9,
+        "IOS": 49.7,
+        "android": 51.3
+      }
+    },
+    {
+      "method": "GUI-Vid",
+      "accuracy": 54.6,
+      "context": "GUI video / keyframes + question",
+      "per_category": {
+        "software": 59.9,
+        "website": 54.1,
+        "XR": 55.6,
+        "multi": 52.9,
+        "IOS": 51.8,
+        "android": 53.4
+      }
+    }
+  ]
+}

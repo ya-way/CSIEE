@@ -1,0 +1,765 @@
+{
+  "schema_version": 1,
+  "csiee_version": "0.2.0",
+  "python": "3.9.13",
+  "dataset": "personamem-v1.jsonl",
+  "sha256": "a76c3ea87017957e01d3813f18a5cc15d07742e1ae1daca6eb2b3b6ffdd878a0",
+  "format": "jsonl",
+  "seed": 42,
+  "shuffle_repeats": 10,
+  "n": 2612,
+  "total_loaded": 2612,
+  "selection": "all",
+  "scope": "option-only; no question, user history, retrieval, or LLM",
+  "source_order": "native option order",
+  "chance_accuracy": 0.25,
+  "answer_histogram": {
+    "A": 736,
+    "B": 679,
+    "C": 551,
+    "D": 646
+  },
+  "option_count_histogram": {
+    "4": 2612
+  },
+  "option_type_histogram": {
+    "length": 2612
+  },
+  "interval_note": "Wilson 95% intervals assume independent questions; shared personas, scenarios, or task templates can violate this. Shuffle spread is sensitivity to order, not extra independent data.",
+  "results": [
+    {
+      "strategy": "xiaoming",
+      "correct": 1158,
+      "accuracy": 0.4433384379785605,
+      "wilson_95": [
+        0.4243841508796959,
+        0.4624591442283163
+      ],
+      "lift_over_chance_pp": 19.333843797856048,
+      "shuffled_mean": 0.44287901990811634,
+      "shuffled_min": 0.4406584992343032,
+      "shuffled_max": 0.4444869831546707,
+      "shuffled_scores": [
+        0.44295558958652376,
+        0.44180704441041346,
+        0.44295558958652376,
+        0.4444869831546707,
+        0.4433384379785605,
+        0.444104134762634,
+        0.44295558958652376,
+        0.44295558958652376,
+        0.4406584992343032,
+        0.442572741194487
+      ],
+      "choice_invariance": 0.9906202143950995,
+      "by_category": {
+        "acknowledge_latest_user_preferences": {
+          "n": 755,
+          "correct": 267
+        },
+        "generalize_to_new_scenarios": {
+          "n": 213,
+          "correct": 211
+        },
+        "provide_preference_aligned_recommendations": {
+          "n": 347,
+          "correct": 191
+        },
+        "recall_user_shared_facts": {
+          "n": 171,
+          "correct": 135
+        },
+        "revisit_reasons_behind_preference_updates": {
+          "n": 269,
+          "correct": 250
+        },
+        "suggest_new_ideas": {
+          "n": 518,
+          "correct": 3
+        },
+        "track_full_preference_evolution": {
+          "n": 339,
+          "correct": 101
+        }
+      },
+      "by_option_count": {
+        "4": {
+          "n": 2612,
+          "correct": 1158
+        }
+      }
+    },
+    {
+      "strategy": "xiaohong",
+      "correct": 551,
+      "accuracy": 0.21094946401225115,
+      "wilson_95": [
+        0.19573368368571764,
+        0.2270142068990746
+      ],
+      "lift_over_chance_pp": -3.9050535987748853,
+      "shuffled_mean": 0.24689892802450228,
+      "shuffled_min": 0.23774885145482388,
+      "shuffled_max": 0.2591883614088821,
+      "shuffled_scores": [
+        0.24004594180704442,
+        0.24540581929555896,
+        0.2591883614088821,
+        0.24272588055130168,
+        0.23774885145482388,
+        0.25306278713629404,
+        0.24272588055130168,
+        0.24846860643185298,
+        0.24119448698315468,
+        0.25842266462480856
+      ],
+      "choice_invariance": 0.2452143950995406,
+      "by_category": {
+        "acknowledge_latest_user_preferences": {
+          "n": 755,
+          "correct": 157
+        },
+        "generalize_to_new_scenarios": {
+          "n": 213,
+          "correct": 40
+        },
+        "provide_preference_aligned_recommendations": {
+          "n": 347,
+          "correct": 69
+        },
+        "recall_user_shared_facts": {
+          "n": 171,
+          "correct": 39
+        },
+        "revisit_reasons_behind_preference_updates": {
+          "n": 269,
+          "correct": 64
+        },
+        "suggest_new_ideas": {
+          "n": 518,
+          "correct": 112
+        },
+        "track_full_preference_evolution": {
+          "n": 339,
+          "correct": 70
+        }
+      },
+      "by_option_count": {
+        "4": {
+          "n": 2612,
+          "correct": 551
+        }
+      }
+    },
+    {
+      "strategy": "xiaogang",
+      "correct": 1372,
+      "accuracy": 0.5252679938744257,
+      "wilson_95": [
+        0.5060945889713236,
+        0.54436718483186
+      ],
+      "lift_over_chance_pp": 27.52679938744257,
+      "shuffled_mean": 0.5250765696784074,
+      "shuffled_min": 0.5241194486983155,
+      "shuffled_max": 0.5267993874425727,
+      "shuffled_scores": [
+        0.524885145482389,
+        0.5256508422664625,
+        0.5241194486983155,
+        0.5267993874425727,
+        0.5252679938744257,
+        0.5245022970903522,
+        0.5260336906584993,
+        0.5245022970903522,
+        0.5245022970903522,
+        0.5245022970903522
+      ],
+      "choice_invariance": 0.994716692189893,
+      "by_category": {
+        "acknowledge_latest_user_preferences": {
+          "n": 755,
+          "correct": 128
+        },
+        "generalize_to_new_scenarios": {
+          "n": 213,
+          "correct": 204
+        },
+        "provide_preference_aligned_recommendations": {
+          "n": 347,
+          "correct": 77
+        },
+        "recall_user_shared_facts": {
+          "n": 171,
+          "correct": 140
+        },
+        "revisit_reasons_behind_preference_updates": {
+          "n": 269,
+          "correct": 241
+        },
+        "suggest_new_ideas": {
+          "n": 518,
+          "correct": 507
+        },
+        "track_full_preference_evolution": {
+          "n": 339,
+          "correct": 75
+        }
+      },
+      "by_option_count": {
+        "4": {
+          "n": 2612,
+          "correct": 1372
+        }
+      }
+    },
+    {
+      "strategy": "random",
+      "correct": 656,
+      "accuracy": 0.25114854517611024,
+      "wilson_95": [
+        0.2348909495888572,
+        0.26813703568281816
+      ],
+      "lift_over_chance_pp": 0.11485451761102383,
+      "shuffled_mean": 0.25344563552833077,
+      "shuffled_min": 0.23774885145482388,
+      "shuffled_max": 0.2679938744257274,
+      "shuffled_scores": [
+        0.25880551301684535,
+        0.24004594180704442,
+        0.24272588055130168,
+        0.25765696784073505,
+        0.2679938744257274,
+        0.25229709035222053,
+        0.2622511485451761,
+        0.25689127105666154,
+        0.23774885145482388,
+        0.25803981623277183
+      ],
+      "choice_invariance": 0.24322358346094947,
+      "by_category": {
+        "acknowledge_latest_user_preferences": {
+          "n": 755,
+          "correct": 197
+        },
+        "generalize_to_new_scenarios": {
+          "n": 213,
+          "correct": 58
+        },
+        "provide_preference_aligned_recommendations": {
+          "n": 347,
+          "correct": 89
+        },
+        "recall_user_shared_facts": {
+          "n": 171,
+          "correct": 48
+        },
+        "revisit_reasons_behind_preference_updates": {
+          "n": 269,
+          "correct": 57
+        },
+        "suggest_new_ideas": {
+          "n": 518,
+          "correct": 125
+        },
+        "track_full_preference_evolution": {
+          "n": 339,
+          "correct": 82
+        }
+      },
+      "by_option_count": {
+        "4": {
+          "n": 2612,
+          "correct": 656
+        }
+      }
+    }
+  ],
+  "source": {
+    "dataset": "PersonaMem-v1 (128k)",
+    "url": "https://huggingface.co/datasets/bowen-upenn/PersonaMem-v1",
+    "revision": "a8076d5608c93ba2a28983cd78aa99b01a163ae7",
+    "license": "Consult upstream dataset card",
+    "split": "questions_128k.csv; duplicate choices excluded; same family as PersonaMem-v2",
+    "sources": [
+      {
+        "path": "questions_128k.csv",
+        "url": "https://huggingface.co/datasets/bowen-upenn/PersonaMem-v1/resolve/a8076d5608c93ba2a28983cd78aa99b01a163ae7/questions_128k.csv",
+        "sha256": "f0e137c3167fadbffbce5be2786105283c3299972c4ac1f158939155fd1578a7"
+      }
+    ],
+    "normalization": {
+      "candidate_count": 2727,
+      "included_count": 2612,
+      "excluded_count": 115,
+      "exclusions": [
+        {
+          "id": "2ce0d1c2-2c79-47de-afad-a9ff84389cb1",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "ef08a447-bbfc-4291-ab50-e386bb18f12b",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "2ccf9bf9-fe15-4401-afeb-44c23121e10f",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "5764f552-417b-4a6c-94b2-86f24a9ab676",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "2fe741fe-2c21-4692-873a-00e8ba90037e",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "90be40a4-809a-4627-af99-14b5bc5a90ae",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "a2e55f16-8896-4666-821c-bcf4158a3dac",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "43cb44b3-7c1b-4247-903a-fbe7516bd30e",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "9617cc92-a732-4308-b88a-e89190e831a4",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "4938b6be-de95-48c7-b7ad-48d49db14837",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "8f66f685-6f28-4ad7-8002-b3af9389e287",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "870a5a0f-9c22-4f99-9716-bdfd9d2dde0b",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "557f1e83-517e-4f1e-a94d-69aff1511485",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "39d66e84-8f77-47e7-9b32-476cc41d87be",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "cf3fdfa5-8870-4ee5-b3d1-c24af921978c",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "20689502-3db5-4bae-a482-f859f3f52755",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "f20383a6-5898-447d-bd1e-8df36059f176",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "bdd4aa77-48f4-46ca-8f4a-3aedda624fc8",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "55c0a3ea-0a52-4d38-95c7-40aff4936daa",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "4b80898d-bd37-4293-95e5-cd0e94952a16",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "eca54c3b-9d3f-4826-b95f-436fd3e78183",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "9f3c5205-0a6e-4f91-8dba-a7c79a3bf7a8",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "95d63b27-1030-4f2f-856d-4d970bb9a96e",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "c20e7b65-a1e4-41cb-904b-860c3f197e08",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "38eca6dd-47c9-4b30-97c3-d648805d98ea",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "f761312f-1c49-40e4-b008-209127b5f074",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "feb32f09-4b5a-4426-9a00-a8fad9e6b7f3",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "b9c0c302-3712-4293-93bd-8817ac843cca",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "9a8d9c52-5ed0-4917-a202-785a1fb54732",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "36d781f2-40c5-439e-bafd-9472b79e2eb2",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "41b3e187-44bf-4d12-b2b0-a9521177839d",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "926f0e33-2e21-4bae-8d65-9beff594e7dd",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "af51d3d6-47c1-4399-9b5a-c7e1ab37de2e",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "e2e82ec3-1939-42a8-88ec-c1ac51be2ee1",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "62be3f4c-c9af-4cf3-9bbd-b89b4530c404",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "ca577450-a15e-42ef-a374-76d8bb7ec326",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "473cd88c-e0e1-40dc-aff7-96d3d361e9af",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "b8b7d133-232a-4c8d-9e4b-bdb6fe355c1c",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "77f3abf0-8c2a-4dc9-91ee-61059d21ce11",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "3ffd6942-ed22-4291-9eab-ddea75ffe3e6",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "1715717c-2f16-482f-9add-0d2a289f38c2",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "d709c819-72dd-4cf2-aea0-09857682bf65",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "2341a804-a01e-418e-9b10-8db1a814723b",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "2cbd1540-ff15-43c0-9bc5-286070306a61",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "8e0397e6-52b8-4045-a5f8-d2f6a49ceff2",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "db8985d3-f56d-48ce-8449-996169014a91",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "4297867c-762f-47e1-b02d-839527089b87",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "f85a9d8c-a0ef-474c-9f20-41904cb339c8",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "89baab87-40f5-4350-b099-3ad88689573a",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "a1bebab0-d543-4ba6-bad8-294bb1aee69f",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "43aa65a1-4480-4f21-b17c-8f291fdb2013",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "74bf2038-c7e2-4612-930d-061d5736b125",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "e127eb38-7330-44c1-9410-db7351872fdb",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "2c838908-bae9-4d90-bccf-e47600eef511",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "bf6e542f-8648-4371-a120-7b1f5af5bf00",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "fe68029c-27d6-42cf-8d63-99ef7e9af3ef",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "65717325-df63-43ea-9bdc-7d8d6a32d2b2",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "b5e464e8-0b58-4d2f-a73d-7e046a7d6da5",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "600bdd13-3e33-4ce6-a711-4910add15525",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "77d65181-6f2a-4131-b5f3-0a194f4a906c",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "ee008130-6828-4e3e-9206-1b6c545f5b86",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "6bc0e97e-d91a-4f42-8618-c2d988a16356",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "bb924a11-3e9a-424c-9d47-b67028cad766",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "92a46c35-6e09-4eb7-9f41-98d3e9939308",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "2663adb0-20ef-47c1-8825-234f28c5bdd7",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "df7893bb-c512-46c0-ab40-2daad6e8b427",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "a2791b36-f67e-41e9-a02b-ace2fff2e7c7",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "34b5aac5-7ffe-4e56-83df-14f6404ebefd",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "148fbe4e-eec7-473a-b53e-6337baacb070",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "4fbe1cdf-893f-458e-b2ea-91d3c44d2e91",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "c144a89c-043c-44cf-8498-03be384e6c5f",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "32940316-2082-4d5b-a002-815cac9bbc0f",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "290c34c6-10da-4db3-9f24-787ddb52e0bb",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "e4af538f-ed96-43b3-8fda-b44e865533b9",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "241c1d48-5a40-4b5c-815f-a2bc05a7e731",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "70ef620a-3863-4c1b-9c32-cafca257b54b",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "c1e59dd6-9f77-4726-81e9-581d128f48a0",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "e3f0e799-d25d-4e6e-ab2f-cef928ce2498",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "ab5b54c7-5266-42ad-bb2b-228c73053ae5",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "4df76361-68a3-4a12-9c3d-1d71bb7b5b8d",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "ca102334-bc52-4e48-81e6-2982b7cadfbc",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "35cb5928-5c8a-4662-8bae-282da705c627",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "c88b028f-2e20-4068-9e50-824184458750",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "81366ecb-964a-4c12-9f91-fbcd3cf38a09",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "4aedad3d-344e-43e0-8421-ce740c28b8cb",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "290171e3-3c3b-4b80-b00e-96b08dcbdee8",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "b624847d-de0e-4910-b030-484abde8929c",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "43728650-aaa6-40e7-8c3d-b37a6c47d30c",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "171b2c9f-deb4-4382-8ca3-0e0778bcaefd",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "da0ee33d-9520-40f7-9aac-85533711df2b",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "30fe8be1-29ac-49ff-9347-dd22ccadffb0",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "e98a5dae-910a-44ec-8f83-2b945a552c1d",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "37d499be-53d4-41a0-88e8-082295a6592a",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "cb996a66-bad5-4aaf-b702-9a0795418f17",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "c9a744fe-0d88-46ec-aa79-81bed3fff135",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "42e78e74-93dd-4232-8df7-42491d16760c",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "151c554c-2a8e-4e32-b151-2754199f09fc",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "2227f14a-4d94-49b6-a34d-a3d3119872fe",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "5408099e-56de-4f7d-89ae-12b1406183f3",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "53434e9e-f01f-482c-a6d2-9a22ec19968c",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "b016c913-372c-4ff9-9f70-4a6d151394ea",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "7ba55c1c-a088-404a-b915-0afe0c7c2f2d",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "242a6ce7-f83f-41fd-9bd4-c12f1a1d2a00",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "d83e87fd-6ba4-447d-9999-3a9721619f12",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "e36e1927-7701-4a2f-9f49-d55464dbdebb",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "cec5f304-f174-4c5a-9e6a-18c7fcfd0efd",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "2de1876d-075f-4781-ad89-584545336b00",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "783f5602-9d7a-489f-9bd6-525333668836",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "dd76ed19-9fb3-4b11-aacb-8ff2312a40ce",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "92416a39-8424-4451-83a1-dc21b3aea295",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "99857af5-7300-4a2b-b610-46dda4d44c5d",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "1ccfce92-8a25-462a-bf6a-abf094d2aedb",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "2418b879-3156-4032-adee-bae58af4a8f3",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "0cc3cc9b-935d-410c-ae43-030d6f90f3ba",
+          "reason": "duplicate option text after stripping"
+        },
+        {
+          "id": "87137a2f-af8c-4862-91ee-58ea7a84b862",
+          "reason": "duplicate option text after stripping"
+        }
+      ]
+    },
+    "sha256": "a76c3ea87017957e01d3813f18a5cc15d07742e1ae1daca6eb2b3b6ffdd878a0",
+    "adapter_version": 1,
+    "adapter": "personamem-v1",
+    "source_order_seed": null,
+    "source_order": "native option order"
+  }
+}

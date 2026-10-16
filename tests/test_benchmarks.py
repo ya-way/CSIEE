@@ -1,3 +1,5 @@
+import csv
+import io
 import gzip
 import json
 import hashlib
@@ -5,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from csiee.benchmarks import normalize, parse_apt_choices, prepare_benchmark
+from csiee.benchmarks import normalize, parse_apt_choices, prepare_benchmark, huggingface
 from csiee.evaluate import evaluate
 
 
@@ -14,6 +16,54 @@ def payload(rows):
 
 
 class AdapterTests(unittest.TestCase):
+    def test_personamem_csv_embedded_newlines_and_duplicate_exclusion(self):
+        stream = io.StringIO()
+        writer = csv.DictWriter(stream, fieldnames=['question_id', 'all_options', 'correct_answer', 'question_type'])
+        writer.writeheader()
+        writer.writerow(dict(question_id='q', all_options=repr(['(a) first', '(b) second\nline', '(c) third', '(d) fourth']), correct_answer='(b)', question_type='recall'))
+        writer.writerow(dict(question_id='dup', all_options=repr(['(a) same', '(b) same', '(c) c', '(d) d']), correct_answer='(b)', question_type='recall'))
+        qs, audit = normalize('personamem-v1', [('questions_128k.csv', stream.getvalue().encode())])
+        self.assertEqual((qs[0].options[1], qs[0].answer), ('second\nline', 1))
+        self.assertEqual(audit['excluded_count'], 1)
+
+    def test_perma_multiline_options_type_and_url_encoding(self):
+        row = dict(task_type=3, options='A: first\ncontinued\nB: second\nC: third\nD: fourth\nE: fifth\nF: sixth\nG: seventh\nH: eighth', gold_label='H')
+        qs, _ = normalize('perma', [('SD-Rental Cars_3.json', json.dumps(row).encode())])
+        self.assertEqual((qs[0].category, qs[0].answer, qs[0].options[0]), ('SD', 7, 'first\ncontinued'))
+        self.assertIn('Rental%20Cars', huggingface('a/b', 'pin', 'SD-Rental Cars_3.json')[0]['url'])
+        row['task_type'] = 1
+        with self.assertRaisesRegex(ValueError, 'Type 3'):
+            normalize('perma', [('SD_1.json', json.dumps(row).encode())])
+
+    def test_gui_world_exact_text_letter_and_unmappable_gold(self):
+        row = {'Reasoning': {'Options': ['a text', 'b text', 'c text', 'd text'], 'Correct Answer': 'b text'},
+               'MCQA': {'Options': ['A. aa', 'B. bb', 'C. cc', 'D. dd'], 'Answer': '[[C]] cc'},
+               'bad': {'Options': ['a', 'b', 'c', 'd'], 'Answer': 'A completely unrelated description'}}
+        qs, audit = normalize('gui-world', [('benchmark/software.jsonl', payload([row]))])
+        self.assertEqual([q.answer for q in qs], [1, 2])
+        self.assertEqual(qs[1].options, ('aa', 'bb', 'cc', 'dd'))
+        self.assertEqual(audit['excluded_count'], 1)
+
+    def test_mmbench_groups_preserve_labels_and_platform(self):
+        row = dict(index=9, platform='os_ios', groups=[dict(options={'C': 'cc', 'A': 'aa'}, answer='A')])
+        qs, _ = normalize('mmbench-gui-l1', [('L1_annotations.json', json.dumps([row]).encode())])
+        self.assertEqual((qs[0].id, qs[0].answer, qs[0].category), ('9:0', 1, 'os_ios'))
+
+    def test_membench_list_options_match_upstream_interpolation(self):
+        row = {'msa': [{'QA': {'choices': {'A': ['one', 'two'], 'B': ['three']}, 'ground_truth': 'B'}}]}
+        qs, _ = normalize('membench-msa', [('RecMultiSession.json', json.dumps(row).encode())])
+        self.assertEqual(qs[0].options, ("['one', 'two']", "['three']"))
+        self.assertEqual(qs[0].answer, 1)
+
+    def test_option_count_counts_support_adjusted_metric(self):
+        rows = [dict(id='two', options=['longest', 'x'], answer=0), dict(id='four', options=['a', 'bb', 'ccc', 'dddd'], answer=0)]
+        with tempfile.TemporaryDirectory() as directory:
+            p = Path(directory) / 'q.jsonl'; p.write_bytes(payload(rows))
+            report = evaluate(p, strategies=['xiaoming'], shuffles=1)
+        counts = report['results'][0]['by_option_count']
+        self.assertEqual(counts, {'2': {'n': 1, 'correct': 1}, '4': {'n': 1, 'correct': 0}})
+        self.assertEqual(sum((int(m)-1)/int(m)*c['correct'] for m,c in counts.items())/2, .25)
+
     def test_apt_inline_and_multiline(self):
         labels, options = parse_apt_choices('(A) first; (B) second\n(C) third (D) fourth')
         self.assertEqual(labels, list('ABCD'))

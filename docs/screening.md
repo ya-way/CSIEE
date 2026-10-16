@@ -15,7 +15,7 @@ Eight benchmark families were evaluated during the classmates redesign. The five
 | [Backtrader-Bench](https://github.com/rzhao999/Backtrader-Bench) | 160 / 160 | Full MCQ base pool, not the curated 30-question subset | No positive signal above the +5 pp screening threshold |
 | [FDABench-Full](https://huggingface.co/datasets/FDAbench2026/FDAbench-Full) | 237 / 579 | Publicly labeled single-choice rows only | Reverse signal on a label-availability subset |
 
-The current [complete score table](../results/classmates/README.md) includes every completed screen. Rows are different benchmark families, not cherry-picked task slices counted as separate benchmarks. Components differ in scope and difficulty; there is no pooled leaderboard score.
+The initial eight production screens are preserved in the [complete score table](../results/classmates/README.md). The expansion below distinguishes full components, versions, selected subtasks and exploratory pilots. Components differ in scope and difficulty; there is no pooled leaderboard score.
 
 ## Exclusions and boundaries
 
@@ -43,3 +43,50 @@ OpenBookQA was evaluated in the earlier v0.1 project as a general QA control. It
 | FDABench-Full | `0e05e5ec2c95fbe462bed0cba1882f99989ab34e` | MIT, dataset card |
 
 These links credit the benchmark creators; CSIEE is not affiliated with them. Pinned per-file URLs and hashes live in each `summary.json`. We commit no raw benchmark corpus. The project's MIT license covers its original code, not a relicensing of upstream data.
+
+
+## October 16 expansion: selected after screening
+
+The original eight screens above are retained. Five additional **components** were selected using best-of-three shuffled accuracy minus the analytical chance score. The reference is PersonaMem-v2: **+20.592 pp**. No strategy was changed. Ten permutations are order controls, not held-out validation. This search was requested for positive signals and is deliberately not representative.
+
+| Added component | Included / candidates | Best shuffled score | Chance | Lift |
+| :-- | --: | --: | --: | --: |
+| [PERMA (Type 3)](../results/classmates/perma/report.md) | 580 / 580 | 93.93% | 12.50% | +81.43 pp |
+| [MemBench (multi-session assistant subtask)](../results/classmates/membench-msa/report.md) | 500 / 500 | 100.00% | 25.00% | +75.00 pp |
+| [PersonaMem-v1 (128k)](../results/classmates/personamem-v1/report.md) | 2,612 / 2,727 | 52.51% | 25.00% | +27.51 pp |
+| [GUI-World (released benchmark MCQs)](../results/classmates/gui-world/report.md) | 3,643 / 3,646 | 50.49% | 25.00% | +25.49 pp |
+| [MMBench-GUI (L1)](../results/classmates/mmbench-gui-l1/report.md) | 3,561 / 3,561 | 45.46% | 22.08% | +23.38 pp |
+
+PersonaMem-v1 and v2 are one family. MemBench msa is a selected subtask; the full screen below does not show a comparable signal. These additions therefore bring the gallery to **ten components across nine families**, not ten independent full benchmarks. MMBench-GUI clears the criterion because of its lower chance baseline, despite a slightly lower shuffled raw accuracy than PersonaMem-v2.
+
+### Additional exploratory screens, including unsuccessful candidates
+
+These are screening-stage measurements, not promoted production evaluations. Source pins, all three rules, exclusions and normalized-file hashes are preserved in the [machine-readable screening record](../results/screening/2026-10-16.json). Provisional adapter assumptions are labeled; these are not claims of fully validated null results.
+
+| Candidate / pilot scope | Included | Best shuffled score | Chance | Lift |
+| :-- | --: | --: | --: | --: |
+| prefeval | 1,000 | 42.00% | 25.00% | +17.00 pp |
+| socialbench-en | 2,935 | 39.42% | 23.41% | +16.01 pp |
+| tombench-en | 2,375 | 29.69% | 25.00% | +4.69 pp |
+| membench-all | 25,874 | 27.60% | 25.00% | +2.60 pp |
+| membench-ThirdAgent-highlevel | 1,500 | 25.08% | 25.00% | +0.08 pp |
+| memeye | 371 | 32.26% | 25.00% | +7.26 pp |
+| agentdrive-checked | 200 | 40.10% | 25.00% | +15.10 pp |
+| robobench-mcq | 1,892 | 24.99% | 25.00% | -0.01 pp |
+| agentvidbench | 100 | 4.70% | 3.85% | +0.85 pp |
+| gui-knowledge-mcq | 2,425 | 28.68% | 22.85% | +5.83 pp |
+| personamem-v1-32k | 572 | 57.38% | 25.00% | +32.38 pp |
+
+PrefEval assumes the first stored choice is gold; GUI-Knowledge uses `option_text` and needs further reconciliation with its message template. Neither was promoted. The 32k PersonaMem pilot is positive but is not counted as a sixth addition. The early MemBench highlevel pilot overlaps the full MemBench screen. Early GUI-World scores that did not map exact-text gold are superseded by the complete production adapter.
+
+GuideBench annotations were gated (HTTP 401). AMA-Bench exposed open-ended QA in the inspected release. InMind, LLM-Coordination and WhodunitBench were inspected but not scored. These candidates have no invented scores.
+
+### New adapter boundaries
+
+- **PERMA:** all 580 Type-3 overall MCQs (423 single-domain, 157 multi-domain); Type-1/2 checkpoint variants are outside this component. The chart uses the single-domain category to align Table 4.
+- **MemBench msa:** full 500-question RecMultiSession pool. List options use upstream-compatible Python string interpolation. The paper compares sampled 10k-context runs, not this full pool.
+- **PersonaMem-v1:** 2,612 of 2,727 128k rows; all 115 exclusions are duplicate option text. This earlier dataset version is not arXiv paper version v1: the cited paper is arXiv v2.
+- **GUI-World:** 3,643 of 3,646 MCQs from 1,823 video records. One duplicate option row and two answers without an explicit label or unique exact text match are excluded. The paper describes 1,677 test videos; release/paper identity is unresolved.
+- **MMBench-GUI:** all 3,561 L1 questions; no record exclusions. Paper describes 3,582. Its adjusted score and ordinary accuracy are kept separate. L2–L4 are outside scope.
+
+The new pinned URLs, SHA-256 hashes and every exclusion are embedded in the linked production summaries. No raw benchmark corpus is committed.

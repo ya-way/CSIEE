@@ -47,7 +47,7 @@ The figure consistently uses 32k frontier scores; it does not select each model'
 - [Paper-value transcription](../data/paper/personamem-v2-mcq.json)
 - [Local summary](../results/classmates/personamem-v2/summary.json) and [predictions](../results/classmates/personamem-v2/predictions.jsonl)
 - [PNG](../assets/personamem-comparison.png) / [SVG](../assets/personamem-comparison.svg)
-- [Renderer](../scripts/render_benchmarks.py) / [all five comparisons](benchmark-comparisons.md)
+- [Renderer](../scripts/render_benchmarks.py) / [all ten comparisons](benchmark-comparisons.md)
 
 Local dataset SHA-256: `95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52`.
 

@@ -41,7 +41,7 @@ Local bars use input-order results, seed 42. “—” means unavailable for thi
 - [Paper-value transcription](../data/paper/agenthop-accuracy.json)
 - [Local summary](../results/classmates/agenthop/summary.json) and [predictions](../results/classmates/agenthop/predictions.jsonl)
 - [PNG](../assets/agenthop-comparison.png) / [SVG](../assets/agenthop-comparison.svg)
-- [Renderer](../scripts/render_benchmarks.py) / [all five comparisons](benchmark-comparisons.md)
+- [Renderer](../scripts/render_benchmarks.py) / [all ten comparisons](benchmark-comparisons.md)
 
 Local dataset SHA-256: `3f1ea9261f708d27c0d545cac238338abd9161f718be745804b6ec3b1e01147b`.
 

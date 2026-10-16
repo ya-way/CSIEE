@@ -1,15 +1,19 @@
 """Pinned native MCQ components of agent benchmarks, with auditable exclusions."""
 
+import ast
+import csv
 import gzip
 import hashlib
 import json
 import re
 import urllib.request
+from urllib.parse import quote
 from pathlib import Path
 
 from .data import Question, shuffled
 
-FEATURED = ['personamem-v2', 'agentsense', 'acpbench', 'aptbench', 'agenthop']
+FEATURED = ['personamem-v2', 'agentsense', 'acpbench', 'aptbench', 'agenthop',
+            'perma', 'membench-msa', 'personamem-v1', 'gui-world', 'mmbench-gui-l1']
 EXTRA = ['bixbench', 'backtrader', 'fdabench']
 
 
@@ -18,7 +22,7 @@ def github(repo, revision, paths):
 
 
 def huggingface(repo, revision, path):
-    return [{'path': path, 'url': f'https://huggingface.co/datasets/{repo}/resolve/{revision}/{path}'}]
+    return [{'path': path, 'url': f'https://huggingface.co/datasets/{repo}/resolve/{revision}/{quote(path, safe="/")}'}]
 
 
 APT_TASKS = ['agentic_math/action_cal', 'agentic_math/planning_single', 'deepresearch/plan_en',
@@ -62,6 +66,41 @@ REGISTRY = {
     },
 }
 
+from ._perma_sources import PATHS as PERMA_PATHS
+
+REGISTRY.update({
+    'personamem-v1': {
+        'dataset': 'PersonaMem-v1 (128k)', 'url': 'https://huggingface.co/datasets/bowen-upenn/PersonaMem-v1',
+        'revision': 'a8076d5608c93ba2a28983cd78aa99b01a163ae7', 'license': 'Consult upstream dataset card',
+        'split': 'questions_128k.csv; duplicate choices excluded; same family as PersonaMem-v2',
+        'sources': huggingface('bowen-upenn/PersonaMem-v1', 'a8076d5608c93ba2a28983cd78aa99b01a163ae7', 'questions_128k.csv'),
+    },
+    'perma': {
+        'dataset': 'PERMA (Type 3)', 'url': 'https://huggingface.co/datasets/ustclsc/PERMA',
+        'revision': '440e64e4fb8baec6f7ad10c1de135505f93e7cb1', 'license': 'Apache-2.0 (upstream repository)',
+        'split': 'all 580 Type-3 overall MCQs, single- and multi-domain; excludes Type-1/2 checkpoint variants',
+        'sources': [source for path in PERMA_PATHS for source in huggingface('ustclsc/PERMA', '440e64e4fb8baec6f7ad10c1de135505f93e7cb1', path)],
+    },
+    'membench-msa': {
+        'dataset': 'MemBench (multi-session assistant subtask)', 'url': 'https://github.com/import-myself/Membench',
+        'revision': 'f66d8d1028d3f68627d00f77a967b93fbb8694b6', 'license': 'Consult upstream repository terms',
+        'split': 'all 500 FirstAgent/RecMultiSession questions; NOT the whole MemBench suite',
+        'sources': github('import-myself/Membench', 'f66d8d1028d3f68627d00f77a967b93fbb8694b6', ['MemData/FirstAgent/RecMultiSession.json']),
+    },
+    'gui-world': {
+        'dataset': 'GUI-World (released benchmark MCQs)', 'url': 'https://huggingface.co/datasets/ONE-Lab/GUI-World',
+        'revision': '7901fa3f0b9e36afa87d24ff9ecd48037c7fd6a0', 'license': 'Consult upstream dataset card',
+        'split': 'all native MCQs in six Annotation/benchmark files; no video or free-form tasks',
+        'sources': [source for platform in ['IOS', 'XR', 'android', 'multi', 'software', 'website'] for source in huggingface('ONE-Lab/GUI-World', '7901fa3f0b9e36afa87d24ff9ecd48037c7fd6a0', f'Annotation/benchmark/{platform}.jsonl')],
+    },
+    'mmbench-gui-l1': {
+        'dataset': 'MMBench-GUI (L1)', 'url': 'https://huggingface.co/datasets/OpenGVLab/MMBench-GUI',
+        'revision': 'e27757e3910e0d5995b811f916b509b4e34a4690', 'license': 'Consult upstream dataset card',
+        'split': 'all 3561 L1 questions across three difficulty levels; not L2-L4 agent tasks',
+        'sources': huggingface('OpenGVLab/MMBench-GUI', 'e27757e3910e0d5995b811f916b509b4e34a4690', 'L1_annotations.json'),
+    },
+})
+
 
 def parse_apt_choices(text):
     matches = list(re.finditer(r'(?:^|[\s;])\(([A-Z])\)\s*', text))
@@ -89,12 +128,65 @@ def normalize(name, payloads, seed=42):
         questions.append(shuffled(q, seed, name + '-source') if source_shuffle else q)
 
     for path, payload in payloads:
-        if path.endswith('.gz'):
+        if name == 'personamem-v1':
+            rows = list(csv.DictReader(payload.decode('utf-8-sig').splitlines()))
+        elif name in {'mmbench-gui-l1', 'membench-msa', 'perma'}:
+            decoded = json.loads(payload)
+            rows = decoded if isinstance(decoded, list) else [decoded]
+        elif path.endswith('.gz'):
             rows = json.loads(gzip.decompress(payload))
         else:
             rows = [json.loads(line) for line in payload.decode('utf-8-sig').splitlines() if line.strip()]
         for index, row in enumerate(rows):
-            if name == 'agentsense':
+            if name == 'personamem-v1':
+                raw = ast.literal_eval(row['all_options'])
+                matches = [re.fullmatch(r'\(([a-d])\)\s*(.*)', value, re.S) for value in raw]
+                if not all(matches) or [m[1] for m in matches] != list('abcd'):
+                    raise ValueError('unexpected PersonaMem choice labels')
+                add(str(row['question_id']), [m[2] for m in matches], 'abcd'.index(row['correct_answer'].strip('()')), row['question_type'])
+            elif name == 'perma':
+                if row['task_type'] != 3:
+                    raise ValueError('PERMA adapter requires Type 3')
+                parts = re.split(r'(?:^|\n)([A-H]):\s*', row['options'])
+                labels, options = parts[1::2], [x.strip() for x in parts[2::2]]
+                if labels != list('ABCDEFGH') or parts[0].strip():
+                    raise ValueError('unexpected PERMA option layout')
+                add(path, options, labels.index(row['gold_label']), Path(path).stem[:2])
+            elif name == 'membench-msa':
+                for category, items in row.items():
+                    for i, item in enumerate(items):
+                        qa = item['QA']
+                        labels = list(qa['choices'])
+                        # Upstream MembenchAgent.py interpolates choices via str.format,
+                        # including Python's string representation of list-valued options.
+                        add(f'{category}:{i}', [str(v) for v in qa['choices'].values()], labels.index(qa['ground_truth']), category)
+            elif name == 'mmbench-gui-l1':
+                for i, item in enumerate(row['groups']):
+                    labels = list(item['options'])
+                    add(f"{row['index']}:{i}", list(item['options'].values()), labels.index(item['answer']), row['platform'])
+            elif name == 'gui-world':
+                for key, item in row.items():
+                    if not isinstance(item, dict) or 'Options' not in item:
+                        continue
+                    gold = item.get('Correct Answer', item.get('Answer', ''))
+                    match = re.match(r'^(?:\[\[|\[|\()?([A-D])(?:[\].):]|$)', gold.strip())
+                    label = match[1] if match else None
+                    raw = item['Options']
+                    labels = list(raw) if isinstance(raw, dict) else list('ABCD')[:len(raw)]
+                    options = list(raw.values()) if isinstance(raw, dict) else [re.sub(r'^[A-D][.):]\s*', '', v) for v in raw]
+                    id = f'{Path(path).stem}:{index}:{key}'
+                    # Some official records use exact answer text instead of a letter.
+                    exact = [i for i, option in enumerate(options) if option.strip() == gold.strip()]
+                    if len(exact) == 1:
+                        answer = exact[0]
+                    elif label in labels:
+                        answer = labels.index(label)
+                    else:
+                        candidate_count += 1
+                        exclusions.append({'id': id, 'reason': 'gold is neither a released label nor unique exact option text'})
+                        continue
+                    add(id, options, answer, Path(path).stem)
+            elif name == 'agentsense':
                 for ci, character in enumerate(row['characters']):
                     for qi, item in enumerate(character['info_reason_questions']):
                         if item['options'][item['answer_label']] != item['answer']:
